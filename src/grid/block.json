@@ -1,0 +1,105 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "b2wp/grid",
+	"version": "0.1.0",
+	"title": "Grid",
+	"category": "theme",
+	"icon": "layout",
+	"description": "A CSS Grid Block",
+	"supports": {
+		"html": false,
+		"align": true,
+		"color": {
+			"background": true,
+			"gradients": true,
+			"text": true,
+			"link": true
+		},
+		"dimensions": {
+			"minHeight": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"gridName": {
+			"type": "string",
+			"default": "grid-1"
+		},
+		"templateColumns": {
+			"type": "string",
+			"default": "repeat(auto-fill, minmax(min(10rem, 100%), 1fr))"
+		},
+		"templateRows": {
+			"type": "string",
+			"default": ""
+		},
+		"templateAreas": {
+			"type": "string",
+			"default": ""
+		},
+		"autoColumns": {
+			"type": "string",
+			"default": ""
+		},
+		"autoRows": {
+			"type": "string",
+			"default": ""
+		},
+		"autoFlow": {
+			"type": "string",
+			"enum": [
+				"none",
+				"row",
+				"column",
+				"dense",
+				"row dense",
+				"column dense"
+			],
+			"default": "row"
+		},
+		"customCSS": {
+			"type": "string",
+			"default": ".wp-grid-name-class {}"
+		},
+		"numberNamedAreas": {
+			"type": "integer",
+			"default": 0
+		},
+		"rowGap": {
+			"type": "string",
+			"default": "1rem"
+		},
+		"columnGap": {
+			"type": "string",
+			"default": "1rem"
+		},
+		"enableDesignMode": {
+			"type": "boolean",
+			"default": true
+		},
+		"disableDesignModeIfMovementLocked": {
+			"type": "boolean",
+			"default": true
+		},
+		"customLayouts": {
+			"type": "array",
+			"default": []
+		},
+		"showStandardLayouts": {
+			"type": "boolean",
+			"default": true
+		},
+		"applyToQueryLoop": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"textdomain": "b2wp-grid",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
