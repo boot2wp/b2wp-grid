@@ -2,6 +2,8 @@
 
 A proof of concept for a core CSS grid block for intrinsic design
 
+See discussion at WordPress Gutenberg Github issue #49084: "[Designing a Core CSS Grid Block for Intrinsic Design](https://github.com/WordPress/gutenberg/issues/49084)".
+
 ## What problem does this address?
 
 In recent releases, [WordPress has increasingly embraced intrisic design](https://developer.wordpress.org/news/2023/02/intrinsic-design-theming-and-rethinking-how-to-design-with-wordpress/) as a fundamental modern styling methodology.
