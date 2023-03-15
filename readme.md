@@ -66,9 +66,25 @@ Sharing/locking:
 
 Note that the css grid block works with the Query Loop block -- just put a Query Loop inside it and set the flag.
 
-The block supports per-instance custom CSS, to enable advanced uses like different template areas at breakpoints. The placeholder ".wp-grid-name-class" is auto-replaced with the actual name of the grid block instance. 
+The block supports per-instance custom CSS, to enable advanced uses like different template areas at breakpoints. The placeholder ".wp-grid-name-class" is auto-replaced with the actual name of the grid block instance.
 
-Possible refinements:
+## Why a full-featured-first approach?
+
+This proof of concept block takes an enable-the-power-of-grid approach rather than a start-simple approach to address the question:
+
+Assuming the full power of CSS grid as the starting point rather than an eventual destination (that is, all the basic CSS grid properties), what UI(s) on top would best enable user, designer, and sharing/locking use flows?
+
+There are several reasons to fully examine the UI implications of a full-powered CSS grid at the onset rather than down the road:
+
+- In some simple forms, a CSS grid is a lot like the existing row and column blocks, which already do their jobs well. Focusing on what grid can do fundamentally better and differently requires looking beyond that use case.
+- A simple css grid design can seem a lot like CSS flexbox, but the usefulness and power of grid only show up in more sophisticated grid layouts.
+- Designing a grid and using a grid may not be best achieved in the same user interface.
+- A narrowly envisioned grid use case may be compelling for a particular design, but the point of CSS grid is to enable a very wide range of possible designs. The Web standards process has already deeply considered this in specifying and rolling out CSS grid, so why not leverage that platform-level capability.
+- Template areas are a compelling tool for building patterns and sites.
+- Sharing and locking grids raises issues beyond those of a group block.
+- In essence, the modern Web has given us the powerful design tool of CSS grid. Let's use it!
+
+## Possible refinements
 
 - auto-name each grid with hashing or other technique
 - provide slots to add additional UIs for grid selection and design, like a classic 12-column grid

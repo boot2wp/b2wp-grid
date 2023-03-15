@@ -130,11 +130,11 @@ export const ThreeColumnFeaturedIcon = () => (
     <Icon
         icon={
             <svg width="100" height="100" viewBox="0 0 100 100" >
-                <rect x="12" y="68" width="49" height="21" fill="black" />
-                <rect x="12" y="40" width="49" height="21" fill="black" />
-                <rect x="12" y="12" width="77" height="21" fill="black" />
-                <rect x="68" y="40" width="21" height="21" fill="black" />
-                <rect x="68" y="68" width="21" height="21" fill="black" />
+                <rect x="12" y="68" width="49" height="21" />
+                <rect x="12" y="40" width="49" height="21" />
+                <rect x="12" y="12" width="77" height="21" />
+                <rect x="68" y="40" width="21" height="21" />
+                <rect x="68" y="68" width="21" height="21" />
             </svg>
         }
     />
@@ -144,12 +144,12 @@ export const ThreeColumnMagazineIcon = () => (
     <Icon
         icon={
             <svg width="100" height="100" viewBox="0 0 100 100" >
-                <rect x="40" y="68" width="21" height="21" fill="black" />
-                <rect x="12" y="68" width="21" height="21" fill="black" />
-                <rect x="12" y="12" width="49" height="49" fill="black" />
-                <rect x="68" y="12" width="21" height="21" fill="black" />
-                <rect x="68" y="40" width="21" height="21" fill="black" />
-                <rect x="68" y="68" width="21" height="21" fill="black" />
+                <rect x="40" y="68" width="21" height="21" />
+                <rect x="12" y="68" width="21" height="21" />
+                <rect x="12" y="12" width="49" height="49" />
+                <rect x="68" y="12" width="21" height="21" />
+                <rect x="68" y="40" width="21" height="21" />
+                <rect x="68" y="68" width="21" height="21" />
             </svg>
         }
     />
@@ -159,15 +159,15 @@ export const ThreeColumnEqualIcon = () => (
     <Icon
         icon={
             <svg width="100" height="100" viewBox="0 0 100 100" >
-                <rect x="40" y="40" width="21" height="21" fill="black" />
-                <rect x="40" y="12" width="21" height="21" fill="black" />
-                <rect x="40" y="68" width="21" height="21" fill="black" />
-                <rect x="12" y="68" width="21" height="21" fill="black" />
-                <rect x="12" y="40" width="21" height="21" fill="black" />
-                <rect x="12" y="12" width="21" height="21" fill="black" />
-                <rect x="68" y="12" width="21" height="21" fill="black" />
-                <rect x="68" y="40" width="21" height="21" fill="black" />
-                <rect x="68" y="68" width="21" height="21" fill="black" />
+                <rect x="40" y="40" width="21" height="21" />
+                <rect x="40" y="12" width="21" height="21" />
+                <rect x="40" y="68" width="21" height="21" />
+                <rect x="12" y="68" width="21" height="21" />
+                <rect x="12" y="40" width="21" height="21" />
+                <rect x="12" y="12" width="21" height="21" />
+                <rect x="68" y="12" width="21" height="21" />
+                <rect x="68" y="40" width="21" height="21" />
+                <rect x="68" y="68" width="21" height="21" />
             </svg>
         }
     />
@@ -177,15 +177,15 @@ export const FourColumnFeaturedIcon = () => (
     <Icon
         icon={
             <svg width="100" height="100" viewBox="0 0 100 100" >
-                <rect x="10" y="10" width="80" height="38" fill="black" />
-                <rect x="10" y="52" width="17" height="17" fill="black" />
-                <rect x="31" y="52" width="17" height="17" fill="black" />
-                <rect x="52" y="52" width="17" height="17" fill="black" />
-                <rect x="73" y="52" width="17" height="17" fill="black" />
-                <rect x="10" y="73" width="17" height="17" fill="black" />
-                <rect x="31" y="73" width="17" height="17" fill="black" />
-                <rect x="52" y="73" width="17" height="17" fill="black" />
-                <rect x="73" y="73" width="17" height="17" fill="black" />
+                <rect x="10" y="10" width="80" height="38" />
+                <rect x="10" y="52" width="17" height="17" />
+                <rect x="31" y="52" width="17" height="17" />
+                <rect x="52" y="52" width="17" height="17" />
+                <rect x="73" y="52" width="17" height="17" />
+                <rect x="10" y="73" width="17" height="17" />
+                <rect x="31" y="73" width="17" height="17" />
+                <rect x="52" y="73" width="17" height="17" />
+                <rect x="73" y="73" width="17" height="17" />
             </svg>
         }
     />
@@ -195,17 +195,17 @@ export const FourColumnMagazineIcon = () => (
     <Icon
         icon={
             <svg width="100" height="100" viewBox="0 0 100 100" >
-                <rect x="10" y="10" width="59" height="40" fill="black" />
-                <rect x="73" y="10" width="17" height="17" fill="black" />
-                <rect x="73" y="31" width="17" height="17" fill="black" />
-                <rect x="10" y="52" width="17" height="17" fill="black" />
-                <rect x="31" y="52" width="17" height="17" fill="black" />
-                <rect x="52" y="52" width="17" height="17" fill="black" />
-                <rect x="73" y="52" width="17" height="17" fill="black" />
-                <rect x="10" y="73" width="17" height="17" fill="black" />
-                <rect x="31" y="73" width="17" height="17" fill="black" />
-                <rect x="52" y="73" width="17" height="17" fill="black" />
-                <rect x="73" y="73" width="17" height="17" fill="black" />
+                <rect x="10" y="10" width="59" height="40" />
+                <rect x="73" y="10" width="17" height="17" />
+                <rect x="73" y="31" width="17" height="17" />
+                <rect x="10" y="52" width="17" height="17" />
+                <rect x="31" y="52" width="17" height="17" />
+                <rect x="52" y="52" width="17" height="17" />
+                <rect x="73" y="52" width="17" height="17" />
+                <rect x="10" y="73" width="17" height="17" />
+                <rect x="31" y="73" width="17" height="17" />
+                <rect x="52" y="73" width="17" height="17" />
+                <rect x="73" y="73" width="17" height="17" />
             </svg>
         }
     />
@@ -215,22 +215,22 @@ export const FourColumnEqualIcon = () => (
     <Icon
         icon={
             <svg width="100" height="100" viewBox="0 0 100 100" >
-                <rect x="10" y="10" width="17" height="17" fill="black" />
-                <rect x="31" y="10" width="17" height="17" fill="black" />
-                <rect x="52" y="10" width="17" height="17" fill="black" />
-                <rect x="73" y="10" width="17" height="17" fill="black" />
-                <rect x="10" y="31" width="17" height="17" fill="black" />
-                <rect x="31" y="31" width="17" height="17" fill="black" />
-                <rect x="52" y="31" width="17" height="17" fill="black" />
-                <rect x="73" y="31" width="17" height="17" fill="black" />
-                <rect x="10" y="52" width="17" height="17" fill="black" />
-                <rect x="31" y="52" width="17" height="17" fill="black" />
-                <rect x="52" y="52" width="17" height="17" fill="black" />
-                <rect x="73" y="52" width="17" height="17" fill="black" />
-                <rect x="10" y="73" width="17" height="17" fill="black" />
-                <rect x="31" y="73" width="17" height="17" fill="black" />
-                <rect x="52" y="73" width="17" height="17" fill="black" />
-                <rect x="73" y="73" width="17" height="17" fill="black" />
+                <rect x="10" y="10" width="17" height="17" />
+                <rect x="31" y="10" width="17" height="17" />
+                <rect x="52" y="10" width="17" height="17" />
+                <rect x="73" y="10" width="17" height="17" />
+                <rect x="10" y="31" width="17" height="17" />
+                <rect x="31" y="31" width="17" height="17" />
+                <rect x="52" y="31" width="17" height="17" />
+                <rect x="73" y="31" width="17" height="17" />
+                <rect x="10" y="52" width="17" height="17" />
+                <rect x="31" y="52" width="17" height="17" />
+                <rect x="52" y="52" width="17" height="17" />
+                <rect x="73" y="52" width="17" height="17" />
+                <rect x="10" y="73" width="17" height="17" />
+                <rect x="31" y="73" width="17" height="17" />
+                <rect x="52" y="73" width="17" height="17" />
+                <rect x="73" y="73" width="17" height="17" />
             </svg>
         }
     />
