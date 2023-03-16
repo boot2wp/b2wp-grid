@@ -96,4 +96,33 @@ There are several reasons to fully examine the UI implications of a full-powered
 - further isolate grids in a server-rendered web component, perhaps when [declarative Shadow DOM](https://developer.chrome.com/en/articles/declarative-shadow-dom/) is more widely deployed
 - provide an instance-specific custom Javascript field, to facilitate designing  and sharing interactive grids
 
+## Implementation: block attributes
+
+The block level implementation attempts to start with the smallest feasible step that can be useful on its own.
+
+Or framed more precisely: what is the minimum viable solid foundation which would support all future grid layouts and UIs? Even if there were no UI at all?
+
+In implementation terms, what block attributes implement the Grid Module spec and would always reliably underly any grid layout or UI?
+
+Removing short-hand properties, the full Grid Module spec is 10 basic properties:
+
+- grid-template-columns/rows/areas
+- grid-auto-columns/rows/flow
+- row/column-gap
+- grid-column/row
+
+These 10 properties work together, not separately, and have defaults. How to express as block attributes?
+
+- 5 are text attributes (the 3 templates and auto-columns/rows)
+- 1, grid-auto-flow, is an enum
+- 2, row/column-gap, are like gap for which block UI is well-understood
+
+That leaves grid-column/row, technically a property on children of the grid, like flexbox also has child properties.
+
+The poc adopts the single alphabetical letter naming convention. It is versatile and maps intuitively to the WordPress inner block architecture. A possible refinement would be a list of free-form names, which some grid layout designs may favor.
+
+By aligning to the Grid Module, we have a solid foundation on which grid work can reliably move forward, while being forwardly compatible with upcoming enhancements like masonry and subgrid.
+
+The next step on a solid foundation is to consider the use flows of use, design, and sharing/locking, which the poc block then explores.
+
 Hopefully, a proof of concept of a fully functional css grid block will inspire more consideration of how to extend WordPress's intrinsic design capabilities.
