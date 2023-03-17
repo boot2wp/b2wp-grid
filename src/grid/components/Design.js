@@ -14,7 +14,6 @@ export const Design = ({ attributes, setAttributes }) => (
             <SaveCustomLayouts attributes={attributes} setAttributes={setAttributes} />
             <ApplyToQueryLoop attributes={attributes} setAttributes={setAttributes} />
             <ShowStandardLayouts attributes={attributes} setAttributes={setAttributes} />
-            <DisableDesignModeIfMovementLocked attributes={attributes} setAttributes={setAttributes} />
             <TabPanel
                 className="grid-design-tab-panel"
                 tabs={[
@@ -159,17 +158,6 @@ const ShowStandardLayouts = ({ attributes, setAttributes }) => (
             help={__("Show standard layout options: 2 column, 3 column, 4 column, auto", 'b2wp-grid')}
             checked={attributes.showStandardLayouts}
             onChange={(val) => setAttributes({ showStandardLayouts: val })}
-        />
-    )
-);
-
-const DisableDesignModeIfMovementLocked = ({ attributes, setAttributes }) => (
-    (
-        <CheckboxControl
-            label="Disable Design Mode when locked"
-            help={__("Turn off the Design panel when 'Lock > Disable movement' is set on this CSS Grid block", 'b2wp-grid')}
-            checked={attributes.disableDesignModeIfMovementLocked}
-            onChange={(val) => setAttributes({ disableDesignModeIfMovementLocked: val })}
         />
     )
 );

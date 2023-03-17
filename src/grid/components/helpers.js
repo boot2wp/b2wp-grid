@@ -3,10 +3,6 @@ export const showDesignPanel = (attributes) => {
         return false;
     }
 
-    if (!attributes.disableDesignModeIfMovementLocked) {
-        return true;
-    }
-
     if (attributes.lock === undefined) {
         return true;
     }

@@ -60,15 +60,18 @@ There is a design panel for designers to make and save grid layouts for users to
 
 ![CSS Grid block design panel](./docs/css-grid-design-panel.png)
 
-Sharing/locking:
-
-- Designers can create, name, save, and share layouts inside a specific block instance. 
-- Designers can customize the UI of a specific block to show only their pre-defined layouts, turn off standard layouts, or hide the Design panel.
-- The Design panel can be turned off when locking is set on the grid block. There is an "enableDesignMode" block property.
+The block supports per-instance custom CSS, to enable advanced uses like different template areas at breakpoints. The placeholder ".wp-grid-name-class" is auto-replaced with the actual name of the grid block instance.
 
 Note that the css grid block works with the Query Loop block -- just put a Query Loop inside it and set the flag.
 
-The block supports per-instance custom CSS, to enable advanced uses like different template areas at breakpoints. The placeholder ".wp-grid-name-class" is auto-replaced with the actual name of the grid block instance.
+## Sharing/locking
+
+- Designers can create, name, save, and share layouts inside a specific block instance. 
+- Designers can customize the UI of a specific block to show only their pre-defined layouts, turn off standard layouts, or hide the Design panel.
+
+The Design panel can be turned off in the block settings menu, toggling the "enableDesignMode" block property:
+
+![disable design mode](./docs/disable-design-mode.png)
 
 ## Why a full-featured-first approach?
 
