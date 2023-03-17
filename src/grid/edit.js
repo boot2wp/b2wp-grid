@@ -2,11 +2,18 @@ import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps, InspectorControls, } from '@wordpress/block-editor';
 import { useState } from '@wordpress/element';
 import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
+import { Slot, SlotFillProvider } from '@wordpress/components';
+import { PluginArea } from '@wordpress/plugins';
 
 import { EditorGridStyle } from './components/GridStyle.js';
 import { Settings } from './components/Settings.js';
 import { Design } from './components/Design.js';
 import { showDesignPanel } from './components/helpers.js';
+
+import { ExampleGridUserPanel } from './slots/ExampleGridUserPanel.js';
+import { ExampleGridDesignerPanel } from './slots/ExampleGridDesignerPanel.js';
+
+import './slots/register.js';
 
 import './editor.scss';
 
@@ -48,19 +55,26 @@ export default function Edit({ attributes, setAttributes }) {
 				showGrid={showGrid}
 			/>
 			<InnerBlocks />
+
 			<InspectorControls>
-				<Settings
-					attributes={attributes}
-					setAttributes={setAttributes}
-					showGrid={showGrid}
-					setShowGrid={setShowGrid}
-				/>
-				{showDesignPanel(attributes) && (
-					<Design
+				<SlotFillProvider>
+					<ExampleGridUserPanel title="Example grid user panel" attributes={attributes} setAttributes={setAttributes} />
+					<ExampleGridDesignerPanel title="Example grid designer panel" attributes={attributes} setAttributes={setAttributes} />
+					<Settings
 						attributes={attributes}
 						setAttributes={setAttributes}
+						showGrid={showGrid}
+						setShowGrid={setShowGrid}
 					/>
-				)}
+					{showDesignPanel(attributes) && (
+						<Design
+							attributes={attributes}
+							setAttributes={setAttributes}
+						/>
+					)}
+
+					<PluginArea scope="grid-slots" />
+				</SlotFillProvider>
 			</InspectorControls>
 		</div>
 	);

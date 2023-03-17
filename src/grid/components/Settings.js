@@ -17,6 +17,7 @@ import { PresetsFourColumn } from './PresetsFourColumn';
 import { PresetsAuto } from './PresetsAuto';
 import { PresetsCustom } from './PresetsCustom';
 
+import PluginGridUserPanel from '../slots/PluginGridUserPanel.js';
 import styled from '@emotion/styled';
 
 export const Settings = ({ attributes, setAttributes, showGrid, setShowGrid }) => {
@@ -28,53 +29,60 @@ export const Settings = ({ attributes, setAttributes, showGrid, setShowGrid }) =
     }
 
     return (
-        <Panel>
-            <PanelBody>
-                {
-                    !attributes.showStandardLayouts &&
-                    <PresetsCustom attributes={attributes} setAttributes={setAttributes} />
-                }
-                {
-                    attributes.showStandardLayouts &&
-                    <>
-                        <ToggleGroupControl
-                            label={__('Layouts', 'b2wp-grid')}
-                            value="vertical"
-                            isDeselectable={true}
-                            onChange={(value) => onChangeLayouts(value)}
-                            isBlock
-                        >
-                            <ToggleGroupControlOptionIcon value="2col" icon={TwoColumnIcon} label={__('2 columns', 'b2wp-grid')} />
-                            <ToggleGroupControlOptionIcon value="3col" icon={ThreeColumnIcon} label={__('3 columns', 'b2wp-grid')} />
-                            <ToggleGroupControlOptionIcon value="4col" icon={FourColumnIcon} label={__('4 columns', 'b2wp-grid')} />
-                            <ToggleGroupControlOption value="auto" label={__('auto', 'b2wp-grid')} />
-                            <ToggleGroupControlOption value="custom" label={__('custom', 'b2wp-grid')} />
-                        </ToggleGroupControl>
+        <>
+            <Panel>
+                <PanelBody>
+                    {
+                        !attributes.showStandardLayouts &&
+                        <PresetsCustom attributes={attributes} setAttributes={setAttributes} />
+                    }
+                    {
+                        attributes.showStandardLayouts &&
                         <>
-                            {layouts === '2col' && (
-                                <PresetsTwoColumn attributes={attributes} setAttributes={setAttributes} />
-                            )}
-                            {layouts === '3col' && (
-                                <PresetsThreeColumn attributes={attributes} setAttributes={setAttributes} />
-                            )}
-                            {layouts === '4col' && (
-                                <PresetsFourColumn attributes={attributes} setAttributes={setAttributes} />
-                            )}
-                            {layouts === 'auto' && (
-                                <PresetsAuto attributes={attributes} setAttributes={setAttributes} />
-                            )}
-                            {layouts === 'custom' && (
-                                <PresetsCustom attributes={attributes} setAttributes={setAttributes} />
-                            )}
+                            <ToggleGroupControl
+                                label={__('Layouts', 'b2wp-grid')}
+                                value="vertical"
+                                isDeselectable={true}
+                                onChange={(value) => onChangeLayouts(value)}
+                                isBlock
+                            >
+                                <ToggleGroupControlOptionIcon value="2col" icon={TwoColumnIcon} label={__('2 columns', 'b2wp-grid')} />
+                                <ToggleGroupControlOptionIcon value="3col" icon={ThreeColumnIcon} label={__('3 columns', 'b2wp-grid')} />
+                                <ToggleGroupControlOptionIcon value="4col" icon={FourColumnIcon} label={__('4 columns', 'b2wp-grid')} />
+                                <ToggleGroupControlOption value="auto" label={__('auto', 'b2wp-grid')} />
+                                <ToggleGroupControlOption value="custom" label={__('custom', 'b2wp-grid')} />
+                            </ToggleGroupControl>
+                            <>
+                                {layouts === '2col' && (
+                                    <PresetsTwoColumn attributes={attributes} setAttributes={setAttributes} />
+                                )}
+                                {layouts === '3col' && (
+                                    <PresetsThreeColumn attributes={attributes} setAttributes={setAttributes} />
+                                )}
+                                {layouts === '4col' && (
+                                    <PresetsFourColumn attributes={attributes} setAttributes={setAttributes} />
+                                )}
+                                {layouts === 'auto' && (
+                                    <PresetsAuto attributes={attributes} setAttributes={setAttributes} />
+                                )}
+                                {layouts === 'custom' && (
+                                    <PresetsCustom attributes={attributes} setAttributes={setAttributes} />
+                                )}
+                            </>
                         </>
-                    </>
-                }
-                <Divider></Divider>
-                <ShowGrid showGrid={showGrid} setShowGrid={setShowGrid} />
-                <GridName attributes={attributes} setAttributes={setAttributes} />
-            </PanelBody>
-            <GridGapPanel attributes={attributes} setAttributes={setAttributes} />
-        </Panel>
+                    }
+
+                </PanelBody>
+            </Panel>
+            <PluginGridUserPanel.Slot />
+            <Panel>
+                <PanelBody>
+                    <ShowGrid showGrid={showGrid} setShowGrid={setShowGrid} />
+                    <GridName attributes={attributes} setAttributes={setAttributes} />
+                    <GridGapPanel attributes={attributes} setAttributes={setAttributes} />
+                </PanelBody>
+            </Panel>
+        </>
     );
 }
 
