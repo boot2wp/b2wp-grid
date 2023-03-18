@@ -7,7 +7,7 @@ import {
 } from '@wordpress/components';
 
 import { SaveCustomLayouts } from './SaveCustomLayouts';
-import PluginGridDesignerPanel from '../slots/PluginGridDesignerPanel.js';
+import PluginGridDesignPanel from '../slots/PluginGridDesignPanel.js';
 
 export const Design = ({ attributes, setAttributes }) => (
     <Panel>
@@ -15,7 +15,7 @@ export const Design = ({ attributes, setAttributes }) => (
             <SaveCustomLayouts attributes={attributes} setAttributes={setAttributes} />
             <ApplyToQueryLoop attributes={attributes} setAttributes={setAttributes} />
             <ShowStandardLayouts attributes={attributes} setAttributes={setAttributes} />
-            <PluginGridDesignerPanel.Slot />
+            <PluginGridDesignPanel.Slot />
             <TabPanel
                 className="grid-design-tab-panel"
                 tabs={[

@@ -10,6 +10,29 @@ import {
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
+export const saveCustomLayout = (name, description, attributes, setAttributes) => {
+    let newLayout = {
+        name: name,
+        description: description,
+        attributes: {
+            "templateColumns": attributes.templateColumns,
+            "templateRows": attributes.templateRows,
+            "templateAreas": attributes.templateAreas,
+            "autoColumns": attributes.autoColumns,
+            "autoRows": attributes.autoRows,
+            "autoFlow": attributes.autoFlow,
+            "customCSS": attributes.customCSS,
+            "numberNamedAreas": attributes.numberNamedAreas,
+            "rowGap": attributes.rowGap,
+            "columnGap": attributes.columnGap,
+        }
+    };
+    const newLayouts = attributes.customLayouts;
+    newLayouts.push(newLayout);
+    setAttributes({ customLayouts: [...newLayouts] });
+    setSavedSuccess(() => true);
+}
+
 export const SaveCustomLayouts = ({ attributes, setAttributes }) => {
 
     const [visible, setVisible] = useState(false);
@@ -25,29 +48,6 @@ export const SaveCustomLayouts = ({ attributes, setAttributes }) => {
         const newLayouts = attributes.customLayouts;
         newLayouts.splice(layoutIndex, 1);
         setAttributes({ customLayouts: [...newLayouts] });
-    }
-
-    function onSaveCustomLayout(name, description, attributes, setAttributes) {
-        let newLayout = {
-            name: name,
-            description: description,
-            attributes: {
-                "templateColumns": attributes.templateColumns,
-                "templateRows": attributes.templateRows,
-                "templateAreas": attributes.templateAreas,
-                "autoColumns": attributes.autoColumns,
-                "autoRows": attributes.autoRows,
-                "autoFlow": attributes.autoFlow,
-                "customCSS": attributes.customCSS,
-                "numberNamedAreas": attributes.numberNamedAreas,
-                "rowGap": attributes.rowGap,
-                "columnGap": attributes.columnGap,
-            }
-        };
-        const newLayouts = attributes.customLayouts;
-        newLayouts.push(newLayout);
-        setAttributes({ customLayouts: [...newLayouts] });
-        setSavedSuccess(() => true);
     }
 
     return (
@@ -68,7 +68,7 @@ export const SaveCustomLayouts = ({ attributes, setAttributes }) => {
                 <>
                     <LayoutName layoutName={layoutName} setLayoutName={setLayoutName} />
                     <LayoutDescription layoutDescription={layoutDescription} setLayoutDescription={setLayoutDescription} />
-                    <SaveLayout attributes={attributes} setAttributes={setAttributes} onSaveCustomLayout={onSaveCustomLayout} layoutName={layoutName} layoutDescription={layoutDescription} savedSuccess={savedSuccess} setSavedSuccess={setSavedSuccess} />
+                    <SaveLayout attributes={attributes} setAttributes={setAttributes} saveCustomLayout={saveCustomLayout} layoutName={layoutName} layoutDescription={layoutDescription} savedSuccess={savedSuccess} setSavedSuccess={setSavedSuccess} />
                     <SavedLayouts attributes={attributes} setAttributes={setAttributes} onRemoveCustomLayout={onRemoveCustomLayout} />
                 </>
             }
@@ -95,7 +95,7 @@ const LayoutDescription = ({ layoutDescription, setLayoutDescription }) => (
 const SaveLayout = ({
     attributes,
     setAttributes,
-    onSaveCustomLayout,
+    saveCustomLayout,
     layoutName,
     layoutDescription,
     savedSuccess,
@@ -105,7 +105,7 @@ const SaveLayout = ({
         <PanelRow>
             <Button
                 variant="primary"
-                onClick={() => onSaveCustomLayout(layoutName, layoutDescription, attributes, setAttributes)}
+                onClick={() => saveCustomLayout(layoutName, layoutDescription, attributes, setAttributes)}
             >
                 Save layout
             </Button>

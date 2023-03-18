@@ -8,7 +8,7 @@ import {
 
 const { Fill, Slot } = createSlotFill('PluginGridUserPanel');
 
-const PluginGridDesignerPanel = ({ children, title }) => (
+const PluginGridDesignPanel = ({ children, title }) => (
     <Fill>
         <Panel>
             <PanelBody title={title} initialOpen={false}>
@@ -20,7 +20,7 @@ const PluginGridDesignerPanel = ({ children, title }) => (
     </Fill>
 );
 
-PluginGridDesignerPanel.Slot = () => (
+PluginGridDesignPanel.Slot = () => (
     <Slot>
         {(fills) => {
             return fills.length ? (
@@ -31,4 +31,4 @@ PluginGridDesignerPanel.Slot = () => (
         }}
     </Slot>
 );
-export default PluginGridDesignerPanel;
+export default PluginGridDesignPanel;

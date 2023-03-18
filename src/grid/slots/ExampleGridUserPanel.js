@@ -1,11 +1,14 @@
+import { getPlugin } from '@wordpress/plugins';
+
 import PluginGridUserPanel from './PluginGridUserPanel';
 
-export const ExampleGridUserPanel = ({ attributes, setAttributes, title }) => {
+export const ExampleGridUserPanel = ({ title }) => {
+    const plugin = getPlugin('plugin-grid-user-panel');
     return (
         <PluginGridUserPanel
             title={title}
         >
-            Example User Panel: attributes.gridName is {attributes.gridName}
+            <div>gridName: {plugin.settings.attributes.gridName}</div>
         </PluginGridUserPanel>
     )
 }

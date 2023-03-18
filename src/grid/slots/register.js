@@ -1,11 +1,17 @@
 import { registerPlugin } from '@wordpress/plugins';
 
-const CustomSlotFill = () => (
-    <>
-    </>
-);
+// const UserSlotFill = () => (
+//     <>
+//     </>
+// );
 
-registerPlugin('grid-slotfills', {
-    render: CustomSlotFill,
-    scope: 'grid-slots',
-});
+
+// const DesignerSlotFill = () => (
+//     <>
+//     </>
+// );
+
+// registerPlugin('grid-designer-slotfills', {
+//     render: DesignerSlotFill,
+//     scope: 'grid-slots',
+// });
