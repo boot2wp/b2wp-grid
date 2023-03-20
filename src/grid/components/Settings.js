@@ -17,7 +17,7 @@ import { PresetsFourColumn } from './PresetsFourColumn';
 import { PresetsAuto } from './PresetsAuto';
 import { PresetsCustom } from './PresetsCustom';
 
-import PluginGridUserPanel from '../slots/PluginGridUserPanel.js';
+import PluginGridUserPanel from '../slotfills/PluginGridUserPanel.js';
 import styled from '@emotion/styled';
 
 export const Settings = ({ attributes, setAttributes, showGrid, setShowGrid }) => {
@@ -41,7 +41,7 @@ export const Settings = ({ attributes, setAttributes, showGrid, setShowGrid }) =
                         <>
                             <ToggleGroupControl
                                 label={__('Layouts', 'b2wp-grid')}
-                                value="vertical"
+                                // value="vertical"
                                 isDeselectable={true}
                                 onChange={(value) => onChangeLayouts(value)}
                                 isBlock

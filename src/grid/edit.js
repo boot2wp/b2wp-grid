@@ -2,18 +2,18 @@ import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps, InspectorControls, } from '@wordpress/block-editor';
 import { useState } from '@wordpress/element';
 import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
-import { Slot, SlotFillProvider } from '@wordpress/components';
+import { SlotFillProvider } from '@wordpress/components';
 import { PluginArea, registerPlugin } from '@wordpress/plugins';
 import { useEffect } from '@wordpress/element';
 
 import { EditorGridStyle } from './components/GridStyle.js';
 import { Settings } from './components/Settings.js';
 import { Design } from './components/Design.js';
-import { saveCustomLayout } from './components/SaveCustomLayouts.js';
+import { saveLayout } from './components/SaveLayouts.js';
 import { showDesignPanel } from './components/helpers.js';
 
-import { ExampleGridUserPanel } from './slots/ExampleGridUserPanel.js';
-import { ExampleGridDesignPanel } from './slots/ExampleGridDesignPanel.js';
+import { ExampleGridUserPanel } from './slotfills/ExampleGridUserPanel.js';
+import { ExampleGridDesignPanel } from './slotfills/ExampleGridDesignPanel.js';
 
 import './editor.scss';
 
@@ -27,7 +27,7 @@ export default function Edit({ attributes, setAttributes }) {
 				name: "Fred",
 				attributes: attributes,
 				setAttributes: setAttributes,
-				saveCustomLayout: saveCustomLayout,
+				saveLayout: saveLayout,
 			},
 		});
 	}, []);
@@ -39,7 +39,7 @@ export default function Edit({ attributes, setAttributes }) {
 			settings: {
 				attributes: attributes,
 				setAttributes: setAttributes,
-				saveCustomLayout: saveCustomLayout,
+				saveLayout: saveLayout,
 			},
 		});
 	}, []);
@@ -83,8 +83,8 @@ export default function Edit({ attributes, setAttributes }) {
 
 			<InspectorControls>
 				<SlotFillProvider>
-					<ExampleGridUserPanel
-						title="Example grid user panel" />
+					{/* <ExampleGridUserPanel
+						title="Example grid user panel" /> */}
 					<Settings
 						attributes={attributes}
 						setAttributes={setAttributes}
@@ -94,9 +94,9 @@ export default function Edit({ attributes, setAttributes }) {
 					<PluginArea scope="grid-user-slots" />
 				</SlotFillProvider>
 				<SlotFillProvider>
-					<ExampleGridDesignPanel
+					{/* <ExampleGridDesignPanel
 						title="Example grid designer panel"
-					/>
+					/> */}
 					{showDesignPanel(attributes) && (
 						<Design
 							attributes={attributes}

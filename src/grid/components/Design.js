@@ -6,13 +6,13 @@ import {
     __experimentalSpacer as Spacer,
 } from '@wordpress/components';
 
-import { SaveCustomLayouts } from './SaveCustomLayouts';
-import PluginGridDesignPanel from '../slots/PluginGridDesignPanel.js';
+import { SaveLayouts } from './SaveLayouts';
+import PluginGridDesignPanel from '../slotfills/PluginGridDesignPanel.js';
 
 export const Design = ({ attributes, setAttributes }) => (
     <Panel>
         <PanelBody title="Design" initialOpen={false}>
-            <SaveCustomLayouts attributes={attributes} setAttributes={setAttributes} />
+            <SaveLayouts attributes={attributes} setAttributes={setAttributes} />
             <ApplyToQueryLoop attributes={attributes} setAttributes={setAttributes} />
             <ShowStandardLayouts attributes={attributes} setAttributes={setAttributes} />
             <PluginGridDesignPanel.Slot />

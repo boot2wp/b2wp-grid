@@ -10,8 +10,8 @@ export const PresetsCustom = ({ attributes, setAttributes }) => {
     const [selectedMessage, setSelectedMessage] = useState("Select a layout");
 
     function onChangeCustomLayout(layoutIndex, attributes, setAttributes) {
-        setGridAttributes(setAttributes, attributes.customLayouts[layoutIndex].attributes)
-        setSelectedMessage(attributes.customLayouts[layoutIndex].name + ' selected')
+        setGridAttributes(setAttributes, attributes.savedLayouts[layoutIndex].attributes)
+        setSelectedMessage(attributes.savedLayouts[layoutIndex].name + ' selected')
     }
 
     return (
@@ -27,9 +27,9 @@ export const PresetsCustom = ({ attributes, setAttributes }) => {
 }
 
 const CustomLayouts = ({ attributes, setAttributes, onChangeCustomLayout, selectedMessage }) => {
-    const hasNoCustomLayouts = (attributes.customLayouts.length === 0) ? true : false;
+    const hasNoCustomLayouts = (attributes.savedLayouts.length === 0) ? true : false;
 
-    var layouts = attributes.customLayouts.map(
+    var layouts = attributes.savedLayouts.map(
         function (layout, index) {
             return (
                 <Button

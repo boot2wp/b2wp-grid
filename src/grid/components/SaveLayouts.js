@@ -10,7 +10,7 @@ import {
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
-export const saveCustomLayout = (name, description, attributes, setAttributes) => {
+export const saveLayout = (name, description, attributes, setAttributes) => {
     let newLayout = {
         name: name,
         description: description,
@@ -27,13 +27,13 @@ export const saveCustomLayout = (name, description, attributes, setAttributes) =
             "columnGap": attributes.columnGap,
         }
     };
-    const newLayouts = attributes.customLayouts;
+    const newLayouts = attributes.savedLayouts;
     newLayouts.push(newLayout);
-    setAttributes({ customLayouts: [...newLayouts] });
+    setAttributes({ savedLayouts: [...newLayouts] });
     setSavedSuccess(() => true);
 }
 
-export const SaveCustomLayouts = ({ attributes, setAttributes }) => {
+export const SaveLayouts = ({ attributes, setAttributes }) => {
 
     const [visible, setVisible] = useState(false);
     const [layoutName, setLayoutName] = useState("Custom layout");
@@ -44,10 +44,10 @@ export const SaveCustomLayouts = ({ attributes, setAttributes }) => {
         setVisible((current) => !current);
     };
 
-    function onRemoveCustomLayout(layoutIndex, attributes, setAttributes) {
-        const newLayouts = attributes.customLayouts;
+    function onRemoveSavedLayout(layoutIndex, attributes, setAttributes) {
+        const newLayouts = attributes.savedLayouts;
         newLayouts.splice(layoutIndex, 1);
-        setAttributes({ customLayouts: [...newLayouts] });
+        setAttributes({ savedLayouts: [...newLayouts] });
     }
 
     return (
@@ -68,8 +68,8 @@ export const SaveCustomLayouts = ({ attributes, setAttributes }) => {
                 <>
                     <LayoutName layoutName={layoutName} setLayoutName={setLayoutName} />
                     <LayoutDescription layoutDescription={layoutDescription} setLayoutDescription={setLayoutDescription} />
-                    <SaveLayout attributes={attributes} setAttributes={setAttributes} saveCustomLayout={saveCustomLayout} layoutName={layoutName} layoutDescription={layoutDescription} savedSuccess={savedSuccess} setSavedSuccess={setSavedSuccess} />
-                    <SavedLayouts attributes={attributes} setAttributes={setAttributes} onRemoveCustomLayout={onRemoveCustomLayout} />
+                    <SaveLayout attributes={attributes} setAttributes={setAttributes} saveLayout={saveLayout} layoutName={layoutName} layoutDescription={layoutDescription} savedSuccess={savedSuccess} setSavedSuccess={setSavedSuccess} />
+                    <SavedLayouts attributes={attributes} setAttributes={setAttributes} onRemoveSavedLayout={onRemoveSavedLayout} />
                 </>
             }
         </>
@@ -95,7 +95,7 @@ const LayoutDescription = ({ layoutDescription, setLayoutDescription }) => (
 const SaveLayout = ({
     attributes,
     setAttributes,
-    saveCustomLayout,
+    saveLayout,
     layoutName,
     layoutDescription,
     savedSuccess,
@@ -105,7 +105,7 @@ const SaveLayout = ({
         <PanelRow>
             <Button
                 variant="primary"
-                onClick={() => saveCustomLayout(layoutName, layoutDescription, attributes, setAttributes)}
+                onClick={() => saveLayout(layoutName, layoutDescription, attributes, setAttributes)}
             >
                 Save layout
             </Button>
@@ -139,8 +139,8 @@ const SuccessNotice = ({ setSavedSuccess }) => {
     );
 }
 
-const SavedLayouts = ({ attributes, setAttributes, onRemoveCustomLayout }) => {
-    var layouts = attributes.customLayouts.map(
+const SavedLayouts = ({ attributes, setAttributes, onRemoveSavedLayout }) => {
+    var layouts = attributes.savedLayouts.map(
         function (layout, index) {
             return (
                 <Flex>
@@ -152,7 +152,7 @@ const SavedLayouts = ({ attributes, setAttributes, onRemoveCustomLayout }) => {
                             variant="tertiary"
                             showTooltip={true}
                             label={__('remove saved layout', 'b2wp-grid')}
-                            onClick={() => onRemoveCustomLayout(index, attributes, setAttributes)}
+                            onClick={() => onRemoveSavedLayout(index, attributes, setAttributes)}
                         >
                             x
                         </Button>
