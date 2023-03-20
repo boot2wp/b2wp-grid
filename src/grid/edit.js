@@ -11,9 +11,8 @@ import { User } from './components/User.js';
 import { Design } from './components/Design.js';
 import { saveLayout } from './components/SaveLayouts.js';
 import { showDesignPanel } from './components/helpers.js';
-
-import { ExampleGridUserPanel } from './slotfills/ExampleGridUserPanel.js';
-import { ExampleGridDesignPanel } from './slotfills/ExampleGridDesignPanel.js';
+import { UserPanels } from './slotfills/UserPanels.js'
+import { DesignPanels } from './slotfills/DesignPanels.js'
 
 import './editor.scss';
 
@@ -22,7 +21,7 @@ export default function Edit({ attributes, setAttributes }) {
 	useEffect(() => {
 		registerPlugin('plugin-grid-user-panel', {
 			render: () => (<></>),
-			scope: 'grid-slots',
+			scope: 'grid-user-slots',
 			settings: {
 				attributes: attributes,
 				setAttributes: setAttributes,
@@ -34,7 +33,7 @@ export default function Edit({ attributes, setAttributes }) {
 	useEffect(() => {
 		registerPlugin('plugin-grid-design-panel', {
 			render: () => (<></>),
-			scope: 'grid-slots',
+			scope: 'grid-design-slots',
 			settings: {
 				attributes: attributes,
 				setAttributes: setAttributes,
@@ -82,8 +81,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 			<InspectorControls>
 				<SlotFillProvider>
-					{/* <ExampleGridUserPanel
-						title="Example grid user panel" /> */}
+					<UserPanels attributes={attributes} />
 					<User
 						attributes={attributes}
 						setAttributes={setAttributes}
@@ -93,16 +91,14 @@ export default function Edit({ attributes, setAttributes }) {
 					<PluginArea scope="grid-user-slots" />
 				</SlotFillProvider>
 				<SlotFillProvider>
-					{/* <ExampleGridDesignPanel
-						title="Example grid designer panel"
-					/> */}
+					<DesignPanels attributes={attributes} />
 					{showDesignPanel(attributes) && (
 						<Design
 							attributes={attributes}
 							setAttributes={setAttributes}
 						/>
 					)}
-					<PluginArea scope="grid-designer-slots" />
+					<PluginArea scope="grid-design-slots" />
 				</SlotFillProvider>
 			</InspectorControls>
 		</div>

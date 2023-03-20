@@ -1,4 +1,3 @@
-
 import {
     createSlotFill,
     Panel,
@@ -8,7 +7,7 @@ import {
 
 const { Fill, Slot } = createSlotFill('PluginGridUserPanel');
 
-const PluginGridDesignPanel = ({ children, title }) => (
+const PluginGridDesignPanel = ({ children, title, description, id }) => (
     <Fill>
         <Panel>
             <PanelBody title={title} initialOpen={false}>

@@ -83,7 +83,20 @@
 		},
 		"enablePanels": {
 			"type": "array",
-			"default": []
+			"default": [
+				{
+					"name": "Auto"
+				},
+				{
+					"name": "Columns"
+				},
+				{
+					"name": "Sidebars"
+				},
+				{
+					"name": "Areas"
+				}
+			]
 		},
 		"savedLayouts": {
 			"type": "array",

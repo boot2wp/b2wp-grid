@@ -42,7 +42,6 @@ export const User = ({ attributes, setAttributes, showGrid, setShowGrid }) => {
                         <>
                             <ToggleGroupControl
                                 label={__('Layouts', 'b2wp-grid')}
-                                // value="vertical"
                                 isDeselectable={true}
                                 onChange={(value) => onChangeLayouts(value)}
                                 isBlock
