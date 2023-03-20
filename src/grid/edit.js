@@ -7,7 +7,7 @@ import { PluginArea, registerPlugin } from '@wordpress/plugins';
 import { useEffect } from '@wordpress/element';
 
 import { EditorGridStyle } from './components/GridStyle.js';
-import { Settings } from './components/Settings.js';
+import { User } from './components/User.js';
 import { Design } from './components/Design.js';
 import { saveLayout } from './components/SaveLayouts.js';
 import { showDesignPanel } from './components/helpers.js';
@@ -24,7 +24,6 @@ export default function Edit({ attributes, setAttributes }) {
 			render: () => (<></>),
 			scope: 'grid-slots',
 			settings: {
-				name: "Fred",
 				attributes: attributes,
 				setAttributes: setAttributes,
 				saveLayout: saveLayout,
@@ -85,7 +84,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<SlotFillProvider>
 					{/* <ExampleGridUserPanel
 						title="Example grid user panel" /> */}
-					<Settings
+					<User
 						attributes={attributes}
 						setAttributes={setAttributes}
 						showGrid={showGrid}

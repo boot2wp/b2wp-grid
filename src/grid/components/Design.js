@@ -7,14 +7,14 @@ import {
 } from '@wordpress/components';
 
 import { SaveLayouts } from './SaveLayouts';
+import { DesignSettings } from './DesignSettings';
 import PluginGridDesignPanel from '../slotfills/PluginGridDesignPanel.js';
 
 export const Design = ({ attributes, setAttributes }) => (
     <Panel>
         <PanelBody title="Design" initialOpen={false}>
             <SaveLayouts attributes={attributes} setAttributes={setAttributes} />
-            <ApplyToQueryLoop attributes={attributes} setAttributes={setAttributes} />
-            <ShowStandardLayouts attributes={attributes} setAttributes={setAttributes} />
+            <DesignSettings attributes={attributes} setAttributes={setAttributes} />
             <PluginGridDesignPanel.Slot />
             <TabPanel
                 className="grid-design-tab-panel"
@@ -153,24 +153,3 @@ const CustomCSS = ({ attributes, setAttributes }) => (
     </PanelRow>
 );
 
-const ShowStandardLayouts = ({ attributes, setAttributes }) => (
-    (
-        <CheckboxControl
-            label="Show standard layouts"
-            help={__("Show standard layout options: 2 column, 3 column, 4 column, auto", 'b2wp-grid')}
-            checked={attributes.showStandardLayouts}
-            onChange={(val) => setAttributes({ showStandardLayouts: val })}
-        />
-    )
-);
-
-const ApplyToQueryLoop = ({ attributes, setAttributes }) => (
-    (
-        <CheckboxControl
-            label="Apply to Query Loop block"
-            help={__("Apply the css grid property to a Query Loop block inside the grid, instead of to the CSS Grid block itself.", 'b2wp-grid')}
-            checked={attributes.applyToQueryLoop}
-            onChange={(val) => setAttributes({ applyToQueryLoop: val })}
-        />
-    )
-);

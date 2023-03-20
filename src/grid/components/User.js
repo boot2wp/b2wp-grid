@@ -20,9 +20,10 @@ import { PresetsCustom } from './PresetsCustom';
 import PluginGridUserPanel from '../slotfills/PluginGridUserPanel.js';
 import styled from '@emotion/styled';
 
-export const Settings = ({ attributes, setAttributes, showGrid, setShowGrid }) => {
+export const User = ({ attributes, setAttributes, showGrid, setShowGrid }) => {
 
     const [layouts, setLayouts] = useState(undefined);
+    const [showStandardLayouts, setShowStandardLayouts] = useState(true);
 
     function onChangeLayouts(value) {
         setLayouts(value);
@@ -33,11 +34,11 @@ export const Settings = ({ attributes, setAttributes, showGrid, setShowGrid }) =
             <Panel>
                 <PanelBody>
                     {
-                        !attributes.showStandardLayouts &&
+                        !showStandardLayouts &&
                         <PresetsCustom attributes={attributes} setAttributes={setAttributes} />
                     }
                     {
-                        attributes.showStandardLayouts &&
+                        showStandardLayouts &&
                         <>
                             <ToggleGroupControl
                                 label={__('Layouts', 'b2wp-grid')}
@@ -78,7 +79,6 @@ export const Settings = ({ attributes, setAttributes, showGrid, setShowGrid }) =
             <Panel>
                 <PanelBody>
                     <ShowGrid showGrid={showGrid} setShowGrid={setShowGrid} />
-                    <GridName attributes={attributes} setAttributes={setAttributes} />
                     <GridGapPanel attributes={attributes} setAttributes={setAttributes} />
                 </PanelBody>
             </Panel>
@@ -95,15 +95,6 @@ const ShowGrid = ({ showGrid, setShowGrid }) => (
             onChange={(val) => setShowGrid(val)}
         />
     )
-);
-
-const GridName = ({ attributes, setAttributes }) => (
-    <TextControl
-        label={__('Grid Name', 'b2wp-grid')}
-        help="Each grid on a post or page should have a unique name."
-        value={attributes.gridName}
-        onChange={(val) => setAttributes({ gridName: val })}
-    />
 );
 
 const PanelDescription = styled.div`
