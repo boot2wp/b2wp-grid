@@ -11,9 +11,7 @@ const PluginGridUserPanel = ({ children, title, description, id }) => (
     <Fill>
         <Panel>
             <PanelBody title={title} initialOpen={false}>
-                <PanelRow>
-                    {children}
-                </PanelRow>
+                {children}
             </PanelBody>
         </Panel>
     </Fill>

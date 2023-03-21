@@ -1,3 +1,25 @@
+export const setCSSAttributes = (cssAttributes, setAttributes) => {
+
+    const attributeSettings = wp.data.select('core/blocks').getBlockType('b2wp/grid').attributes;
+
+    let newCSSAttributes = {
+        "templateColumns": attributeSettings.templateColumns.default,
+        "templateRows": attributeSettings.templateRows.default,
+        "templateAreas": attributeSettings.templateAreas.default,
+        "autoColumns": attributeSettings.autoColumns.default,
+        "autoRows": attributeSettings.autoRows.default,
+        "autoFlow": attributeSettings.autoFlow.default,
+        "customCSS": attributeSettings.customCSS.default,
+        "numberNamedAreas": attributeSettings.numberNamedAreas.default,
+        "rowGap": attributeSettings.rowGap.default,
+        "columnGap": attributeSettings.columnGap.default,
+    };
+
+    newCSSAttributes = { ...newCSSAttributes, ...cssAttributes }
+    setAttributes({ ...newCSSAttributes });
+}
+
+
 export const showDesignPanel = (attributes) => {
     if (!attributes.enableDesignMode) {
         return false;
