@@ -21,18 +21,7 @@ export const setCSSAttributes = (cssAttributes, setAttributes) => {
 
 
 export const showDesignPanel = (attributes) => {
-    if (!attributes.enableDesignMode) {
-        return false;
-    }
-
-    if (attributes.lock === undefined) {
-        return true;
-    }
-
-    if (attributes.lock.move === true) {
-        return false;
-    }
-    return true;
+    return attributes.enableDesignMode;
 }
 
 export const setGridAttributes = (setAttributes, newGridAttributes) => {

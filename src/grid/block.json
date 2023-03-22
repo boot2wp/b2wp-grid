@@ -85,13 +85,7 @@
 			"type": "array",
 			"default": [
 				{
-					"name": "Auto"
-				},
-				{
-					"name": "Columns"
-				},
-				{
-					"name": "Sidebars"
+					"name": "Layouts"
 				},
 				{
 					"name": "Areas"

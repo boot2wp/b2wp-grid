@@ -2,31 +2,24 @@ import { __ } from '@wordpress/i18n';
 import {
     Panel, PanelBody,
     CheckboxControl,
-    TextControl,
 } from '@wordpress/components';
-
-import { useState } from '@wordpress/element';
 
 export const DesignSettings = ({ attributes, setAttributes }) => {
     return (
-        <Panel>
-            <PanelBody title={__('Settings', 'b2wp-grid')} initialOpen={false}>
-                <GridName attributes={attributes} setAttributes={setAttributes} />
-                <Panels attributes={attributes} setAttributes={setAttributes} />
-                <ApplyToQueryLoop attributes={attributes} setAttributes={setAttributes} />
-            </PanelBody>
-        </Panel>
+        <>
+            <Panel>
+                <PanelBody title={__('Panels', 'b2wp-grid')} initialOpen={false}>
+                    <Panels attributes={attributes} setAttributes={setAttributes} />
+                </PanelBody>
+            </Panel>
+            <Panel>
+                <PanelBody>
+                    <ApplyToQueryLoop attributes={attributes} setAttributes={setAttributes} />
+                </PanelBody>
+            </Panel>
+        </>
     );
 }
-
-const GridName = ({ attributes, setAttributes }) => (
-    <TextControl
-        label={__('Grid Name', 'b2wp-grid')}
-        help="Each grid on a post or page should have a unique name."
-        value={attributes.gridName}
-        onChange={(val) => setAttributes({ gridName: val })}
-    />
-);
 
 const ApplyToQueryLoop = ({ attributes, setAttributes }) => (
     (
@@ -60,6 +53,11 @@ const Panels = ({ attributes, setAttributes }) => {
 
     return (
         <>
+            <CheckboxControl
+                label={__('Layouts', 'b2wp-grid')}
+                checked={enablePanels.find(panel => panel["name"] === 'Layouts')}
+                onChange={(val) => setChecked(val, "Layouts")}
+            />
             <CheckboxControl
                 label={__('Columns', 'b2wp-grid')}
                 checked={enablePanels.find(panel => panel["name"] === 'Columns')}

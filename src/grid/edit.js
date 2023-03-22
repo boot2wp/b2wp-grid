@@ -7,7 +7,7 @@ import { PluginArea, registerPlugin } from '@wordpress/plugins';
 import { useEffect } from '@wordpress/element';
 
 import { EditorGridStyle } from './components/GridStyle.js';
-import { User } from './components/User.js';
+import { User, GridGapPanel } from './components/User.js';
 import { Design } from './components/Design.js';
 import { saveLayout } from './components/SaveLayouts.js';
 import { showDesignPanel } from './components/helpers.js';
@@ -78,6 +78,12 @@ export default function Edit({ attributes, setAttributes }) {
 				showGrid={showGrid}
 			/>
 			<InnerBlocks />
+			<InspectorControls group="styles">
+				<GridGapPanel
+					attributes={attributes}
+					setAttributes={setAttributes}
+				/>
+			</InspectorControls>
 
 			<InspectorControls>
 				<SlotFillProvider>

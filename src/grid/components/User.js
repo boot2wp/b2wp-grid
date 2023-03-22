@@ -7,9 +7,10 @@ import {
     __experimentalToolsPanel as ToolsPanel,
     __experimentalToolsPanelItem as ToolsPanelItem,
     __experimentalUnitControl as UnitControl,
-    __experimentalDivider as Divider,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
+
 import { TwoColumnIcon, ThreeColumnIcon, FourColumnIcon } from './Icons.js';
 import { PresetsTwoColumn } from './PresetsTwoColumn';
 import { PresetsThreeColumn } from './PresetsThreeColumn';
@@ -23,27 +24,31 @@ import styled from '@emotion/styled';
 export const User = ({ attributes, setAttributes, showGrid, setShowGrid }) => {
 
     const [layouts, setLayouts] = useState(undefined);
-    const [showStandardLayouts, setShowStandardLayouts] = useState(true);
+    const [showLayoutsPanel, setLayoutsPanel] = useState(
+        attributes.enablePanels.find(panel => panel["name"] === 'Layouts')
+    );
 
-    function onChangeLayouts(value) {
-        setLayouts(value);
-    }
+    useEffect(() => {
+        setLayoutsPanel(
+            attributes.enablePanels.find(panel => panel["name"] === 'Layouts')
+        );
+    }, [attributes.enablePanels]);
 
     return (
         <>
             <Panel>
                 <PanelBody>
                     {
-                        !showStandardLayouts &&
+                        !showLayoutsPanel &&
                         <PresetsCustom attributes={attributes} setAttributes={setAttributes} />
                     }
                     {
-                        showStandardLayouts &&
+                        showLayoutsPanel &&
                         <>
                             <ToggleGroupControl
                                 label={__('Layouts', 'b2wp-grid')}
                                 isDeselectable={true}
-                                onChange={(value) => onChangeLayouts(value)}
+                                onChange={(value => setLayouts(value))}
                                 isBlock
                             >
                                 <ToggleGroupControlOptionIcon value="2col" icon={TwoColumnIcon} label={__('2 columns', 'b2wp-grid')} />
@@ -78,7 +83,7 @@ export const User = ({ attributes, setAttributes, showGrid, setShowGrid }) => {
             <Panel>
                 <PanelBody>
                     <ShowGrid showGrid={showGrid} setShowGrid={setShowGrid} />
-                    <GridGapPanel attributes={attributes} setAttributes={setAttributes} />
+                    <GridName attributes={attributes} setAttributes={setAttributes} />
                 </PanelBody>
             </Panel>
         </>
@@ -96,15 +101,20 @@ const ShowGrid = ({ showGrid, setShowGrid }) => (
     )
 );
 
-const PanelDescription = styled.div`
-    grid-column: span 2;
-`;
+const GridName = ({ attributes, setAttributes }) => (
+    <TextControl
+        label={__('Grid Name', 'b2wp-grid')}
+        help="Each grid on a post or page should have a unique name."
+        value={attributes.gridName}
+        onChange={(val) => setAttributes({ gridName: val })}
+    />
+);
 
 const SingleColumnItem = styled(ToolsPanelItem)`
     grid-column: span 1;
 `;
 
-function GridGapPanel({ attributes, setAttributes }) {
+export const GridGapPanel = ({ attributes, setAttributes }) => {
 
     const resetAll = () => {
         setAttributes({ rowGap: "" });
