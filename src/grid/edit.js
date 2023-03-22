@@ -3,7 +3,7 @@ import { InnerBlocks, useBlockProps, InspectorControls, } from '@wordpress/block
 import { useState } from '@wordpress/element';
 import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
 import { SlotFillProvider } from '@wordpress/components';
-import { PluginArea, registerPlugin } from '@wordpress/plugins';
+import { PluginArea, registerPlugin, getPlugin } from '@wordpress/plugins';
 import { useEffect } from '@wordpress/element';
 
 import { EditorGridStyle } from './components/GridStyle.js';
@@ -13,21 +13,26 @@ import { saveLayout } from './components/SaveLayouts.js';
 import { showDesignPanel } from './components/helpers.js';
 import { UserPanels } from './slotfills/UserPanels.js'
 import { DesignPanels } from './slotfills/DesignPanels.js'
+import { setCSSAttributes } from './components/helpers.js';
 
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
 
 	useEffect(() => {
-		registerPlugin('plugin-grid-user-panel', {
-			render: () => (<></>),
-			scope: 'grid-user-slots',
-			settings: {
-				attributes: attributes,
-				setAttributes: setAttributes,
-				saveLayout: saveLayout,
-			},
-		});
+		const userPlugin = getPlugin('plugin-grid-user-panel');
+		if (!userPlugin) {
+			registerPlugin('plugin-grid-user-panel', {
+				render: () => (<></>),
+				scope: 'grid-user-slots',
+				settings: {
+					attributes: attributes,
+					setAttributes: setAttributes,
+					setCSSAttributes: setCSSAttributes,
+					saveLayout: saveLayout,
+				},
+			});
+		}
 	}, []);
 
 	useEffect(() => {
@@ -37,10 +42,13 @@ export default function Edit({ attributes, setAttributes }) {
 			settings: {
 				attributes: attributes,
 				setAttributes: setAttributes,
+				setCSSAttributes: setCSSAttributes,
 				saveLayout: saveLayout,
 			},
 		});
 	}, []);
+
+
 
 	const ToggleEnableDesignMode = ({ attributes, setAttributes }) => {
 		const message = attributes.enableDesignMode === true

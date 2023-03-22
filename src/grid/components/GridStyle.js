@@ -114,7 +114,7 @@ function gridCustomCSS(attributes) {
     const defaultGridSelector = `.wp-block-b2wp-grid.${attributes.gridName}`;
     let customCSS = attributes.customCSS.trim();
     if (customCSS.length !== 0) {
-        customCSS = customCSS.replace(".wp-grid-name-class", defaultGridSelector);
+        customCSS = customCSS.replaceAll(".wp-grid-name-class", defaultGridSelector);
         return customCSS;
     }
     return "";
@@ -124,8 +124,8 @@ function editorGridCustomCSS(attributes, gridSelector) {
     const defaultGridSelector = `.wp-block-b2wp-grid.${attributes.gridName}`;
     let customCSS = attributes.customCSS.trim();
     if (customCSS.length !== 0) {
-        customCSS = customCSS.replace(defaultGridSelector, gridSelector);
-        customCSS = customCSS.replace(".wp-grid-name-class", gridSelector);
+        customCSS = customCSS.replaceAll(defaultGridSelector, gridSelector);
+        customCSS = customCSS.replaceAll(".wp-grid-name-class", gridSelector);
         return customCSS;
     }
     return "";

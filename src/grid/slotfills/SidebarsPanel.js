@@ -1,18 +1,122 @@
 import { __ } from '@wordpress/i18n';
+import { useState, useEffect } from '@wordpress/element';
+
+import {
+    RadioControl,
+    __experimentalToolsPanel as ToolsPanel,
+    __experimentalToolsPanelItem as ToolsPanelItem,
+    __experimentalUnitControl as UnitControl,
+} from '@wordpress/components';
 
 import { getPlugin } from '@wordpress/plugins';
+import styled from '@emotion/styled';
 
 import PluginGridUserPanel from './PluginGridUserPanel';
 
 export const SidebarsPanel = () => {
     const plugin = getPlugin('plugin-grid-user-panel');
+    const setAttributes = plugin.settings.setAttributes;
+    const setCSSAttributes = plugin.settings.setCSSAttributes;
+
+    const [hasUpdated, setHasUpdated] = useState(false);
+    const [sidebarLocation, setSidebarLocation] = useState('right');
+    const [sidebarWidth, setSidebarWidth] = useState('200px');
+
+    useEffect(() => {
+
+        if (!hasUpdated) {
+            return;
+        }
+
+        let columns = ''
+
+        if (sidebarLocation === "left") {
+            columns = `${sidebarWidth} 1fr`
+        } else {
+            columns = `1fr ${sidebarWidth}`
+        }
+
+        const newAttributes = {
+            templateColumns: columns
+        };
+
+        setCSSAttributes(newAttributes, setAttributes)
+    }, [sidebarWidth, sidebarLocation]);
+
     return (
         <PluginGridUserPanel
             title={__('Sidebars', 'b2wp-grid')}
-            id="wp-grid-user-panel-auto"
         >
-            <div>Sidebars Panel</div>
-            <div>gridName: {plugin.settings.attributes.gridName}</div>
+            <SetSidebarLocation
+                sidebarLocation={sidebarLocation}
+                setSidebarLocation={setSidebarLocation}
+                setHasUpdated={setHasUpdated}
+            />
+            <SetSidebarWidth
+                sidebarWidth={sidebarWidth}
+                setSidebarWidth={setSidebarWidth}
+                setHasUpdated={setHasUpdated}
+            />
         </PluginGridUserPanel>
     )
 }
+
+const SetSidebarLocation = ({ sidebarLocation, setSidebarLocation, setHasUpdated }) => {
+
+    const updateSidebarLocation = (val) => {
+        setHasUpdated(true);
+        setSidebarLocation(val);
+    }
+
+    return (
+        <RadioControl
+            label="Select Sidebar Location"
+            help="Put sidebar on left or right."
+            selected={sidebarLocation}
+            options={[
+                {
+                    label: __('Left', 'b2wp-grid'),
+                    value: 'left'
+                },
+                {
+                    label: __('Right', 'b2wp-grid'),
+                    value: 'right'
+                },
+            ]}
+            onChange={(value) => updateSidebarLocation(value)}
+        />
+    )
+};
+
+const SingleColumnItem = styled(ToolsPanelItem)`
+    grid-column: span 1;
+`;
+
+const SetSidebarWidth = ({ sidebarWidth, setSidebarWidth, setHasUpdated }) => {
+
+    const updateSidebarWidth = (val) => {
+        setHasUpdated(true);
+        setSidebarWidth(val);
+    }
+
+    const resetAll = () => {
+        setSidebarWidth('200px');
+    };
+
+    return (
+        <ToolsPanel label={__('Set Sidebar Width')} resetAll={resetAll}>
+            <SingleColumnItem
+                hasValue={() => !!sidebarWidth}
+                label={__('Width', 'b2wp-grid')}
+                onDeselect={() => setSidebarWidth('200px')}
+                isShownByDefault
+            >
+                <UnitControl
+                    label={__('Width', 'b2wp-grid')}
+                    onChange={(val) => updateSidebarWidth(val)}
+                    value={sidebarWidth}
+                />
+            </SingleColumnItem>
+        </ToolsPanel>
+    );
+};

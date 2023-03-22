@@ -8,8 +8,7 @@ import {
     __experimentalToolsPanelItem as ToolsPanelItem,
     __experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
-import { useState } from '@wordpress/element';
-import { useEffect } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 
 import { TwoColumnIcon, ThreeColumnIcon, FourColumnIcon } from './Icons.js';
 import { PresetsTwoColumn } from './PresetsTwoColumn';
