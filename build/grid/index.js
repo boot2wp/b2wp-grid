@@ -3956,17 +3956,34 @@ function Edit(_ref) {
     }
   }, []);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    (0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_5__.registerPlugin)('plugin-grid-design-panel', {
-      render: () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null),
-      scope: 'grid-design-slots',
-      settings: {
-        attributes: attributes,
-        setAttributes: setAttributes,
-        setCSSAttributes: _components_helpers_js__WEBPACK_IMPORTED_MODULE_10__.setCSSAttributes,
-        saveLayout: _components_SaveLayouts_js__WEBPACK_IMPORTED_MODULE_9__.saveLayout
-      }
-    });
+    const userPlugin = (0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_5__.getPlugin)('plugin-grid-design-panel');
+    if (!userPlugin) {
+      (0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_5__.registerPlugin)('plugin-grid-design-panel', {
+        render: () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null),
+        scope: 'grid-design-slots',
+        settings: {
+          attributes: attributes,
+          setAttributes: setAttributes,
+          setCSSAttributes: _components_helpers_js__WEBPACK_IMPORTED_MODULE_10__.setCSSAttributes,
+          saveLayout: _components_SaveLayouts_js__WEBPACK_IMPORTED_MODULE_9__.saveLayout
+        }
+      });
+    }
   }, []);
+
+  // useEffect(() => {
+  // 	registerPlugin('plugin-grid-design-panel', {
+  // 		render: () => (<></>),
+  // 		scope: 'grid-design-slots',
+  // 		settings: {
+  // 			attributes: attributes,
+  // 			setAttributes: setAttributes,
+  // 			setCSSAttributes: setCSSAttributes,
+  // 			saveLayout: saveLayout,
+  // 		},
+  // 	});
+  // }, []);
+
   const ToggleEnableDesignMode = _ref2 => {
     let {
       attributes,
@@ -4040,7 +4057,23 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"],
+  transforms: {
+    to: [{
+      type: 'block',
+      blocks: ['core/group'],
+      transform: (attributes, innerBlocks) => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('core/group', attributes, innerBlocks);
+      }
+    }],
+    from: [{
+      type: 'block',
+      blocks: ['core/group'],
+      transform: (attributes, innerBlocks) => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('b2wp/grid', attributes, innerBlocks);
+      }
+    }]
+  }
 });
 
 /***/ }),

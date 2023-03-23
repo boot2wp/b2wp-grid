@@ -36,19 +36,33 @@ export default function Edit({ attributes, setAttributes }) {
 	}, []);
 
 	useEffect(() => {
-		registerPlugin('plugin-grid-design-panel', {
-			render: () => (<></>),
-			scope: 'grid-design-slots',
-			settings: {
-				attributes: attributes,
-				setAttributes: setAttributes,
-				setCSSAttributes: setCSSAttributes,
-				saveLayout: saveLayout,
-			},
-		});
+		const userPlugin = getPlugin('plugin-grid-design-panel');
+		if (!userPlugin) {
+			registerPlugin('plugin-grid-design-panel', {
+				render: () => (<></>),
+				scope: 'grid-design-slots',
+				settings: {
+					attributes: attributes,
+					setAttributes: setAttributes,
+					setCSSAttributes: setCSSAttributes,
+					saveLayout: saveLayout,
+				},
+			});
+		}
 	}, []);
 
-
+	// useEffect(() => {
+	// 	registerPlugin('plugin-grid-design-panel', {
+	// 		render: () => (<></>),
+	// 		scope: 'grid-design-slots',
+	// 		settings: {
+	// 			attributes: attributes,
+	// 			setAttributes: setAttributes,
+	// 			setCSSAttributes: setCSSAttributes,
+	// 			saveLayout: saveLayout,
+	// 		},
+	// 	});
+	// }, []);
 
 	const ToggleEnableDesignMode = ({ attributes, setAttributes }) => {
 		const message = attributes.enableDesignMode === true
