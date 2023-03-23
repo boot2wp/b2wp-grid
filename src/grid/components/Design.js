@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import {
     Panel, PanelBody, PanelRow,
-    TabPanel, CheckboxControl,
+    TabPanel,
     TextControl, TextareaControl, RadioControl, RangeControl,
     __experimentalSpacer as Spacer,
 } from '@wordpress/components';

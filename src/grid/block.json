@@ -3,10 +3,14 @@
 	"apiVersion": 2,
 	"name": "b2wp/grid",
 	"version": "0.1.0",
-	"title": "Grid",
-	"category": "theme",
+	"title": "CSS Grid",
+	"category": "design",
 	"icon": "layout",
 	"description": "A CSS Grid Block",
+	"keywords": [
+		"grid",
+		"layout"
+	],
 	"supports": {
 		"html": false,
 		"align": true,
