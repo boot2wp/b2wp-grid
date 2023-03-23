@@ -135,7 +135,7 @@ function overRideLayoutFlow(gridSelector, attributes) {
     let layoutFlowOverRide = "";
     if (attributes.applyToQueryLoop) {
         layoutFlowOverRide = `
-${gridSelector}.wp-block-post-template-is-layout-flow * {
+${gridSelector}.is-layout-flow * {
     margin-block-start: 0 !important;
 }
 `;
