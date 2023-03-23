@@ -3821,6 +3821,8 @@ const GridGapPanel = _ref4 => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "autoColumnsOnMobileCSS": function() { return /* binding */ autoColumnsOnMobileCSS; },
+/* harmony export */   "oneColumnOnMobileCSS": function() { return /* binding */ oneColumnOnMobileCSS; },
 /* harmony export */   "setCSSAttributes": function() { return /* binding */ setCSSAttributes; },
 /* harmony export */   "setGridAttributes": function() { return /* binding */ setGridAttributes; },
 /* harmony export */   "showDesignPanel": function() { return /* binding */ showDesignPanel; }
@@ -3868,6 +3870,20 @@ const setGridAttributes = (setAttributes, newGridAttributes) => {
     ...newGridAttributes
   };
   setAttributes(gridAttributes);
+};
+const autoColumnsOnMobileCSS = () => {
+  return `@media screen and (max-width: 600px) {
+.wp-grid-name-class {
+grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+}
+}`;
+};
+const oneColumnOnMobileCSS = () => {
+  return `@media screen and (max-width: 600px) {
+.wp-grid-name-class {
+grid-template-columns: 1fr;
+}
+}`;
 };
 
 /***/ }),
@@ -4110,7 +4126,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/plugins */ "@wordpress/plugins");
 /* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js");
-/* harmony import */ var _PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PluginGridUserPanel */ "./src/grid/slotfills/PluginGridUserPanel.js");
+/* harmony import */ var _components_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/helpers */ "./src/grid/components/helpers.js");
+/* harmony import */ var _PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PluginGridUserPanel */ "./src/grid/slotfills/PluginGridUserPanel.js");
+
 
 
 
@@ -4124,21 +4142,37 @@ const AutoPanel = () => {
   const setCSSAttributes = plugin.settings.setCSSAttributes;
   const [hasUpdated, setHasUpdated] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [minimumColumnWidth, setMinimumColumnWidth] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('10rem');
+  const [onMobile, setOnMobile] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('autoColumn');
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (!hasUpdated) {
       return;
     }
     const columns = `repeat(auto-fill, minmax(min(${minimumColumnWidth}, 100%), 1fr))`;
+    let onMobileCSS = '';
+    switch (onMobile) {
+      case 'oneColumn':
+        onMobileCSS = (0,_components_helpers__WEBPACK_IMPORTED_MODULE_5__.oneColumnOnMobileCSS)();
+        break;
+      case 'autoColumn':
+        break;
+      default:
+        break;
+    }
     const newAttributes = {
-      templateColumns: columns
+      templateColumns: columns,
+      customCSS: onMobileCSS
     };
     setCSSAttributes(newAttributes, setAttributes);
-  }, [minimumColumnWidth]);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, [minimumColumnWidth, onMobile]);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto', 'b2wp-grid')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetMinWidth, {
     minimumColumnWidth: minimumColumnWidth,
     setMinimumColumnWidth: setMinimumColumnWidth,
+    setHasUpdated: setHasUpdated
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetOnMobileType, {
+    onMobile: onMobile,
+    setOnMobile: setOnMobile,
     setHasUpdated: setHasUpdated
   }));
 };
@@ -4172,6 +4206,30 @@ const SetMinWidth = _ref => {
     value: minimumColumnWidth
   })));
 };
+const SetOnMobileType = _ref2 => {
+  let {
+    onMobile,
+    setOnMobile,
+    setHasUpdated
+  } = _ref2;
+  const updateOnMobileType = val => {
+    setHasUpdated(true);
+    setOnMobile(val);
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RadioControl, {
+    label: "On mobile",
+    help: "Select grid for mobile width.",
+    selected: onMobile,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('One column', 'b2wp-grid'),
+      value: 'oneColumn'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto columns', 'b2wp-grid'),
+      value: 'autoColumns'
+    }],
+    onChange: value => updateOnMobileType(value)
+  });
+};
 
 /***/ }),
 
@@ -4194,6 +4252,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/plugins */ "@wordpress/plugins");
 /* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PluginGridUserPanel */ "./src/grid/slotfills/PluginGridUserPanel.js");
+/* harmony import */ var _components_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/helpers */ "./src/grid/components/helpers.js");
+
 
 
 
@@ -4205,8 +4265,8 @@ const ColumnsPanel = () => {
   const setAttributes = plugin.settings.setAttributes;
   const setCSSAttributes = plugin.settings.setCSSAttributes;
   const [hasUpdated, setHasUpdated] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const [autoLayout, setAutoLayout] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [columns, setColumns] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
+  const [onMobile, setOnMobile] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('oneColumn');
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (!hasUpdated) {
       return;
@@ -4215,28 +4275,32 @@ const ColumnsPanel = () => {
     for (let i = 0; i < columns; i++) {
       newTemplateColumns = newTemplateColumns + '1fr ';
     }
-    const newAttributes = {
-      templateColumns: newTemplateColumns.trim()
-    };
-    if (autoLayout) {
-      newAttributes['customCSS'] = `@media screen and (max-width: 600px) {
-  .wp-grid-name-class {
-  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
-  }
-}
-`;
+    let onMobileCSS = '';
+    switch (onMobile) {
+      case 'oneColumn':
+        onMobileCSS = (0,_components_helpers__WEBPACK_IMPORTED_MODULE_5__.oneColumnOnMobileCSS)();
+        break;
+      case 'autoColumns':
+        onMobileCSS = (0,_components_helpers__WEBPACK_IMPORTED_MODULE_5__.autoColumnsOnMobileCSS)();
+        break;
+      default:
+        break;
     }
+    const newAttributes = {
+      templateColumns: newTemplateColumns.trim(),
+      customCSS: onMobileCSS
+    };
     setCSSAttributes(newAttributes, setAttributes);
-  }, [autoLayout, columns]);
+  }, [columns, onMobile]);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Columns', 'b2wp-grid')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetColumns, {
     columns: columns,
     setColumns: setColumns,
     setHasUpdated: setHasUpdated
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetAutoOnMobile, {
-    autoLayout: autoLayout,
-    setAutoLayout: setAutoLayout,
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetOnMobileType, {
+    onMobile: onMobile,
+    setOnMobile: setOnMobile,
     setHasUpdated: setHasUpdated
   }));
 };
@@ -4258,21 +4322,28 @@ const SetColumns = _ref => {
     max: 12
   });
 };
-const SetAutoOnMobile = _ref2 => {
+const SetOnMobileType = _ref2 => {
   let {
-    autoLayout,
-    setAutoLayout,
+    onMobile,
+    setOnMobile,
     setHasUpdated
   } = _ref2;
-  const updateAutoLayout = val => {
+  const updateOnMobileType = val => {
     setHasUpdated(true);
-    setAutoLayout(val);
+    setOnMobile(val);
   };
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CheckboxControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set to auto layout on mobile', 'b2wp-grid'),
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('At mobile width screen, auto-calculate number of columns.', 'b2wp-grid'),
-    checked: autoLayout,
-    onChange: val => updateAutoLayout(val)
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RadioControl, {
+    label: "On mobile",
+    help: "Select grid for mobile width.",
+    selected: onMobile,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('One column', 'b2wp-grid'),
+      value: 'oneColumn'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto columns', 'b2wp-grid'),
+      value: 'autoColumns'
+    }],
+    onChange: value => updateOnMobileType(value)
   });
 };
 
@@ -4398,6 +4469,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js");
 /* harmony import */ var _PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PluginGridUserPanel */ "./src/grid/slotfills/PluginGridUserPanel.js");
+/* harmony import */ var _components_helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/helpers */ "./src/grid/components/helpers.js");
+
 
 
 
@@ -4412,6 +4485,7 @@ const SidebarsPanel = () => {
   const [hasUpdated, setHasUpdated] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [sidebarLocation, setSidebarLocation] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('right');
   const [sidebarWidth, setSidebarWidth] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('200px');
+  const [onMobile, setOnMobile] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('oneColumn');
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (!hasUpdated) {
       return;
@@ -4422,11 +4496,23 @@ const SidebarsPanel = () => {
     } else {
       columns = `1fr ${sidebarWidth}`;
     }
+    let onMobileCSS = '';
+    switch (onMobile) {
+      case 'oneColumn':
+        onMobileCSS = (0,_components_helpers__WEBPACK_IMPORTED_MODULE_6__.oneColumnOnMobileCSS)();
+        break;
+      case 'autoColumns':
+        onMobileCSS = (0,_components_helpers__WEBPACK_IMPORTED_MODULE_6__.autoColumnsOnMobileCSS)();
+        break;
+      default:
+        break;
+    }
     const newAttributes = {
-      templateColumns: columns
+      templateColumns: columns,
+      customCSS: onMobileCSS
     };
     setCSSAttributes(newAttributes, setAttributes);
-  }, [sidebarWidth, sidebarLocation]);
+  }, [sidebarWidth, sidebarLocation, onMobile]);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Sidebars', 'b2wp-grid')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetSidebarLocation, {
@@ -4436,6 +4522,10 @@ const SidebarsPanel = () => {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetSidebarWidth, {
     sidebarWidth: sidebarWidth,
     setSidebarWidth: setSidebarWidth,
+    setHasUpdated: setHasUpdated
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetOnMobileType, {
+    onMobile: onMobile,
+    setOnMobile: setOnMobile,
     setHasUpdated: setHasUpdated
   }));
 };
@@ -4463,15 +4553,39 @@ const SetSidebarLocation = _ref => {
     onChange: value => updateSidebarLocation(value)
   });
 };
+const SetOnMobileType = _ref2 => {
+  let {
+    onMobile,
+    setOnMobile,
+    setHasUpdated
+  } = _ref2;
+  const updateOnMobileType = val => {
+    setHasUpdated(true);
+    setOnMobile(val);
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RadioControl, {
+    label: "On mobile",
+    help: "Select grid for mobile width.",
+    selected: onMobile,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('One column', 'b2wp-grid'),
+      value: 'oneColumn'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto columns', 'b2wp-grid'),
+      value: 'autoColumns'
+    }],
+    onChange: value => updateOnMobileType(value)
+  });
+};
 const SingleColumnItem = (0,_emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToolsPanelItem)`
     grid-column: span 1;
 `;
-const SetSidebarWidth = _ref2 => {
+const SetSidebarWidth = _ref3 => {
   let {
     sidebarWidth,
     setSidebarWidth,
     setHasUpdated
-  } = _ref2;
+  } = _ref3;
   const updateSidebarWidth = val => {
     setHasUpdated(true);
     setSidebarWidth(val);

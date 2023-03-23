@@ -12,6 +12,7 @@ import { getPlugin } from '@wordpress/plugins';
 import styled from '@emotion/styled';
 
 import PluginGridUserPanel from './PluginGridUserPanel';
+import { autoColumnsOnMobileCSS, oneColumnOnMobileCSS } from '../components/helpers';
 
 export const SidebarsPanel = () => {
     const plugin = getPlugin('plugin-grid-user-panel');
@@ -21,6 +22,7 @@ export const SidebarsPanel = () => {
     const [hasUpdated, setHasUpdated] = useState(false);
     const [sidebarLocation, setSidebarLocation] = useState('right');
     const [sidebarWidth, setSidebarWidth] = useState('200px');
+    const [onMobile, setOnMobile] = useState('oneColumn');
 
     useEffect(() => {
 
@@ -36,12 +38,25 @@ export const SidebarsPanel = () => {
             columns = `1fr ${sidebarWidth}`
         }
 
+        let onMobileCSS = ''
+        switch (onMobile) {
+            case 'oneColumn':
+                onMobileCSS = oneColumnOnMobileCSS();
+                break;
+            case 'autoColumns':
+                onMobileCSS = autoColumnsOnMobileCSS();
+                break;
+            default:
+                break;
+        }
+
         const newAttributes = {
-            templateColumns: columns
+            templateColumns: columns,
+            customCSS: onMobileCSS,
         };
 
         setCSSAttributes(newAttributes, setAttributes)
-    }, [sidebarWidth, sidebarLocation]);
+    }, [sidebarWidth, sidebarLocation, onMobile]);
 
     return (
         <PluginGridUserPanel
@@ -55,6 +70,11 @@ export const SidebarsPanel = () => {
             <SetSidebarWidth
                 sidebarWidth={sidebarWidth}
                 setSidebarWidth={setSidebarWidth}
+                setHasUpdated={setHasUpdated}
+            />
+            <SetOnMobileType
+                onMobile={onMobile}
+                setOnMobile={setOnMobile}
                 setHasUpdated={setHasUpdated}
             />
         </PluginGridUserPanel>
@@ -84,6 +104,33 @@ const SetSidebarLocation = ({ sidebarLocation, setSidebarLocation, setHasUpdated
                 },
             ]}
             onChange={(value) => updateSidebarLocation(value)}
+        />
+    )
+};
+
+const SetOnMobileType = ({ onMobile, setOnMobile, setHasUpdated }) => {
+
+    const updateOnMobileType = (val) => {
+        setHasUpdated(true);
+        setOnMobile(val);
+    }
+
+    return (
+        <RadioControl
+            label="On mobile"
+            help="Select grid for mobile width."
+            selected={onMobile}
+            options={[
+                {
+                    label: __('One column', 'b2wp-grid'),
+                    value: 'oneColumn'
+                },
+                {
+                    label: __('Auto columns', 'b2wp-grid'),
+                    value: 'autoColumns'
+                },
+            ]}
+            onChange={(value) => updateOnMobileType(value)}
         />
     )
 };

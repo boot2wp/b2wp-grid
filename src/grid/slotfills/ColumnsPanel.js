@@ -1,10 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 
-import { RangeControl, CheckboxControl } from '@wordpress/components';
+import { RangeControl, RadioControl } from '@wordpress/components';
 
 import { getPlugin } from '@wordpress/plugins';
 import PluginGridUserPanel from './PluginGridUserPanel';
+import { autoColumnsOnMobileCSS, oneColumnOnMobileCSS } from '../components/helpers';
 
 export const ColumnsPanel = () => {
     const plugin = getPlugin('plugin-grid-user-panel');
@@ -12,8 +13,8 @@ export const ColumnsPanel = () => {
     const setCSSAttributes = plugin.settings.setCSSAttributes;
 
     const [hasUpdated, setHasUpdated] = useState(false);
-    const [autoLayout, setAutoLayout] = useState(false);
     const [columns, setColumns] = useState(undefined);
+    const [onMobile, setOnMobile] = useState('oneColumn');
 
     useEffect(() => {
 
@@ -26,21 +27,24 @@ export const ColumnsPanel = () => {
             newTemplateColumns = newTemplateColumns + '1fr ';
         }
 
+        let onMobileCSS = ''
+        switch (onMobile) {
+            case 'oneColumn':
+                onMobileCSS = oneColumnOnMobileCSS();
+                break;
+            case 'autoColumns':
+                onMobileCSS = autoColumnsOnMobileCSS();
+                break;
+            default:
+                break;
+        }
         const newAttributes = {
-            templateColumns: newTemplateColumns.trim()
+            templateColumns: newTemplateColumns.trim(),
+            customCSS: onMobileCSS,
         };
 
-        if (autoLayout) {
-            newAttributes['customCSS'] = `@media screen and (max-width: 600px) {
-  .wp-grid-name-class {
-  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
-  }
-}
-`
-        }
-
         setCSSAttributes(newAttributes, setAttributes)
-    }, [autoLayout, columns]);
+    }, [columns, onMobile]);
 
     return (
         <PluginGridUserPanel
@@ -51,9 +55,9 @@ export const ColumnsPanel = () => {
                 setColumns={setColumns}
                 setHasUpdated={setHasUpdated}
             />
-            <SetAutoOnMobile
-                autoLayout={autoLayout}
-                setAutoLayout={setAutoLayout}
+            <SetOnMobileType
+                onMobile={onMobile}
+                setOnMobile={setOnMobile}
                 setHasUpdated={setHasUpdated}
             />
         </PluginGridUserPanel>
@@ -78,19 +82,29 @@ const SetColumns = ({ columns, setColumns, setHasUpdated }) => {
     )
 };
 
-const SetAutoOnMobile = ({ autoLayout, setAutoLayout, setHasUpdated }) => {
+const SetOnMobileType = ({ onMobile, setOnMobile, setHasUpdated }) => {
 
-    const updateAutoLayout = (val) => {
+    const updateOnMobileType = (val) => {
         setHasUpdated(true);
-        setAutoLayout(val);
+        setOnMobile(val);
     }
 
     return (
-        <CheckboxControl
-            label={__('Set to auto layout on mobile', 'b2wp-grid')}
-            help={__('At mobile width screen, auto-calculate number of columns.', 'b2wp-grid')}
-            checked={autoLayout}
-            onChange={(val) => updateAutoLayout(val)}
+        <RadioControl
+            label="On mobile"
+            help="Select grid for mobile width."
+            selected={onMobile}
+            options={[
+                {
+                    label: __('One column', 'b2wp-grid'),
+                    value: 'oneColumn'
+                },
+                {
+                    label: __('Auto columns', 'b2wp-grid'),
+                    value: 'autoColumns'
+                },
+            ]}
+            onChange={(value) => updateOnMobileType(value)}
         />
     )
 };
