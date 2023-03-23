@@ -2432,6 +2432,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AutoColumnIcon": function() { return /* binding */ AutoColumnIcon; },
 /* harmony export */   "AutoRowIcon": function() { return /* binding */ AutoRowIcon; },
+/* harmony export */   "CenteredIcon": function() { return /* binding */ CenteredIcon; },
 /* harmony export */   "FourColumnEqualIcon": function() { return /* binding */ FourColumnEqualIcon; },
 /* harmony export */   "FourColumnFeaturedIcon": function() { return /* binding */ FourColumnFeaturedIcon; },
 /* harmony export */   "FourColumnIcon": function() { return /* binding */ FourColumnIcon; },
@@ -3062,6 +3063,38 @@ const FourColumnEqualIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE
     height: "17"
   }))
 });
+const CenteredIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    width: "100",
+    height: "100",
+    viewBox: "0 0 100 100"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+    x: "36",
+    y: "37",
+    width: "26",
+    height: "26"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+    x: "9",
+    y: "8",
+    width: "6",
+    height: "84"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+    x: "84",
+    y: "8",
+    width: "6",
+    height: "84"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+    x: "12",
+    y: "8",
+    width: "72",
+    height: "6"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+    x: "13",
+    y: "86",
+    width: "72",
+    height: "6"
+  }))
+});
 
 /***/ }),
 
@@ -3107,6 +3140,10 @@ const PresetsAuto = _ref => {
         newGridAttributes = {
           "autoFlow": "column dense"
         };
+      case 'centered':
+        newGridAttributes = {
+          "customCSS": `.wp-grid-name-class {place-items: center;}`
+        };
         break;
       default:
         return;
@@ -3129,7 +3166,11 @@ const PresetsAuto = _ref => {
     value: "row",
     icon: _Icons_js__WEBPACK_IMPORTED_MODULE_3__.AutoRowIcon,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('auto-row', 'b2wp-grid')
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, presets === 'column' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto-column layout selected', 'b2wp-grid')), presets === 'row' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto-row layout selected', 'b2wp-grid')), presets === undefined && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a grid layout', 'b2wp-grid'))));
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
+    value: "centered",
+    icon: _Icons_js__WEBPACK_IMPORTED_MODULE_3__.CenteredIcon,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('centerd', 'b2wp-grid')
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, presets === 'column' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto-column layout selected', 'b2wp-grid')), presets === 'row' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto-row layout selected', 'b2wp-grid')), presets === 'centered' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Centered layout selected', 'b2wp-grid')), presets === undefined && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a grid layout', 'b2wp-grid'))));
 };
 
 /***/ }),

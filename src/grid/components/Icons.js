@@ -235,3 +235,17 @@ export const FourColumnEqualIcon = () => (
         }
     />
 );
+
+export const CenteredIcon = () => (
+    <Icon
+        icon={
+            <svg width="100" height="100" viewBox="0 0 100 100" >
+                <rect x="36" y="37" width="26" height="26" />
+                <rect x="9" y="8" width="6" height="84" />
+                <rect x="84" y="8" width="6" height="84" />
+                <rect x="12" y="8" width="72" height="6" />
+                <rect x="13" y="86" width="72" height="6" />
+            </svg>
+        }
+    />
+);
