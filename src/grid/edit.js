@@ -5,6 +5,7 @@ import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
 import { SlotFillProvider } from '@wordpress/components';
 import { PluginArea, registerPlugin, getPlugin } from '@wordpress/plugins';
 import { useEffect } from '@wordpress/element';
+import { useSelect } from '@wordpress/data';
 
 import { EditorGridStyle } from './components/GridStyle.js';
 import { User, GridGapPanel } from './components/User.js';
@@ -17,7 +18,7 @@ import { setCSSAttributes } from './components/helpers.js';
 
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({ attributes, setAttributes, clientId }) {
 
 	useEffect(() => {
 		const userPlugin = getPlugin('plugin-grid-user-panel');
@@ -51,37 +52,21 @@ export default function Edit({ attributes, setAttributes }) {
 		}
 	}, []);
 
-	// useEffect(() => {
-	// 	registerPlugin('plugin-grid-design-panel', {
-	// 		render: () => (<></>),
-	// 		scope: 'grid-design-slots',
-	// 		settings: {
-	// 			attributes: attributes,
-	// 			setAttributes: setAttributes,
-	// 			setCSSAttributes: setCSSAttributes,
-	// 			saveLayout: saveLayout,
-	// 		},
-	// 	});
-	// }, []);
+	const blocks = useSelect((select) => {
+		return wp.data.select('core/block-editor').getBlocks()
+	});
 
-	const ToggleEnableDesignMode = ({ attributes, setAttributes }) => {
-		const message = attributes.enableDesignMode === true
-			? __('Disable Design Mode', 'b2wp-grid')
-			: __('Enable Design Mode', 'b2wp-grid')
-		const lockIcon = attributes.enableDesignMode === true ? 'unlock' : 'lock'
+	useEffect(() => {
+		const gridBlockNames = blocks
+			.filter((block) => block.name === 'b2wp/grid')
+			.map((block) => block.attributes.gridName)
 
-		return (
-			<PluginBlockSettingsMenuItem
-				allowedBlocks={['b2wp/grid']}
-				icon={lockIcon}
-				label={message}
-				onClick={() => {
-					setAttributes({ enableDesignMode: !attributes.enableDesignMode })
-				}}
-			/>
-		)
-	};
-
+		const countOfDuplicates = gridBlockNames.filter((name) => name === `${attributes.gridName}`).length;
+		if (!attributes.gridName || (countOfDuplicates > 1)) {
+			console.log(`reseting gridName to grid-${clientId}`)
+			setAttributes({ gridName: `grid-${clientId}` });
+		}
+	}, []);
 
 	const [showGrid, setShowGrid] = useState(true);
 
@@ -106,7 +91,6 @@ export default function Edit({ attributes, setAttributes }) {
 					setAttributes={setAttributes}
 				/>
 			</InspectorControls>
-
 			<InspectorControls>
 				<SlotFillProvider>
 					<UserPanels attributes={attributes} />
@@ -132,3 +116,21 @@ export default function Edit({ attributes, setAttributes }) {
 		</div>
 	);
 }
+
+const ToggleEnableDesignMode = ({ attributes, setAttributes }) => {
+	const message = attributes.enableDesignMode === true
+		? __('Disable Design Mode', 'b2wp-grid')
+		: __('Enable Design Mode', 'b2wp-grid')
+	const lockIcon = attributes.enableDesignMode === true ? 'unlock' : 'lock'
+
+	return (
+		<PluginBlockSettingsMenuItem
+			allowedBlocks={['b2wp/grid']}
+			icon={lockIcon}
+			label={message}
+			onClick={() => {
+				setAttributes({ enableDesignMode: !attributes.enableDesignMode })
+			}}
+		/>
+	)
+};

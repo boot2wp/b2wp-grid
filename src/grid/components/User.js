@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import {
-    Panel, PanelBody, CheckboxControl, TextControl,
+    Panel, PanelBody, CheckboxControl,
     __experimentalToggleGroupControl as ToggleGroupControl,
     __experimentalToggleGroupControlOption as ToggleGroupControlOption,
     __experimentalToggleGroupControlOptionIcon as ToggleGroupControlOptionIcon,
@@ -82,7 +82,6 @@ export const User = ({ attributes, setAttributes, showGrid, setShowGrid }) => {
             <Panel>
                 <PanelBody>
                     <ShowGrid showGrid={showGrid} setShowGrid={setShowGrid} />
-                    <GridName attributes={attributes} setAttributes={setAttributes} />
                 </PanelBody>
             </Panel>
         </>
@@ -98,15 +97,6 @@ const ShowGrid = ({ showGrid, setShowGrid }) => (
             onChange={(val) => setShowGrid(val)}
         />
     )
-);
-
-const GridName = ({ attributes, setAttributes }) => (
-    <TextControl
-        label={__('Grid Name', 'b2wp-grid')}
-        help="Each grid on a post or page should have a unique name."
-        value={attributes.gridName}
-        onChange={(val) => setAttributes({ gridName: val })}
-    />
 );
 
 const SingleColumnItem = styled(ToolsPanelItem)`

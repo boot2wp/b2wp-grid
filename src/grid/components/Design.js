@@ -15,6 +15,7 @@ export const Design = ({ attributes, setAttributes }) => (
         <PanelBody title="Design" initialOpen={false}>
             <SaveLayouts attributes={attributes} setAttributes={setAttributes} />
             <DesignSettings attributes={attributes} setAttributes={setAttributes} />
+            <GridName attributes={attributes} setAttributes={setAttributes} />
             <PluginGridDesignPanel.Slot />
             <TabPanel
                 className="grid-design-tab-panel"
@@ -63,6 +64,15 @@ export const Design = ({ attributes, setAttributes }) => (
             </TabPanel >
         </PanelBody>
     </Panel>
+);
+
+const GridName = ({ attributes, setAttributes }) => (
+    <TextControl
+        label={__('Grid Name', 'b2wp-grid')}
+        help="Each grid on a post or page should have a unique name."
+        value={attributes.gridName}
+        onChange={(val) => setAttributes({ gridName: val })}
+    />
 );
 
 const TemplateColumns = ({ attributes, setAttributes }) => (
