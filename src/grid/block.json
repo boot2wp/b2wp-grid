@@ -7,10 +7,7 @@
 	"category": "design",
 	"icon": "layout",
 	"description": "A CSS Grid Block",
-	"keywords": [
-		"grid",
-		"layout"
-	],
+	"keywords": [ "grid", "layout" ],
 	"supports": {
 		"html": false,
 		"align": true,

@@ -2,129 +2,131 @@ import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 
 import {
-    RadioControl,
-    __experimentalToolsPanel as ToolsPanel,
-    __experimentalToolsPanelItem as ToolsPanelItem,
-    __experimentalUnitControl as UnitControl,
+	RadioControl,
+	__experimentalToolsPanel as ToolsPanel,
+	__experimentalToolsPanelItem as ToolsPanelItem,
+	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 
 import { getPlugin } from '@wordpress/plugins';
 import styled from '@emotion/styled';
 
-import { autoColumnsOnMobileCSS, oneColumnOnMobileCSS } from '../components/helpers';
+import { oneColumnOnMobileCSS } from '../components/helpers';
 
 import PluginGridUserPanel from './PluginGridUserPanel';
 
 export const AutoPanel = () => {
-    const plugin = getPlugin('plugin-grid-user-panel');
-    const setAttributes = plugin.settings.setAttributes;
-    const setCSSAttributes = plugin.settings.setCSSAttributes;
+	const plugin = getPlugin( 'plugin-grid-user-panel' );
+	const setAttributes = plugin.settings.setAttributes;
+	const setCSSAttributes = plugin.settings.setCSSAttributes;
 
-    const [hasUpdated, setHasUpdated] = useState(false);
-    const [minimumColumnWidth, setMinimumColumnWidth] = useState('10rem');
-    const [onMobile, setOnMobile] = useState('autoColumn');
+	const [ hasUpdated, setHasUpdated ] = useState( false );
+	const [ minimumColumnWidth, setMinimumColumnWidth ] = useState( '10rem' );
+	const [ onMobile, setOnMobile ] = useState( 'autoColumn' );
 
-    useEffect(() => {
+	useEffect( () => {
+		if ( ! hasUpdated ) {
+			return;
+		}
 
-        if (!hasUpdated) {
-            return;
-        }
+		const columns = `repeat(auto-fill, minmax(min(${ minimumColumnWidth }, 100%), 1fr))`;
 
-        const columns = `repeat(auto-fill, minmax(min(${minimumColumnWidth}, 100%), 1fr))`
+		let onMobileCSS = '';
+		switch ( onMobile ) {
+			case 'oneColumn':
+				onMobileCSS = oneColumnOnMobileCSS();
+				break;
+			case 'autoColumn':
+				break;
+			default:
+				break;
+		}
 
-        let onMobileCSS = ''
-        switch (onMobile) {
-            case 'oneColumn':
-                onMobileCSS = oneColumnOnMobileCSS();
-                break;
-            case 'autoColumn':
-                break;
-            default:
-                break;
-        }
+		const newAttributes = {
+			templateColumns: columns,
+			customCSS: onMobileCSS,
+		};
 
-        const newAttributes = {
-            templateColumns: columns,
-            customCSS: onMobileCSS,
-        };
+		setCSSAttributes( newAttributes, setAttributes );
+	}, [ minimumColumnWidth, onMobile ] );
 
-        setCSSAttributes(newAttributes, setAttributes)
-    }, [minimumColumnWidth, onMobile]);
-
-    return (
-        <PluginGridUserPanel
-            title={__('Auto', 'b2wp-grid')}
-        >
-            <SetMinWidth
-                minimumColumnWidth={minimumColumnWidth}
-                setMinimumColumnWidth={setMinimumColumnWidth}
-                setHasUpdated={setHasUpdated}
-            />
-            <SetOnMobileType
-                onMobile={onMobile}
-                setOnMobile={setOnMobile}
-                setHasUpdated={setHasUpdated}
-            />
-        </PluginGridUserPanel>
-    )
-}
-
-const SingleColumnItem = styled(ToolsPanelItem)`
-    grid-column: span 1;
-`;
-
-const SetMinWidth = ({ minimumColumnWidth, setMinimumColumnWidth, setHasUpdated }) => {
-
-    const updateMinimumColumnWidth = (val) => {
-        setHasUpdated(true);
-        setMinimumColumnWidth(val);
-    }
-
-    const resetAll = () => {
-        setMinimumColumnWidth('10rem');
-    };
-
-    return (
-        <ToolsPanel label={__('Set Minimum Column Width')} resetAll={resetAll}>
-            <SingleColumnItem
-                hasValue={() => !!minimumColumnWidth}
-                label={__('Width', 'b2wp-grid')}
-                onDeselect={() => setMinimumColumnWidth('10rem')}
-                isShownByDefault
-            >
-                <UnitControl
-                    label={__('Width', 'b2wp-grid')}
-                    onChange={(val) => updateMinimumColumnWidth(val)}
-                    value={minimumColumnWidth}
-                />
-            </SingleColumnItem>
-        </ToolsPanel>
-    );
+	return (
+		<PluginGridUserPanel title={ __( 'Auto', 'b2wp-grid' ) }>
+			<SetMinWidth
+				minimumColumnWidth={ minimumColumnWidth }
+				setMinimumColumnWidth={ setMinimumColumnWidth }
+				setHasUpdated={ setHasUpdated }
+			/>
+			<SetOnMobileType
+				onMobile={ onMobile }
+				setOnMobile={ setOnMobile }
+				setHasUpdated={ setHasUpdated }
+			/>
+		</PluginGridUserPanel>
+	);
 };
 
-const SetOnMobileType = ({ onMobile, setOnMobile, setHasUpdated }) => {
+const SingleColumnItem = styled( ToolsPanelItem )`
+	grid-column: span 1;
+`;
 
-    const updateOnMobileType = (val) => {
-        setHasUpdated(true);
-        setOnMobile(val);
-    }
+const SetMinWidth = ( {
+	minimumColumnWidth,
+	setMinimumColumnWidth,
+	setHasUpdated,
+} ) => {
+	const updateMinimumColumnWidth = ( val ) => {
+		setHasUpdated( true );
+		setMinimumColumnWidth( val );
+	};
 
-    return (
-        <RadioControl
-            label="On mobile"
-            help="Select grid for mobile width."
-            selected={onMobile}
-            options={[
-                {
-                    label: __('One column', 'b2wp-grid'),
-                    value: 'oneColumn'
-                },
-                {
-                    label: __('Auto columns', 'b2wp-grid'),
-                    value: 'autoColumns'
-                },
-            ]}
-            onChange={(value) => updateOnMobileType(value)}
-        />
-    )
+	const resetAll = () => {
+		setMinimumColumnWidth( '10rem' );
+	};
+
+	return (
+		<ToolsPanel
+			label={ __( 'Set Minimum Column Width' ) }
+			resetAll={ resetAll }
+		>
+			<SingleColumnItem
+				hasValue={ () => !! minimumColumnWidth }
+				label={ __( 'Width', 'b2wp-grid' ) }
+				onDeselect={ () => setMinimumColumnWidth( '10rem' ) }
+				isShownByDefault
+			>
+				<UnitControl
+					label={ __( 'Width', 'b2wp-grid' ) }
+					onChange={ ( val ) => updateMinimumColumnWidth( val ) }
+					value={ minimumColumnWidth }
+				/>
+			</SingleColumnItem>
+		</ToolsPanel>
+	);
+};
+
+const SetOnMobileType = ( { onMobile, setOnMobile, setHasUpdated } ) => {
+	const updateOnMobileType = ( val ) => {
+		setHasUpdated( true );
+		setOnMobile( val );
+	};
+
+	return (
+		<RadioControl
+			label="On mobile"
+			help="Select grid for mobile width."
+			selected={ onMobile }
+			options={ [
+				{
+					label: __( 'One column', 'b2wp-grid' ),
+					value: 'oneColumn',
+				},
+				{
+					label: __( 'Auto columns', 'b2wp-grid' ),
+					value: 'autoColumns',
+				},
+			] }
+			onChange={ ( value ) => updateOnMobileType( value ) }
+		/>
+	);
 };

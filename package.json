@@ -8,15 +8,23 @@
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build",
-		"format": "wp-scripts format",
+		"format": "wp-scripts format ./src",
 		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
+		"lint:js": "wp-scripts lint-js ./src",
+		"lint:pkg-json": "wp-scripts lint-pkg-json ./src",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^25.5.0"
+		"@wordpress/prettier-config": "^2.12.0",
+		"@wordpress/scripts": "^25.5.0",
+		"eslint": "^8.36.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-n": "^15.6.1",
+		"eslint-plugin-promise": "^6.1.1",
+		"eslint-plugin-react": "^7.32.2"
 	},
 	"dependencies": {
 		"@emotion/styled": "^11.10.6",
