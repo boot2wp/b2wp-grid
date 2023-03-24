@@ -185,26 +185,80 @@ const AutoRows = ( { attributes, setAttributes } ) => (
 	/>
 );
 
-const AutoFlow = ( { attributes, setAttributes } ) => (
-	<PanelRow>
-		<RadioControl
-			label={ __( 'Auto Flow', 'b2wp-grid' ) }
-			help={ __( 'Value for grid-auto-flow CSS property', 'b2wp-grid' ) }
-			selected={ attributes.autoFlow }
-			options={ [
-				{ label: 'none', value: 'none' },
-				{ label: 'row', value: 'row' },
-				{ label: 'column', value: 'column' },
-				{ label: 'dense', value: 'dense' },
-				{ label: 'row dense', value: 'row dense' },
-				{ label: 'column dense', value: 'column dense' },
-			] }
-			onChange={ ( option ) => {
-				setAttributes( { autoFlow: option } );
-			} }
-		/>
-	</PanelRow>
-);
+const AutoFlow = ( { attributes, setAttributes } ) => {
+	const getAutoFlowSelected = () => {
+		const options = [
+			'row',
+			'column',
+			'dense',
+			'row dense',
+			'column dense',
+		];
+
+		if ( attributes.autoFlow === '' ) {
+			return 'none';
+		}
+
+		if ( options.includes( attributes.autoFlow ) ) {
+			return attributes.autoFlow;
+		}
+
+		return 'other';
+	};
+	const updateAutoFlow = ( option ) => {
+		let newOption = option === 'none' ? '' : option;
+		if ( option === 'other' ) {
+			return;
+		}
+		setAttributes( { autoFlow: newOption } );
+	};
+
+	return (
+		<PanelRow>
+			<RadioControl
+				label={ __( 'Auto Flow', 'b2wp-grid' ) }
+				help={ __(
+					'Value for grid-auto-flow CSS property',
+					'b2wp-grid'
+				) }
+				selected={ getAutoFlowSelected() }
+				options={ [
+					{ label: 'none', value: 'none' },
+					{ label: 'row', value: 'row' },
+					{ label: 'column', value: 'column' },
+					{ label: 'dense', value: 'dense' },
+					{ label: 'row dense', value: 'row dense' },
+					{ label: 'column dense', value: 'column dense' },
+					{ label: 'other', value: 'other' },
+				] }
+				onChange={ ( option ) => {
+					updateAutoFlow( option );
+				} }
+			/>
+		</PanelRow>
+	);
+};
+
+// const AutoFlow = ( { attributes, setAttributes } ) => (
+// 	<PanelRow>
+// 		<RadioControl
+// 			label={ __( 'Auto Flow', 'b2wp-grid' ) }
+// 			help={ __( 'Value for grid-auto-flow CSS property', 'b2wp-grid' ) }
+// 			selected={ attributes.autoFlow }
+// 			options={ [
+// 				{ label: 'none', value: 'none' },
+// 				{ label: 'row', value: 'row' },
+// 				{ label: 'column', value: 'column' },
+// 				{ label: 'dense', value: 'dense' },
+// 				{ label: 'row dense', value: 'row dense' },
+// 				{ label: 'column dense', value: 'column dense' },
+// 			] }
+// 			onChange={ ( option ) => {
+// 				setAttributes( { autoFlow: option } );
+// 			} }
+// 		/>
+// 	</PanelRow>
+// );
 
 const CustomCSS = ( { attributes, setAttributes } ) => (
 	<PanelRow>

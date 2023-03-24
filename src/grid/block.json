@@ -48,15 +48,7 @@
 		},
 		"autoFlow": {
 			"type": "string",
-			"enum": [
-				"none",
-				"row",
-				"column",
-				"dense",
-				"row dense",
-				"column dense"
-			],
-			"default": "row"
+			"default": ""
 		},
 		"rowGap": {
 			"type": "string",

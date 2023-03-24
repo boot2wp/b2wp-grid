@@ -2113,10 +2113,29 @@ const AutoFlow = _ref9 => {
     attributes,
     setAttributes
   } = _ref9;
+  const getAutoFlowSelected = () => {
+    const options = ['row', 'column', 'dense', 'row dense', 'column dense'];
+    if (attributes.autoFlow === '') {
+      return 'none';
+    }
+    if (options.includes(attributes.autoFlow)) {
+      return attributes.autoFlow;
+    }
+    return 'other';
+  };
+  const updateAutoFlow = option => {
+    let newOption = option === 'none' ? '' : option;
+    if (option === 'other') {
+      return;
+    }
+    setAttributes({
+      autoFlow: newOption
+    });
+  };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RadioControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto Flow', 'b2wp-grid'),
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Value for grid-auto-flow CSS property', 'b2wp-grid'),
-    selected: attributes.autoFlow,
+    selected: getAutoFlowSelected(),
     options: [{
       label: 'none',
       value: 'none'
@@ -2135,14 +2154,37 @@ const AutoFlow = _ref9 => {
     }, {
       label: 'column dense',
       value: 'column dense'
+    }, {
+      label: 'other',
+      value: 'other'
     }],
     onChange: option => {
-      setAttributes({
-        autoFlow: option
-      });
+      updateAutoFlow(option);
     }
   }));
 };
+
+// const AutoFlow = ( { attributes, setAttributes } ) => (
+// 	<PanelRow>
+// 		<RadioControl
+// 			label={ __( 'Auto Flow', 'b2wp-grid' ) }
+// 			help={ __( 'Value for grid-auto-flow CSS property', 'b2wp-grid' ) }
+// 			selected={ attributes.autoFlow }
+// 			options={ [
+// 				{ label: 'none', value: 'none' },
+// 				{ label: 'row', value: 'row' },
+// 				{ label: 'column', value: 'column' },
+// 				{ label: 'dense', value: 'dense' },
+// 				{ label: 'row dense', value: 'row dense' },
+// 				{ label: 'column dense', value: 'column dense' },
+// 			] }
+// 			onChange={ ( option ) => {
+// 				setAttributes( { autoFlow: option } );
+// 			} }
+// 		/>
+// 	</PanelRow>
+// );
+
 const CustomCSS = _ref10 => {
   let {
     attributes,
@@ -6329,7 +6371,7 @@ function combine (array, callback) {
   \*****************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"b2wp/grid","version":"0.1.0","title":"CSS Grid","category":"design","icon":"layout","description":"A CSS Grid Block","keywords":["grid","layout"],"supports":{"html":false,"align":true,"color":{"background":true,"gradients":true,"text":true,"link":true},"dimensions":{"minHeight":true},"spacing":{"margin":true,"padding":true}},"attributes":{"templateColumns":{"type":"string","default":"repeat(auto-fill, minmax(min(10rem, 100%), 1fr))"},"templateRows":{"type":"string","default":""},"templateAreas":{"type":"string","default":""},"autoColumns":{"type":"string","default":""},"autoRows":{"type":"string","default":""},"autoFlow":{"type":"string","enum":["none","row","column","dense","row dense","column dense"],"default":"row"},"rowGap":{"type":"string","default":"1rem"},"columnGap":{"type":"string","default":"1rem"},"numberNamedAreas":{"type":"integer","default":0},"gridName":{"type":"string"},"customCSS":{"type":"string","default":".wp-grid-name-class {}"},"enableDesignMode":{"type":"boolean","default":true},"enablePanels":{"type":"array","default":[{"name":"Layouts"},{"name":"Columns"},{"name":"Areas"}]},"savedLayouts":{"type":"array","default":[]},"applyToQueryLoop":{"type":"boolean","default":false}},"textdomain":"b2wp-grid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"b2wp/grid","version":"0.1.0","title":"CSS Grid","category":"design","icon":"layout","description":"A CSS Grid Block","keywords":["grid","layout"],"supports":{"html":false,"align":true,"color":{"background":true,"gradients":true,"text":true,"link":true},"dimensions":{"minHeight":true},"spacing":{"margin":true,"padding":true}},"attributes":{"templateColumns":{"type":"string","default":"repeat(auto-fill, minmax(min(10rem, 100%), 1fr))"},"templateRows":{"type":"string","default":""},"templateAreas":{"type":"string","default":""},"autoColumns":{"type":"string","default":""},"autoRows":{"type":"string","default":""},"autoFlow":{"type":"string","default":""},"rowGap":{"type":"string","default":"1rem"},"columnGap":{"type":"string","default":"1rem"},"numberNamedAreas":{"type":"integer","default":0},"gridName":{"type":"string"},"customCSS":{"type":"string","default":".wp-grid-name-class {}"},"enableDesignMode":{"type":"boolean","default":true},"enablePanels":{"type":"array","default":[{"name":"Layouts"},{"name":"Columns"},{"name":"Areas"}]},"savedLayouts":{"type":"array","default":[]},"applyToQueryLoop":{"type":"boolean","default":false}},"textdomain":"b2wp-grid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
