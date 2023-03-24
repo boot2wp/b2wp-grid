@@ -4,7 +4,7 @@ import { useState } from '@wordpress/element';
 import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
 import { SlotFillProvider } from '@wordpress/components';
 import { PluginArea, registerPlugin, getPlugin } from '@wordpress/plugins';
-import { useEffect } from '@wordpress/element';
+import { useEffect, memo } from '@wordpress/element';
 import { useSelect } from '@wordpress/data';
 
 import { EditorGridStyle } from './components/GridStyle.js';
@@ -52,6 +52,20 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		}
 	}, []);
 
+	useEffect(() => {
+		const menuSettingsPlugin = getPlugin('plugin-grid-menu-settings');
+		if (!menuSettingsPlugin) {
+			registerPlugin('plugin-grid-menu-settings', {
+				render: () => (
+					<ToggleEnableDesignMode
+						attributes={attributes}
+						setAttributes={setAttributes}
+					/>
+				),
+			});
+		}
+	}, []);
+
 	const blocks = useSelect((select) => {
 		return wp.data.select('core/block-editor').getBlocks()
 	});
@@ -76,10 +90,10 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				className: `${attributes.gridName}`,
 			}
 		)}>
-			<ToggleEnableDesignMode
+			{/* <ToggleEnableDesignMode
 				attributes={attributes}
 				setAttributes={setAttributes}
-			/>
+			/> */}
 			<EditorGridStyle
 				attributes={attributes}
 				showGrid={showGrid}
@@ -117,7 +131,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	);
 }
 
-const ToggleEnableDesignMode = ({ attributes, setAttributes }) => {
+const ToggleEnableDesignMode = memo(({ attributes, setAttributes }) => {
 	const message = attributes.enableDesignMode === true
 		? __('Disable Design Mode', 'b2wp-grid')
 		: __('Enable Design Mode', 'b2wp-grid')
@@ -133,4 +147,4 @@ const ToggleEnableDesignMode = ({ attributes, setAttributes }) => {
 			}}
 		/>
 	)
-};
+});

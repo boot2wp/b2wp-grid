@@ -4015,6 +4015,17 @@ function Edit(_ref) {
       });
     }
   }, []);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const menuSettingsPlugin = (0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_5__.getPlugin)('plugin-grid-menu-settings');
+    if (!menuSettingsPlugin) {
+      (0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_5__.registerPlugin)('plugin-grid-menu-settings', {
+        render: () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(ToggleEnableDesignMode, {
+          attributes: attributes,
+          setAttributes: setAttributes
+        })
+      });
+    }
+  }, []);
   const blocks = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_6__.useSelect)(select => {
     return wp.data.select('core/block-editor').getBlocks();
   });
@@ -4031,9 +4042,6 @@ function Edit(_ref) {
   const [showGrid, setShowGrid] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: `${attributes.gridName}`
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(ToggleEnableDesignMode, {
-    attributes: attributes,
-    setAttributes: setAttributes
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_GridStyle_js__WEBPACK_IMPORTED_MODULE_7__.EditorGridStyle, {
     attributes: attributes,
     showGrid: showGrid
@@ -4060,7 +4068,7 @@ function Edit(_ref) {
     scope: "grid-design-slots"
   }))));
 }
-const ToggleEnableDesignMode = _ref2 => {
+const ToggleEnableDesignMode = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.memo)(_ref2 => {
   let {
     attributes,
     setAttributes
@@ -4077,7 +4085,7 @@ const ToggleEnableDesignMode = _ref2 => {
       });
     }
   });
-};
+});
 
 /***/ }),
 
