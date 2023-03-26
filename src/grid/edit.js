@@ -4,8 +4,7 @@ import {
 	useBlockProps,
 	InspectorControls,
 } from '@wordpress/block-editor';
-import { useState, useEffect, memo } from '@wordpress/element';
-import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
+import { useState, useEffect } from '@wordpress/element';
 import { SlotFillProvider } from '@wordpress/components';
 import { PluginArea, registerPlugin, getPlugin } from '@wordpress/plugins';
 import { useSelect } from '@wordpress/data';
@@ -13,6 +12,7 @@ import { useSelect } from '@wordpress/data';
 import { EditorGridStyle } from './components/GridStyle.js';
 import { User, GridGapPanel } from './components/User.js';
 import { Design } from './components/Design.js';
+import { ToggleEnableDesignMode } from './components/ToggleEnableDesignMode.js';
 import { showDesignPanel, setCSSAttributes } from './components/helpers.js';
 import { UserPanels } from './slotfills/UserPanels.js';
 import { DesignPanels } from './slotfills/DesignPanels.js';
@@ -58,6 +58,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					<ToggleEnableDesignMode
 						attributes={ attributes }
 						setAttributes={ setAttributes }
+						clientId={ clientId }
 					/>
 				),
 			} );
@@ -122,24 +123,3 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		</div>
 	);
 }
-
-const ToggleEnableDesignMode = memo( ( { attributes, setAttributes } ) => {
-	const message =
-		attributes.enableDesignMode === true
-			? __( 'Disable Design Mode', 'b2wp-grid' )
-			: __( 'Enable Design Mode', 'b2wp-grid' );
-	const lockIcon = attributes.enableDesignMode === true ? 'unlock' : 'lock';
-
-	return (
-		<PluginBlockSettingsMenuItem
-			allowedBlocks={ [ 'b2wp/grid' ] }
-			icon={ lockIcon }
-			label={ message }
-			onClick={ () => {
-				setAttributes( {
-					enableDesignMode: ! attributes.enableDesignMode,
-				} );
-			} }
-		/>
-	);
-} );
