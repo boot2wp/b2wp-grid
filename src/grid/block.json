@@ -67,7 +67,7 @@
 		},
 		"customCSS": {
 			"type": "string",
-			"default": ".wp-grid-name-class {}"
+			"default": ""
 		},
 		"enableDesignMode": {
 			"type": "boolean",

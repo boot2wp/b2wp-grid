@@ -37,10 +37,15 @@ export const Design = ( { attributes, setAttributes } ) => {
 							className: 'tab-auto',
 						},
 						{
-							name: 'tabcss',
-							title: 'CSS',
-							className: 'tab-css',
+							name: 'tabcustomcss',
+							title: 'Custom',
+							className: 'tab-custom-css',
 						},
+						// {
+						// 	name: 'tabcss',
+						// 	title: 'CSS',
+						// 	className: 'tab-css',
+						// },
 					] }
 				>
 					{ ( tab ) => (
@@ -81,7 +86,7 @@ export const Design = ( { attributes, setAttributes } ) => {
 									/>
 								</Spacer>
 							) }
-							{ tab.name === 'tabcss' && (
+							{ tab.name === 'tabcustomcss' && (
 								<Spacer marginTop={ 6 }>
 									<CustomCSS
 										attributes={ attributes }
@@ -89,6 +94,11 @@ export const Design = ( { attributes, setAttributes } ) => {
 									/>
 								</Spacer>
 							) }
+							{ /* { tab.name === 'tabcss' && (
+								<Spacer marginTop={ 6 }>
+									<div>CSS</div>
+								</Spacer>
+							) } */ }
 						</>
 					) }
 				</TabPanel>
@@ -232,6 +242,7 @@ const CustomCSS = ( { attributes, setAttributes } ) => (
 				"Enter custom CSS. '.wp-grid-name-class' will be auto-replaced with block's grid name.",
 				'b2wp-grid'
 			) }
+			placeholder=".wp-grid-name-class {}"
 			value={ attributes.customCSS }
 			onChange={ ( val ) => setAttributes( { customCSS: val } ) }
 		/>

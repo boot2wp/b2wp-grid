@@ -13,17 +13,29 @@ import { moreVertical } from '@wordpress/icons';
 import { useState } from '@wordpress/element';
 
 import { SaveLayouts } from './SaveLayouts';
+import { gridCSSRules } from './GridStyle';
 
 export const DesignSettings = ( { attributes, setAttributes } ) => {
 	const [ savedLayoutsVisible, setSavedLayoutsVisible ] = useState( false );
+	const [ CSSVisible, setCSSVisible ] = useState( false );
 	const [ moreSettingsVisible, setMoreSettingsVisible ] = useState( false );
 
 	const toggleSavedLayoutsVisible = () => {
+		setMoreSettingsVisible( false );
+		setCSSVisible( false );
 		setSavedLayoutsVisible( ( current ) => ! current );
 	};
 
 	const toggleMoreSettingsVisible = () => {
+		setSavedLayoutsVisible( false );
+		setCSSVisible( false );
 		setMoreSettingsVisible( ( current ) => ! current );
+	};
+
+	const toggleCSSVisible = () => {
+		setMoreSettingsVisible( false );
+		setSavedLayoutsVisible( false );
+		setCSSVisible( ( current ) => ! current );
 	};
 	return (
 		<>
@@ -31,11 +43,30 @@ export const DesignSettings = ( { attributes, setAttributes } ) => {
 				<Flex>
 					<FlexItem>
 						<Button
-							variant="secondary"
+							variant="tertiary"
 							isPressed={ savedLayoutsVisible }
+							showTooltip={ true }
+							label={ __(
+								'Save and remove custom grid layouts',
+								'b2wp-grid'
+							) }
 							onClick={ toggleSavedLayoutsVisible }
 						>
 							{ __( 'Manage saved layouts', 'b2wp-grid' ) }
+						</Button>
+					</FlexItem>
+					<FlexItem>
+						<Button
+							variant="tertiary"
+							isPressed={ CSSVisible }
+							showTooltip={ true }
+							label={ __(
+								'View grid CSS properties',
+								'b2wp-grid'
+							) }
+							onClick={ toggleCSSVisible }
+						>
+							CSS
 						</Button>
 					</FlexItem>
 					<FlexItem>
@@ -55,6 +86,7 @@ export const DesignSettings = ( { attributes, setAttributes } ) => {
 					setAttributes={ setAttributes }
 				/>
 			) }
+			{ CSSVisible && <CSSProperties attributes={ attributes } /> }
 			{ moreSettingsVisible && (
 				<>
 					<Panel header={ __( 'Design Settings', 'b2wp-grid' ) }>
@@ -76,6 +108,20 @@ export const DesignSettings = ( { attributes, setAttributes } ) => {
 				</>
 			) }
 		</>
+	);
+};
+
+const CSSProperties = ( { attributes } ) => {
+	return (
+		<Panel header={ __( 'Grid CSS Properties', 'b2wp-grid' ) }>
+			<PanelBody>
+				<pre>
+					<code style={ { background: 'unset', color: '#007CBA' } }>
+						{ gridCSSRules( attributes ) }
+					</code>
+				</pre>
+			</PanelBody>
+		</Panel>
 	);
 };
 

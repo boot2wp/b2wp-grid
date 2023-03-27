@@ -2103,10 +2103,16 @@ const Design = _ref => {
       title: 'Auto',
       className: 'tab-auto'
     }, {
-      name: 'tabcss',
-      title: 'CSS',
-      className: 'tab-css'
-    }]
+      name: 'tabcustomcss',
+      title: 'Custom',
+      className: 'tab-custom-css'
+    }
+    // {
+    // 	name: 'tabcss',
+    // 	title: 'CSS',
+    // 	className: 'tab-css',
+    // },
+    ]
   }, tab => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, tab.name === 'tabtemplate' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalSpacer, {
     marginTop: 6
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TemplateColumns, {
@@ -2132,7 +2138,7 @@ const Design = _ref => {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(AutoFlow, {
     attributes: attributes,
     setAttributes: setAttributes
-  })), tab.name === 'tabcss' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalSpacer, {
+  })), tab.name === 'tabcustomcss' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalSpacer, {
     marginTop: 6
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(CustomCSS, {
     attributes: attributes,
@@ -2290,6 +2296,7 @@ const CustomCSS = _ref9 => {
     rows: 30,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Custom CSS', 'b2wp-grid'),
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter custom CSS. '.wp-grid-name-class' will be auto-replaced with block's grid name.", 'b2wp-grid'),
+    placeholder: ".wp-grid-name-class {}",
     value: attributes.customCSS,
     onChange: val => setAttributes({
       customCSS: val
@@ -2315,8 +2322,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/more-vertical.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/more-vertical.js");
 /* harmony import */ var _SaveLayouts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SaveLayouts */ "./src/grid/components/SaveLayouts.js");
+/* harmony import */ var _GridStyle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./GridStyle */ "./src/grid/components/GridStyle.js");
+
 
 
 
@@ -2329,21 +2338,39 @@ const DesignSettings = _ref => {
     setAttributes
   } = _ref;
   const [savedLayoutsVisible, setSavedLayoutsVisible] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [CSSVisible, setCSSVisible] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [moreSettingsVisible, setMoreSettingsVisible] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const toggleSavedLayoutsVisible = () => {
+    setMoreSettingsVisible(false);
+    setCSSVisible(false);
     setSavedLayoutsVisible(current => !current);
   };
   const toggleMoreSettingsVisible = () => {
+    setSavedLayoutsVisible(false);
+    setCSSVisible(false);
     setMoreSettingsVisible(current => !current);
+  };
+  const toggleCSSVisible = () => {
+    setMoreSettingsVisible(false);
+    setSavedLayoutsVisible(false);
+    setCSSVisible(current => !current);
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalSpacer, {
     paddingBottom: 2
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Flex, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FlexItem, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-    variant: "secondary",
+    variant: "tertiary",
     isPressed: savedLayoutsVisible,
+    showTooltip: true,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Save and remove custom grid layouts', 'b2wp-grid'),
     onClick: toggleSavedLayoutsVisible
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Manage saved layouts', 'b2wp-grid'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FlexItem, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+    variant: "tertiary",
+    isPressed: CSSVisible,
+    showTooltip: true,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('View grid CSS properties', 'b2wp-grid'),
+    onClick: toggleCSSVisible
+  }, "CSS")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FlexItem, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     isPressed: moreSettingsVisible,
     showTooltip: true,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Design settings', 'b2wp-grid'),
@@ -2351,6 +2378,8 @@ const DesignSettings = _ref => {
   })))), savedLayoutsVisible && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_SaveLayouts__WEBPACK_IMPORTED_MODULE_3__.SaveLayouts, {
     attributes: attributes,
     setAttributes: setAttributes
+  }), CSSVisible && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(CSSProperties, {
+    attributes: attributes
   }), moreSettingsVisible && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, {
     header: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Design Settings', 'b2wp-grid')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(GridName, {
@@ -2364,11 +2393,24 @@ const DesignSettings = _ref => {
     setAttributes: setAttributes
   })))));
 };
-const GridName = _ref2 => {
+const CSSProperties = _ref2 => {
+  let {
+    attributes
+  } = _ref2;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, {
+    header: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Grid CSS Properties', 'b2wp-grid')
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("pre", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("code", {
+    style: {
+      background: 'unset',
+      color: '#007CBA'
+    }
+  }, (0,_GridStyle__WEBPACK_IMPORTED_MODULE_4__.gridCSSRules)(attributes)))));
+};
+const GridName = _ref3 => {
   let {
     attributes,
     setAttributes
-  } = _ref2;
+  } = _ref3;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Grid Name', 'b2wp-grid'),
     help: "Each grid on a post or page should have a unique name.",
@@ -2378,11 +2420,11 @@ const GridName = _ref2 => {
     })
   });
 };
-const ApplyToQueryLoop = _ref3 => {
+const ApplyToQueryLoop = _ref4 => {
   let {
     attributes,
     setAttributes
-  } = _ref3;
+  } = _ref4;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CheckboxControl, {
     label: "Apply to Query Loop block",
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Apply the css grid property to a Query Loop block inside the grid, instead of to the CSS Grid block itself.', 'b2wp-grid'),
@@ -2392,11 +2434,11 @@ const ApplyToQueryLoop = _ref3 => {
     })
   });
 };
-const Panels = _ref4 => {
+const Panels = _ref5 => {
   let {
     attributes,
     setAttributes
-  } = _ref4;
+  } = _ref5;
   const enablePanels = attributes.enablePanels;
   const setChecked = (val, panelName) => {
     let newEnablePanels = [];
@@ -2450,7 +2492,8 @@ const Panels = _ref4 => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "EditorGridStyle": function() { return /* binding */ EditorGridStyle; },
-/* harmony export */   "GridStyle": function() { return /* binding */ GridStyle; }
+/* harmony export */   "GridStyle": function() { return /* binding */ GridStyle; },
+/* harmony export */   "gridCSSRules": function() { return /* binding */ gridCSSRules; }
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
@@ -2463,11 +2506,20 @@ const GridStyle = _ref => {
   if (attributes.applyToQueryLoop) {
     gridSelector = `.wp-block-b2wp-grid.${attributes.gridName} > .wp-block-query > .wp-block-post-template`;
   }
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
-${gridSelector} {
-    ${gridStyleProperties(attributes)}
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, getRules(attributes, gridSelector));
+};
+const gridCSSRules = attributes => {
+  let gridSelector = `.wp-block-b2wp-grid.${attributes.gridName}`;
+  return getRules(attributes, gridSelector);
+};
+const getRules = (attributes, gridSelector) => {
+  let cssRules = `${gridSelector} {
+${gridStyleProperties(attributes)}
 }
-`, overRideLayoutFlow(gridSelector, attributes), gridNamesRule(gridSelector, attributes, true), gridCustomCSS(attributes));
+${overRideLayoutFlow(gridSelector, attributes)}
+${gridNamesRule(gridSelector, attributes, true)}
+${gridCustomCSS(attributes)}`;
+  return cssRules.replace(/\n+/g, '\n');
 };
 const EditorGridStyle = _ref2 => {
   let {
@@ -2485,13 +2537,21 @@ ${gridSelector} {
 `, overRideLayoutFlow(gridSelector, attributes), gridNamesRule(gridSelector, attributes, false), editorShowGrid(attributes, gridSelector, showGrid), editorGridCustomCSS(attributes, gridSelector));
 };
 function gridStyleProperties(attributes) {
-  return `display: grid;${gridTemplateColumns(attributes)}${gridTemplateRows(attributes)}${gridTemplateAreas(attributes)}${gridAutoColumns(attributes)}${gridAutoRows(attributes)}${gridAutoFlow(attributes)}${gridGap(attributes)}`;
+  return `
+  display: grid;
+${gridTemplateColumns(attributes)}
+${gridTemplateRows(attributes)}
+${gridTemplateAreas(attributes)}
+${gridAutoColumns(attributes)}
+${gridAutoRows(attributes)}
+${gridAutoFlow(attributes)}
+${gridGap(attributes)}`;
 }
 function gridTemplateColumns(attributes) {
   const templateColumns = attributes.templateColumns.trim();
   if (templateColumns.length !== 0) {
     return `
-    grid-template-columns: ${templateColumns};`;
+  grid-template-columns: ${templateColumns};`;
   }
   return '';
 }
@@ -2499,7 +2559,7 @@ function gridTemplateRows(attributes) {
   const templateRows = attributes.templateRows.trim();
   if (templateRows.length !== 0) {
     return `
-    grid-template-rows: ${templateRows};`;
+  grid-template-rows: ${templateRows};`;
   }
   return '';
 }
@@ -2507,7 +2567,7 @@ function gridTemplateAreas(attributes) {
   const templateAreas = attributes.templateAreas.trim();
   if (templateAreas.length !== 0) {
     return `
-    grid-template-areas: ${templateAreas};`;
+  grid-template-areas: ${templateAreas};`;
   }
   return '';
 }
@@ -2515,7 +2575,7 @@ function gridAutoColumns(attributes) {
   const autoColumns = attributes.autoColumns.trim();
   if (autoColumns.length !== 0) {
     return `
-    grid-auto-columns: ${autoColumns};`;
+  grid-auto-columns: ${autoColumns};`;
   }
   return '';
 }
@@ -2523,7 +2583,7 @@ function gridAutoRows(attributes) {
   const autoRows = attributes.autoRows.trim();
   if (autoRows.length !== 0) {
     return `
-    grid-auto-rows: ${autoRows};`;
+  grid-auto-rows: ${autoRows};`;
   }
   return '';
 }
@@ -2531,7 +2591,7 @@ function gridAutoFlow(attributes) {
   const autoFlow = attributes.autoFlow.trim();
   if (autoFlow.length !== 0 && autoFlow !== 'none') {
     return `
-    grid-auto-flow: ${autoFlow};`;
+  grid-auto-flow: ${autoFlow};`;
   }
   return '';
 }
@@ -2541,11 +2601,11 @@ function gridGap(attributes) {
   const gridColumnGap = attributes.columnGap.trim();
   if (gridRowGap.length !== 0) {
     gap += `
-    row-gap: ${gridRowGap};`;
+  row-gap: ${gridRowGap};`;
   }
   if (gridColumnGap.length !== 0) {
     gap += `
-    column-gap: ${gridColumnGap};`;
+  column-gap: ${gridColumnGap};`;
   }
   return gap;
 }
@@ -3340,7 +3400,9 @@ const PresetsAuto = _ref => {
         break;
       case 'centered':
         newGridAttributes = {
-          customCSS: `.wp-grid-name-class {place-items: center;}`
+          customCSS: `.wp-grid-name-class {
+  place-items: center;
+}`
         };
         break;
       default:
@@ -4124,7 +4186,7 @@ const setGridAttributes = (setAttributes, gridAttributes) => {
     autoColumns: '',
     autoRows: '',
     autoFlow: '',
-    customCSS: '.wp-grid-name-class {}',
+    customCSS: '',
     numberNamedAreas: 0
   };
   newGridAttributes = {
@@ -4146,16 +4208,16 @@ const showDesignPanel = attributes => {
 };
 const autoColumnsOnMobileCSS = () => {
   return `@media screen and (max-width: 600px) {
-.wp-grid-name-class {
-grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
-}
+  .wp-grid-name-class {
+    grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+  }
 }`;
 };
 const oneColumnOnMobileCSS = () => {
   return `@media screen and (max-width: 600px) {
-.wp-grid-name-class {
-grid-template-columns: 1fr;
-}
+  .wp-grid-name-class {
+    grid-template-columns: 1fr;
+  }
 }`;
 };
 
@@ -6563,7 +6625,7 @@ function combine (array, callback) {
   \*****************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"b2wp/grid","version":"0.1.0","title":"CSS Grid","category":"design","icon":"layout","description":"A CSS Grid Block","keywords":["grid","layout"],"supports":{"html":false,"align":true,"color":{"background":true,"gradients":true,"text":true,"link":true},"dimensions":{"minHeight":true},"spacing":{"margin":true,"padding":true}},"attributes":{"templateColumns":{"type":"string","default":"repeat(auto-fill, minmax(min(10rem, 100%), 1fr))"},"templateRows":{"type":"string","default":""},"templateAreas":{"type":"string","default":""},"autoColumns":{"type":"string","default":""},"autoRows":{"type":"string","default":""},"autoFlow":{"type":"string","default":""},"rowGap":{"type":"string","default":"1rem"},"columnGap":{"type":"string","default":"1rem"},"numberNamedAreas":{"type":"integer","default":0},"gridName":{"type":"string"},"customCSS":{"type":"string","default":".wp-grid-name-class {}"},"enableDesignMode":{"type":"boolean","default":true},"enablePanels":{"type":"array","default":[{"name":"Layouts"},{"name":"Columns"},{"name":"Areas"}]},"savedLayouts":{"type":"array","default":[]},"applyToQueryLoop":{"type":"boolean","default":false}},"textdomain":"b2wp-grid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"b2wp/grid","version":"0.1.0","title":"CSS Grid","category":"design","icon":"layout","description":"A CSS Grid Block","keywords":["grid","layout"],"supports":{"html":false,"align":true,"color":{"background":true,"gradients":true,"text":true,"link":true},"dimensions":{"minHeight":true},"spacing":{"margin":true,"padding":true}},"attributes":{"templateColumns":{"type":"string","default":"repeat(auto-fill, minmax(min(10rem, 100%), 1fr))"},"templateRows":{"type":"string","default":""},"templateAreas":{"type":"string","default":""},"autoColumns":{"type":"string","default":""},"autoRows":{"type":"string","default":""},"autoFlow":{"type":"string","default":""},"rowGap":{"type":"string","default":"1rem"},"columnGap":{"type":"string","default":"1rem"},"numberNamedAreas":{"type":"integer","default":0},"gridName":{"type":"string"},"customCSS":{"type":"string","default":""},"enableDesignMode":{"type":"boolean","default":true},"enablePanels":{"type":"array","default":[{"name":"Layouts"},{"name":"Columns"},{"name":"Areas"}]},"savedLayouts":{"type":"array","default":[]},"applyToQueryLoop":{"type":"boolean","default":false}},"textdomain":"b2wp-grid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

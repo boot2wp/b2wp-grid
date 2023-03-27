@@ -26,7 +26,9 @@ export const PresetsAuto = ( { setAttributes } ) => {
 				break;
 			case 'centered':
 				newGridAttributes = {
-					customCSS: `.wp-grid-name-class {place-items: center;}`,
+					customCSS: `.wp-grid-name-class {
+  place-items: center;
+}`,
 				};
 				break;
 			default:

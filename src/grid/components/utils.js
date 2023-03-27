@@ -6,7 +6,7 @@ export const setGridAttributes = ( setAttributes, gridAttributes ) => {
 		autoColumns: '',
 		autoRows: '',
 		autoFlow: '',
-		customCSS: '.wp-grid-name-class {}',
+		customCSS: '',
 		numberNamedAreas: 0,
 	};
 
@@ -27,16 +27,16 @@ export const showDesignPanel = ( attributes ) => {
 
 export const autoColumnsOnMobileCSS = () => {
 	return `@media screen and (max-width: 600px) {
-.wp-grid-name-class {
-grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
-}
+  .wp-grid-name-class {
+    grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+  }
 }`;
 };
 
 export const oneColumnOnMobileCSS = () => {
 	return `@media screen and (max-width: 600px) {
-.wp-grid-name-class {
-grid-template-columns: 1fr;
-}
+  .wp-grid-name-class {
+    grid-template-columns: 1fr;
+  }
 }`;
 };

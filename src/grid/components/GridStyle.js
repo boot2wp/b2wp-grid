@@ -3,18 +3,23 @@ export const GridStyle = ( { attributes } ) => {
 	if ( attributes.applyToQueryLoop ) {
 		gridSelector = `.wp-block-b2wp-grid.${ attributes.gridName } > .wp-block-query > .wp-block-post-template`;
 	}
-	return (
-		<style>
-			{ `
-${ gridSelector } {
-    ${ gridStyleProperties( attributes ) }
+	return <style>{ getRules( attributes, gridSelector ) }</style>;
+};
+
+export const gridCSSRules = ( attributes ) => {
+	let gridSelector = `.wp-block-b2wp-grid.${ attributes.gridName }`;
+	return getRules( attributes, gridSelector );
+};
+
+const getRules = ( attributes, gridSelector ) => {
+	let cssRules = `${ gridSelector } {
+${ gridStyleProperties( attributes ) }
 }
-` }
-			{ overRideLayoutFlow( gridSelector, attributes ) }
-			{ gridNamesRule( gridSelector, attributes, true ) }
-			{ gridCustomCSS( attributes ) }
-		</style>
-	);
+${ overRideLayoutFlow( gridSelector, attributes ) }
+${ gridNamesRule( gridSelector, attributes, true ) }
+${ gridCustomCSS( attributes ) }`;
+
+	return cssRules.replace( /\n+/g, '\n' );
 };
 
 export const EditorGridStyle = ( { attributes, showGrid } ) => {
@@ -38,20 +43,22 @@ ${ gridSelector } {
 };
 
 function gridStyleProperties( attributes ) {
-	return `display: grid;${ gridTemplateColumns(
-		attributes
-	) }${ gridTemplateRows( attributes ) }${ gridTemplateAreas(
-		attributes
-	) }${ gridAutoColumns( attributes ) }${ gridAutoRows(
-		attributes
-	) }${ gridAutoFlow( attributes ) }${ gridGap( attributes ) }`;
+	return `
+  display: grid;
+${ gridTemplateColumns( attributes ) }
+${ gridTemplateRows( attributes ) }
+${ gridTemplateAreas( attributes ) }
+${ gridAutoColumns( attributes ) }
+${ gridAutoRows( attributes ) }
+${ gridAutoFlow( attributes ) }
+${ gridGap( attributes ) }`;
 }
 
 function gridTemplateColumns( attributes ) {
 	const templateColumns = attributes.templateColumns.trim();
 	if ( templateColumns.length !== 0 ) {
 		return `
-    grid-template-columns: ${ templateColumns };`;
+  grid-template-columns: ${ templateColumns };`;
 	}
 	return '';
 }
@@ -60,7 +67,7 @@ function gridTemplateRows( attributes ) {
 	const templateRows = attributes.templateRows.trim();
 	if ( templateRows.length !== 0 ) {
 		return `
-    grid-template-rows: ${ templateRows };`;
+  grid-template-rows: ${ templateRows };`;
 	}
 	return '';
 }
@@ -69,7 +76,7 @@ function gridTemplateAreas( attributes ) {
 	const templateAreas = attributes.templateAreas.trim();
 	if ( templateAreas.length !== 0 ) {
 		return `
-    grid-template-areas: ${ templateAreas };`;
+  grid-template-areas: ${ templateAreas };`;
 	}
 	return '';
 }
@@ -78,7 +85,7 @@ function gridAutoColumns( attributes ) {
 	const autoColumns = attributes.autoColumns.trim();
 	if ( autoColumns.length !== 0 ) {
 		return `
-    grid-auto-columns: ${ autoColumns };`;
+  grid-auto-columns: ${ autoColumns };`;
 	}
 	return '';
 }
@@ -87,7 +94,7 @@ function gridAutoRows( attributes ) {
 	const autoRows = attributes.autoRows.trim();
 	if ( autoRows.length !== 0 ) {
 		return `
-    grid-auto-rows: ${ autoRows };`;
+  grid-auto-rows: ${ autoRows };`;
 	}
 	return '';
 }
@@ -96,7 +103,7 @@ function gridAutoFlow( attributes ) {
 	const autoFlow = attributes.autoFlow.trim();
 	if ( autoFlow.length !== 0 && autoFlow !== 'none' ) {
 		return `
-    grid-auto-flow: ${ autoFlow };`;
+  grid-auto-flow: ${ autoFlow };`;
 	}
 	return '';
 }
@@ -107,11 +114,11 @@ function gridGap( attributes ) {
 	const gridColumnGap = attributes.columnGap.trim();
 	if ( gridRowGap.length !== 0 ) {
 		gap += `
-    row-gap: ${ gridRowGap };`;
+  row-gap: ${ gridRowGap };`;
 	}
 	if ( gridColumnGap.length !== 0 ) {
 		gap += `
-    column-gap: ${ gridColumnGap };`;
+  column-gap: ${ gridColumnGap };`;
 	}
 	return gap;
 }
