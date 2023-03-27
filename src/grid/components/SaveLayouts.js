@@ -11,6 +11,7 @@ import {
 	Notice,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
+import { cancelCircleFilled } from '@wordpress/icons';
 
 const saveLayout = (
 	name,
@@ -148,6 +149,9 @@ const SuccessNotice = ( { setSavedSuccess } ) => {
 };
 
 const SavedLayouts = ( { attributes, setAttributes } ) => {
+	const hasNoCustomLayouts =
+		attributes.savedLayouts.length === 0 ? true : false;
+
 	const layouts = attributes.savedLayouts.map( function ( layout, index ) {
 		return (
 			<Flex key={ index }>
@@ -155,6 +159,7 @@ const SavedLayouts = ( { attributes, setAttributes } ) => {
 				<FlexItem>
 					<Button
 						variant="tertiary"
+						icon={ cancelCircleFilled }
 						showTooltip={ true }
 						label={ __( 'remove saved layout', 'b2wp-grid' ) }
 						onClick={ () =>
@@ -164,9 +169,7 @@ const SavedLayouts = ( { attributes, setAttributes } ) => {
 								setAttributes
 							)
 						}
-					>
-						x
-					</Button>
+					></Button>
 				</FlexItem>
 			</Flex>
 		);
@@ -175,6 +178,11 @@ const SavedLayouts = ( { attributes, setAttributes } ) => {
 		<>
 			<Divider />
 			<h2>{ __( 'Saved layouts', 'b2wp-grid' ) }</h2>
+			{ hasNoCustomLayouts && (
+				<p>
+					{ __( 'No custom layouts have been saved.', 'b2wp-grid' ) }
+				</p>
+			) }
 			{ layouts }
 			<Divider />
 		</>
