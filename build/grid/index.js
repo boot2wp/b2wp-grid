@@ -2295,33 +2295,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-// export const DesignSettings = ( { attributes, setAttributes } ) => {
-// 	return (
-// 		<>
-// 			<Panel>
-// 				<PanelBody
-// 					title={ __( 'Panels', 'b2wp-grid' ) }
-// 					initialOpen={ false }
-// 				>
-// 					<Panels
-// 						attributes={ attributes }
-// 						setAttributes={ setAttributes }
-// 					/>
-// 				</PanelBody>
-// 			</Panel>
-// 			<Panel>
-// 				<PanelBody>
-// 					<ApplyToQueryLoop
-// 						attributes={ attributes }
-// 						setAttributes={ setAttributes }
-// 					/>
-// 				</PanelBody>
-// 			</Panel>
-// 		</>
-// 	);
-// };
-
 const DesignSettings = _ref => {
   let {
     attributes,
@@ -3760,7 +3733,6 @@ const SaveLayouts = _ref => {
     attributes,
     setAttributes
   } = _ref;
-  // const [ visible, setVisible ] = useState( false );
   const [layoutName, setLayoutName] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('Custom layout');
   const [layoutDescription, setLayoutDescription] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('Custom layout');
   const [savedSuccess, setSavedSuccess] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
@@ -4114,7 +4086,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const setGridAttributes = (setAttributes, gridAttributes) => {
   let newGridAttributes = {
-    templateColumns: 'repeat(auto-fill, minmax(min(10rem, 100%), 1fr))',
+    templateColumns: '',
     templateRows: '',
     templateAreas: '',
     autoColumns: '',
@@ -4132,29 +4104,14 @@ const setGridAttributes = (setAttributes, gridAttributes) => {
   });
 };
 const resetGridAttributes = setAttributes => {
-  setGridAttributes(setAttributes, {});
+  const defaultGridAttributes = {
+    templateColumns: 'repeat(auto-fill, minmax(min(10rem, 100%), 1fr))'
+  };
+  setGridAttributes(setAttributes, defaultGridAttributes);
 };
 const showDesignPanel = attributes => {
   return attributes.enableDesignMode;
 };
-
-// export const setGridAttributes = ( setAttributes, newGridAttributes ) => {
-// 	let gridAttributes = {
-// 		templateColumns: '',
-// 		templateRows: '',
-// 		templateAreas: '',
-// 		autoColumns: '',
-// 		autoRows: '',
-// 		autoFlow: '',
-// 		customCSS: '',
-// 		numberNamedAreas: 0,
-// 		rowGap: '',
-// 		columnGap: '',
-// 	};
-// 	gridAttributes = { ...gridAttributes, ...newGridAttributes };
-// 	setAttributes( gridAttributes );
-// };
-
 const autoColumnsOnMobileCSS = () => {
   return `@media screen and (max-width: 600px) {
 .wp-grid-name-class {

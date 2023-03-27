@@ -14,32 +14,6 @@ import { useState } from '@wordpress/element';
 
 import { SaveLayouts } from './SaveLayouts';
 
-// export const DesignSettings = ( { attributes, setAttributes } ) => {
-// 	return (
-// 		<>
-// 			<Panel>
-// 				<PanelBody
-// 					title={ __( 'Panels', 'b2wp-grid' ) }
-// 					initialOpen={ false }
-// 				>
-// 					<Panels
-// 						attributes={ attributes }
-// 						setAttributes={ setAttributes }
-// 					/>
-// 				</PanelBody>
-// 			</Panel>
-// 			<Panel>
-// 				<PanelBody>
-// 					<ApplyToQueryLoop
-// 						attributes={ attributes }
-// 						setAttributes={ setAttributes }
-// 					/>
-// 				</PanelBody>
-// 			</Panel>
-// 		</>
-// 	);
-// };
-
 export const DesignSettings = ( { attributes, setAttributes } ) => {
 	const [ savedLayoutsVisible, setSavedLayoutsVisible ] = useState( false );
 	const [ moreSettingsVisible, setMoreSettingsVisible ] = useState( false );

@@ -48,7 +48,6 @@ const onRemoveSavedLayout = ( layoutIndex, attributes, setAttributes ) => {
 };
 
 export const SaveLayouts = ( { attributes, setAttributes } ) => {
-	// const [ visible, setVisible ] = useState( false );
 	const [ layoutName, setLayoutName ] = useState( 'Custom layout' );
 	const [ layoutDescription, setLayoutDescription ] =
 		useState( 'Custom layout' );
@@ -60,19 +59,6 @@ export const SaveLayouts = ( { attributes, setAttributes } ) => {
 
 	return (
 		<>
-			{ /* <PanelRow>
-				<Spacer marginTop={ 2 } marginBottom={ 6 }>
-					<Button
-						variant="secondary"
-						isPressed={ visible }
-						onClick={ toggleVisible }
-					>
-						{ __( 'Manage saved layouts', 'b2wp-grid' ) }
-					</Button>
-				</Spacer>
-			</PanelRow> */ }
-			{ /* { visible && ( */ }
-			{ /* <> */ }
 			<LayoutName
 				layoutName={ layoutName }
 				setLayoutName={ setLayoutName }
@@ -94,8 +80,6 @@ export const SaveLayouts = ( { attributes, setAttributes } ) => {
 				setAttributes={ setAttributes }
 				onRemoveSavedLayout={ onRemoveSavedLayout }
 			/>
-			{ /* </> */ }
-			{ /* ) } */ }
 		</>
 	);
 };

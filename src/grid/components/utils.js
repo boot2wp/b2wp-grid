@@ -1,6 +1,6 @@
 export const setGridAttributes = ( setAttributes, gridAttributes ) => {
 	let newGridAttributes = {
-		templateColumns: 'repeat(auto-fill, minmax(min(10rem, 100%), 1fr))',
+		templateColumns: '',
 		templateRows: '',
 		templateAreas: '',
 		autoColumns: '',
@@ -15,29 +15,15 @@ export const setGridAttributes = ( setAttributes, gridAttributes ) => {
 };
 
 export const resetGridAttributes = ( setAttributes ) => {
-	setGridAttributes( setAttributes, {} );
+	const defaultGridAttributes = {
+		templateColumns: 'repeat(auto-fill, minmax(min(10rem, 100%), 1fr))',
+	};
+	setGridAttributes( setAttributes, defaultGridAttributes );
 };
 
 export const showDesignPanel = ( attributes ) => {
 	return attributes.enableDesignMode;
 };
-
-// export const setGridAttributes = ( setAttributes, newGridAttributes ) => {
-// 	let gridAttributes = {
-// 		templateColumns: '',
-// 		templateRows: '',
-// 		templateAreas: '',
-// 		autoColumns: '',
-// 		autoRows: '',
-// 		autoFlow: '',
-// 		customCSS: '',
-// 		numberNamedAreas: 0,
-// 		rowGap: '',
-// 		columnGap: '',
-// 	};
-// 	gridAttributes = { ...gridAttributes, ...newGridAttributes };
-// 	setAttributes( gridAttributes );
-// };
 
 export const autoColumnsOnMobileCSS = () => {
 	return `@media screen and (max-width: 600px) {
