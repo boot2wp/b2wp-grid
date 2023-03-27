@@ -9,8 +9,8 @@ import {
 	TwoColumnMagazineIcon,
 	TwoColumnSidebarIcon,
 	TwoColumnEqualIcon,
-} from './Icons.js';
-import { setGridAttributes } from './utils.js';
+} from './Icons';
+import { setGridAttributes } from './utils';
 
 export const PresetsTwoColumn = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );

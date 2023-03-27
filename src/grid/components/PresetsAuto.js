@@ -1,11 +1,18 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOptionIcon as ToggleGroupControlOptionIcon,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
-import { AutoColumnIcon, AutoRowIcon, CenteredIcon } from './Icons.js';
-import { setGridAttributes } from './utils.js';
+import { AutoColumnIcon, AutoRowIcon, CenteredIcon } from './Icons';
+
+/**
+ * Internal dependencies
+ */
+import { setGridAttributes } from './utils';
 
 export const PresetsAuto = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );

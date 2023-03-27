@@ -1,6 +1,12 @@
+/**
+ * WordPress dependencies
+ */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import { GridStyle } from './components/GridStyle.js';
+/**
+ * Internal dependencies
+ */
+import { GridStyle } from './components/GridStyle';
 
 export default function save( { attributes } ) {
 	return (

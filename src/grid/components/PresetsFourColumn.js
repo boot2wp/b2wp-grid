@@ -1,15 +1,22 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOptionIcon as ToggleGroupControlOptionIcon,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
+
+/**
+ * Internal dependencies
+ */
 import {
 	FourColumnFeaturedIcon,
 	FourColumnMagazineIcon,
 	FourColumnEqualIcon,
-} from './Icons.js';
-import { setGridAttributes } from './utils.js';
+} from './Icons';
+import { setGridAttributes } from './utils';
 
 export const PresetsFourColumn = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );

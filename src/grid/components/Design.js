@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	Panel,
@@ -11,8 +14,11 @@ import {
 	__experimentalSpacer as Spacer,
 } from '@wordpress/components';
 
+/**
+ * Internal dependencies
+ */
 import { DesignSettings } from './DesignSettings';
-import PluginGridDesignPanel from '../slotfills/PluginGridDesignPanel.js';
+import PluginGridDesignPanel from '../slotfills/PluginGridDesignPanel';
 
 export const Design = ( { attributes, setAttributes } ) => {
 	return (

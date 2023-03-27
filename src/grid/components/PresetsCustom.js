@@ -1,7 +1,14 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { Button, __experimentalSpacer as Spacer } from '@wordpress/components';
 import { useState } from '@wordpress/element';
-import { setGridAttributes, showDesignPanel } from './utils.js';
+
+/**
+ * Internal dependencies
+ */
+import { setGridAttributes, showDesignPanel } from './utils';
 
 export const PresetsCustom = ( { attributes, setAttributes } ) => {
 	const [ selectedMessage, setSelectedMessage ] =

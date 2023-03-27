@@ -1,9 +1,15 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { store as blockEditorStore } from '@wordpress/block-editor';
 import { RangeControl, RadioControl } from '@wordpress/components';
 
+/**
+ * Internal dependencies
+ */
 import PluginGridUserPanel from './PluginGridUserPanel';
 import {
 	autoColumnsOnMobileCSS,

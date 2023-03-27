@@ -17,15 +17,15 @@ import {
 import { useState, useEffect } from '@wordpress/element';
 import { undo } from '@wordpress/icons';
 
-import { TwoColumnIcon, ThreeColumnIcon, FourColumnIcon } from './Icons.js';
+import { TwoColumnIcon, ThreeColumnIcon, FourColumnIcon } from './Icons';
 import { PresetsTwoColumn } from './PresetsTwoColumn';
 import { PresetsThreeColumn } from './PresetsThreeColumn';
 import { PresetsFourColumn } from './PresetsFourColumn';
 import { PresetsAuto } from './PresetsAuto';
 import { PresetsCustom } from './PresetsCustom';
-import { resetGridAttributes } from './utils.js';
+import { resetGridAttributes } from './utils';
 
-import PluginGridUserPanel from '../slotfills/PluginGridUserPanel.js';
+import PluginGridUserPanel from '../slotfills/PluginGridUserPanel';
 import styled from '@emotion/styled';
 
 export const User = ( {

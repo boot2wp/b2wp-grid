@@ -1,8 +1,10 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { store as blockEditorStore } from '@wordpress/block-editor';
-
 import {
 	TextareaControl,
 	RangeControl,
@@ -11,8 +13,14 @@ import {
 	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 
+/**
+ * External dependencies
+ */
 import styled from '@emotion/styled';
 
+/**
+ * Internal dependencies
+ */
 import PluginGridUserPanel from './PluginGridUserPanel';
 
 export const AreasPanel = () => {

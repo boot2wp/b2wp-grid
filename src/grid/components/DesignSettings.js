@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	TextControl,
@@ -12,6 +15,9 @@ import {
 import { moreVertical } from '@wordpress/icons';
 import { useState } from '@wordpress/element';
 
+/**
+ * Internal dependencies
+ */
 import { SaveLayouts } from './SaveLayouts';
 import { gridCSSRules } from './GridStyle';
 

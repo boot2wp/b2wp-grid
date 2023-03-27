@@ -1,4 +1,11 @@
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType, createBlock } from '@wordpress/blocks';
+
+/**
+ * Internal dependencies
+ */
 
 import './style.scss';
 

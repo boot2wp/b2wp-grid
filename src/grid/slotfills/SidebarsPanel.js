@@ -1,8 +1,10 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { store as blockEditorStore } from '@wordpress/block-editor';
-
 import {
 	RadioControl,
 	__experimentalToolsPanel as ToolsPanel,
@@ -10,8 +12,14 @@ import {
 	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 
+/**
+ * Internal dependencies
+ */
 import styled from '@emotion/styled';
 
+/**
+ * Internal dependencies
+ */
 import PluginGridUserPanel from './PluginGridUserPanel';
 import {
 	autoColumnsOnMobileCSS,

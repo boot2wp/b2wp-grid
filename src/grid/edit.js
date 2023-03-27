@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	InnerBlocks,
@@ -9,13 +12,16 @@ import { SlotFillProvider } from '@wordpress/components';
 import { PluginArea, registerPlugin, getPlugin } from '@wordpress/plugins';
 import { useSelect } from '@wordpress/data';
 
-import { EditorGridStyle } from './components/GridStyle.js';
-import { User, GridGapPanel } from './components/User.js';
-import { Design } from './components/Design.js';
-import { ToggleEnableDesignMode } from './components/ToggleEnableDesignMode.js';
-import { showDesignPanel, setGridAttributes } from './components/utils.js';
-import { UserPanels } from './slotfills/UserPanels.js';
-import { DesignPanels } from './slotfills/DesignPanels.js';
+/**
+ * Internal dependencies
+ */
+import { EditorGridStyle } from './components/GridStyle';
+import { User, GridGapPanel } from './components/User';
+import { Design } from './components/Design';
+import { ToggleEnableDesignMode } from './components/ToggleEnableDesignMode';
+import { showDesignPanel, setGridAttributes } from './components/utils';
+import { UserPanels } from './slotfills/UserPanels';
+import { DesignPanels } from './slotfills/DesignPanels';
 
 import './editor.scss';
 
