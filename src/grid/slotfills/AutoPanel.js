@@ -11,14 +11,14 @@ import {
 import { getPlugin } from '@wordpress/plugins';
 import styled from '@emotion/styled';
 
-import { oneColumnOnMobileCSS } from '../components/helpers';
+import { oneColumnOnMobileCSS } from '../components/utils';
 
 import PluginGridUserPanel from './PluginGridUserPanel';
 
 export const AutoPanel = () => {
 	const plugin = getPlugin( 'plugin-grid-user-panel' );
 	const setAttributes = plugin.settings.setAttributes;
-	const setCSSAttributes = plugin.settings.setCSSAttributes;
+	const setGridAttributes = plugin.settings.setGridAttributes;
 
 	const [ hasUpdated, setHasUpdated ] = useState( false );
 	const [ minimumColumnWidth, setMinimumColumnWidth ] = useState( '10rem' );
@@ -47,7 +47,7 @@ export const AutoPanel = () => {
 			customCSS: onMobileCSS,
 		};
 
-		setCSSAttributes( newAttributes, setAttributes );
+		setGridAttributes( setAttributes, newAttributes );
 	}, [ minimumColumnWidth, onMobile ] );
 
 	return (

@@ -13,7 +13,7 @@ import { EditorGridStyle } from './components/GridStyle.js';
 import { User, GridGapPanel } from './components/User.js';
 import { Design } from './components/Design.js';
 import { ToggleEnableDesignMode } from './components/ToggleEnableDesignMode.js';
-import { showDesignPanel, setCSSAttributes } from './components/helpers.js';
+import { showDesignPanel, setGridAttributes } from './components/utils.js';
 import { UserPanels } from './slotfills/UserPanels.js';
 import { DesignPanels } from './slotfills/DesignPanels.js';
 
@@ -29,7 +29,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				settings: {
 					attributes,
 					setAttributes,
-					setCSSAttributes,
+					setGridAttributes,
 				},
 			} );
 		}
@@ -44,7 +44,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				settings: {
 					attributes,
 					setAttributes,
-					setCSSAttributes,
+					setGridAttributes,
 				},
 			} );
 		}

@@ -15,12 +15,12 @@ import PluginGridUserPanel from './PluginGridUserPanel';
 import {
 	autoColumnsOnMobileCSS,
 	oneColumnOnMobileCSS,
-} from '../components/helpers';
+} from '../components/utils';
 
 export const SidebarsPanel = () => {
 	const plugin = getPlugin( 'plugin-grid-user-panel' );
 	const setAttributes = plugin.settings.setAttributes;
-	const setCSSAttributes = plugin.settings.setCSSAttributes;
+	const setGridAttributes = plugin.settings.setGridAttributes;
 
 	const [ hasUpdated, setHasUpdated ] = useState( false );
 	const [ sidebarLocation, setSidebarLocation ] = useState( 'right' );
@@ -57,7 +57,7 @@ export const SidebarsPanel = () => {
 			customCSS: onMobileCSS,
 		};
 
-		setCSSAttributes( newAttributes, setAttributes );
+		setGridAttributes( setAttributes, newAttributes );
 	}, [ sidebarWidth, sidebarLocation, onMobile ] );
 
 	return (

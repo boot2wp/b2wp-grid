@@ -9,7 +9,7 @@ import {
 	FourColumnMagazineIcon,
 	FourColumnEqualIcon,
 } from './Icons.js';
-import { setGridAttributes } from './helpers.js';
+import { setGridAttributes } from './utils.js';
 
 export const PresetsFourColumn = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );

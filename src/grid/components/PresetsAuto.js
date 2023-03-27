@@ -5,7 +5,7 @@ import {
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import { AutoColumnIcon, AutoRowIcon, CenteredIcon } from './Icons.js';
-import { setGridAttributes } from './helpers.js';
+import { setGridAttributes } from './utils.js';
 
 export const PresetsAuto = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );

@@ -10,7 +10,7 @@ import {
 	TwoColumnSidebarIcon,
 	TwoColumnEqualIcon,
 } from './Icons.js';
-import { setGridAttributes } from './helpers.js';
+import { setGridAttributes } from './utils.js';
 
 export const PresetsTwoColumn = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );

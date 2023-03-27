@@ -3,6 +3,10 @@ import {
 	Panel,
 	PanelBody,
 	CheckboxControl,
+	Flex,
+	FlexItem,
+	Button,
+	__experimentalSpacer as Spacer,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 	__experimentalToggleGroupControlOptionIcon as ToggleGroupControlOptionIcon,
@@ -11,6 +15,7 @@ import {
 	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
+import { undo } from '@wordpress/icons';
 
 import { TwoColumnIcon, ThreeColumnIcon, FourColumnIcon } from './Icons.js';
 import { PresetsTwoColumn } from './PresetsTwoColumn';
@@ -18,6 +23,7 @@ import { PresetsThreeColumn } from './PresetsThreeColumn';
 import { PresetsFourColumn } from './PresetsFourColumn';
 import { PresetsAuto } from './PresetsAuto';
 import { PresetsCustom } from './PresetsCustom';
+import { resetGridAttributes } from './utils.js';
 
 import PluginGridUserPanel from '../slotfills/PluginGridUserPanel.js';
 import styled from '@emotion/styled';
@@ -76,10 +82,20 @@ export const User = ( {
 								/>
 								<ToggleGroupControlOption
 									value="auto"
+									showTooltip={ true }
+									aria-label={ __(
+										'auto layouts',
+										'b2wp-grid'
+									) }
 									label={ __( 'auto', 'b2wp-grid' ) }
 								/>
 								<ToggleGroupControlOption
 									value="custom"
+									showTooltip={ true }
+									aria-label={ __(
+										'custom layouts',
+										'b2wp-grid'
+									) }
 									label={ __( 'custom', 'b2wp-grid' ) }
 								/>
 							</ToggleGroupControl>
@@ -122,7 +138,9 @@ export const User = ( {
 			<PluginGridUserPanel.Slot />
 			<Panel>
 				<PanelBody>
-					<ShowGrid
+					<UserSettings
+						attributes={ setAttributes }
+						setAttributes={ setAttributes }
 						showGrid={ showGrid }
 						setShowGrid={ setShowGrid }
 					/>
@@ -132,16 +150,36 @@ export const User = ( {
 	);
 };
 
-const ShowGrid = ( { showGrid, setShowGrid } ) => (
-	<CheckboxControl
-		label={ __( 'Show grid', 'b2wp-grid' ) }
-		help={ __(
-			'Show outline around grid areas in the editor',
-			'b2wp-grid'
-		) }
-		checked={ showGrid }
-		onChange={ ( val ) => setShowGrid( val ) }
-	/>
+const UserSettings = ( {
+	attributes,
+	setAttributes,
+	showGrid,
+	setShowGrid,
+} ) => (
+	<>
+		<Spacer paddingBottom={ 2 }>
+			<Flex>
+				<FlexItem>
+					<CheckboxControl
+						label={ __( 'Show grid', 'b2wp-grid' ) }
+						checked={ showGrid }
+						onChange={ ( val ) => setShowGrid( val ) }
+					/>
+				</FlexItem>
+				<FlexItem>
+					<Button
+						icon={ undo }
+						showTooltip={ true }
+						label={ __(
+							'Reset to default grid layout',
+							'b2wp-grid'
+						) }
+						onClick={ () => resetGridAttributes( setAttributes ) }
+					/>
+				</FlexItem>
+			</Flex>
+		</Spacer>
+	</>
 );
 
 const SingleColumnItem = styled( ToolsPanelItem )`

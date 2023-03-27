@@ -18,7 +18,7 @@ import PluginGridUserPanel from './PluginGridUserPanel';
 export const AreasPanel = () => {
 	const plugin = getPlugin( 'plugin-grid-user-panel' );
 	const setAttributes = plugin.settings.setAttributes;
-	const setCSSAttributes = plugin.settings.setCSSAttributes;
+	const setGridAttributes = plugin.settings.setGridAttributes;
 
 	const [ hasUpdated, setHasUpdated ] = useState( false );
 	const [ numberNamedAreas, setNumberNamedAreas ] = useState( 3 );
@@ -44,7 +44,7 @@ grid-template-areas: ${ mobileAreas };
 			numberNamedAreas,
 		};
 
-		setCSSAttributes( newAttributes, setAttributes );
+		setGridAttributes( setAttributes, newAttributes );
 	}, [ areas, mobileAreas, numberNamedAreas, mobileBreakpoint ] );
 
 	return (
