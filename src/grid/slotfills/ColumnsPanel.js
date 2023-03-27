@@ -70,7 +70,7 @@ export const ColumnsPanel = () => {
 	}, [ columns, onMobile ] );
 
 	return (
-		<PluginGridUserPanel title={ __( 'Columns', 'b2wp-grid' ) }>
+		<PluginGridUserPanel title={ __( 'Columns' ) }>
 			<SetColumns
 				columns={ columns }
 				setColumns={ setColumns }
@@ -93,7 +93,7 @@ const SetColumns = ( { columns, setColumns, setHasUpdated } ) => {
 
 	return (
 		<RangeControl
-			label={ __( 'Number of columns', 'b2wp-grid' ) }
+			label={ __( 'Number of columns' ) }
 			value={ columns }
 			onChange={ ( val ) => updateColumns( val ) }
 			min={ 1 }

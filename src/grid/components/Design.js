@@ -115,7 +115,7 @@ export const Design = ( { attributes, setAttributes } ) => {
 
 const TemplateColumns = ( { attributes, setAttributes } ) => (
 	<TextControl
-		label={ __( 'Template Columns', 'b2wp-grid' ) }
+		label={ __( 'Template Columns' ) }
 		help={ __(
 			"Value for grid-template-columns CSS property, like '1fr 1fr 1fr'",
 			'b2wp-grid'
@@ -127,7 +127,7 @@ const TemplateColumns = ( { attributes, setAttributes } ) => (
 
 const TemplateRows = ( { attributes, setAttributes } ) => (
 	<TextControl
-		label={ __( 'Template Rows', 'b2wp-grid' ) }
+		label={ __( 'Template Rows' ) }
 		help={ __(
 			"Value for grid-template-rows CSS property, like '100px 1fr'",
 			'b2wp-grid'
@@ -140,7 +140,7 @@ const TemplateRows = ( { attributes, setAttributes } ) => (
 const TemplateAreas = ( { attributes, setAttributes } ) => (
 	<TextareaControl
 		rows={ 6 }
-		label={ __( 'Template Areas', 'b2wp-grid' ) }
+		label={ __( 'Template Areas' ) }
 		help={ __(
 			"Value for grid-template-areas CSS property, like 'a a' 'b c'",
 			'b2wp-grid'
@@ -152,8 +152,8 @@ const TemplateAreas = ( { attributes, setAttributes } ) => (
 
 const NumberNamedAreas = ( { attributes, setAttributes } ) => (
 	<RangeControl
-		label={ __( 'Number of named areas', 'b2wp-grid' ) }
-		help={ __( "Auto-generate named areas starting at 'a'", 'b2wp-grid' ) }
+		label={ __( 'Number of named areas' ) }
+		help={ __( "Auto-generate named areas starting at 'a'" ) }
 		value={ attributes.numberNamedAreas }
 		onChange={ ( val ) => setAttributes( { numberNamedAreas: val } ) }
 		min={ 0 }
@@ -163,7 +163,7 @@ const NumberNamedAreas = ( { attributes, setAttributes } ) => (
 
 const AutoColumns = ( { attributes, setAttributes } ) => (
 	<TextControl
-		label={ __( 'Auto Columns', 'b2wp-grid' ) }
+		label={ __( 'Auto Columns' ) }
 		help={ __(
 			"Value for grid-auto-columns CSS property, like 'min-content'",
 			'b2wp-grid'
@@ -175,7 +175,7 @@ const AutoColumns = ( { attributes, setAttributes } ) => (
 
 const AutoRows = ( { attributes, setAttributes } ) => (
 	<TextControl
-		label={ __( 'Auto Rows', 'b2wp-grid' ) }
+		label={ __( 'Auto Rows' ) }
 		help={ __(
 			"Value for grid-auto-rows CSS property, like 'min-content'",
 			'b2wp-grid'
@@ -216,7 +216,7 @@ const AutoFlow = ( { attributes, setAttributes } ) => {
 	return (
 		<PanelRow>
 			<RadioControl
-				label={ __( 'Auto Flow', 'b2wp-grid' ) }
+				label={ __( 'Auto Flow' ) }
 				help={ __(
 					'Value for grid-auto-flow CSS property',
 					'b2wp-grid'
@@ -243,7 +243,7 @@ const CustomCSS = ( { attributes, setAttributes } ) => (
 	<PanelRow>
 		<TextareaControl
 			rows={ 30 }
-			label={ __( 'Custom CSS', 'b2wp-grid' ) }
+			label={ __( 'Custom CSS' ) }
 			help={ __(
 				"Enter custom CSS. '.wp-grid-name-class' will be auto-replaced with block's grid name.",
 				'b2wp-grid'

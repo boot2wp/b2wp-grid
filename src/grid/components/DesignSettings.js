@@ -58,7 +58,7 @@ export const DesignSettings = ( { attributes, setAttributes } ) => {
 							) }
 							onClick={ toggleSavedLayoutsVisible }
 						>
-							{ __( 'Manage saved layouts', 'b2wp-grid' ) }
+							{ __( 'Manage saved layouts' ) }
 						</Button>
 					</FlexItem>
 					<FlexItem>
@@ -80,7 +80,7 @@ export const DesignSettings = ( { attributes, setAttributes } ) => {
 							icon={ moreVertical }
 							isPressed={ moreSettingsVisible }
 							showTooltip={ true }
-							label={ __( 'Design settings', 'b2wp-grid' ) }
+							label={ __( 'Design settings' ) }
 							onClick={ toggleMoreSettingsVisible }
 						/>
 					</FlexItem>
@@ -95,7 +95,7 @@ export const DesignSettings = ( { attributes, setAttributes } ) => {
 			{ CSSVisible && <CSSProperties attributes={ attributes } /> }
 			{ moreSettingsVisible && (
 				<>
-					<Panel header={ __( 'Design Settings', 'b2wp-grid' ) }>
+					<Panel header={ __( 'Design Settings' ) }>
 						<PanelBody>
 							<GridName
 								attributes={ attributes }
@@ -119,7 +119,7 @@ export const DesignSettings = ( { attributes, setAttributes } ) => {
 
 const CSSProperties = ( { attributes } ) => {
 	return (
-		<Panel header={ __( 'Grid CSS Properties', 'b2wp-grid' ) }>
+		<Panel header={ __( 'Grid CSS Properties' ) }>
 			<PanelBody>
 				<pre>
 					<code style={ { background: 'unset', color: '#007CBA' } }>
@@ -133,7 +133,7 @@ const CSSProperties = ( { attributes } ) => {
 
 const GridName = ( { attributes, setAttributes } ) => (
 	<TextControl
-		label={ __( 'Grid Name', 'b2wp-grid' ) }
+		label={ __( 'Grid Name' ) }
 		help="Each grid on a post or page should have a unique name."
 		value={ attributes.gridName }
 		onChange={ ( val ) => setAttributes( { gridName: val } ) }
@@ -176,28 +176,28 @@ const Panels = ( { attributes, setAttributes } ) => {
 	return (
 		<>
 			<CheckboxControl
-				label={ __( 'Layouts', 'b2wp-grid' ) }
+				label={ __( 'Layouts' ) }
 				checked={ enablePanels.find(
 					( panel ) => panel.name === 'Layouts'
 				) }
 				onChange={ ( val ) => setChecked( val, 'Layouts' ) }
 			/>
 			<CheckboxControl
-				label={ __( 'Columns', 'b2wp-grid' ) }
+				label={ __( 'Columns' ) }
 				checked={ enablePanels.find(
 					( panel ) => panel.name === 'Columns'
 				) }
 				onChange={ ( val ) => setChecked( val, 'Columns' ) }
 			/>
 			<CheckboxControl
-				label={ __( 'Auto', 'b2wp-grid' ) }
+				label={ __( 'Auto' ) }
 				checked={ enablePanels.find(
 					( panel ) => panel.name === 'Auto'
 				) }
 				onChange={ ( val ) => setChecked( val, 'Auto' ) }
 			/>
 			<CheckboxControl
-				label={ __( 'Sidebars', 'b2wp-grid' ) }
+				label={ __( 'Sidebars' ) }
 				checked={ enablePanels.find(
 					( panel ) => panel.name === 'Sidebars'
 				) }

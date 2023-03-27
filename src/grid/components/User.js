@@ -60,7 +60,7 @@ export const User = ( {
 					{ showLayoutsPanel && (
 						<>
 							<ToggleGroupControl
-								label={ __( 'Layouts', 'b2wp-grid' ) }
+								label={ __( 'Layouts' ) }
 								isDeselectable={ true }
 								onChange={ ( value ) => setLayouts( value ) }
 								isBlock
@@ -68,17 +68,17 @@ export const User = ( {
 								<ToggleGroupControlOptionIcon
 									value="2col"
 									icon={ TwoColumnIcon }
-									label={ __( '2 columns', 'b2wp-grid' ) }
+									label={ __( '2 columns' ) }
 								/>
 								<ToggleGroupControlOptionIcon
 									value="3col"
 									icon={ ThreeColumnIcon }
-									label={ __( '3 columns', 'b2wp-grid' ) }
+									label={ __( '3 columns' ) }
 								/>
 								<ToggleGroupControlOptionIcon
 									value="4col"
 									icon={ FourColumnIcon }
-									label={ __( '4 columns', 'b2wp-grid' ) }
+									label={ __( '4 columns' ) }
 								/>
 								<ToggleGroupControlOption
 									value="auto"
@@ -87,7 +87,7 @@ export const User = ( {
 										'auto layouts',
 										'b2wp-grid'
 									) }
-									label={ __( 'auto', 'b2wp-grid' ) }
+									label={ __( 'auto' ) }
 								/>
 								<ToggleGroupControlOption
 									value="custom"
@@ -96,7 +96,7 @@ export const User = ( {
 										'custom layouts',
 										'b2wp-grid'
 									) }
-									label={ __( 'custom', 'b2wp-grid' ) }
+									label={ __( 'custom' ) }
 								/>
 							</ToggleGroupControl>
 							<>
@@ -154,7 +154,7 @@ const UserSettings = ( { setAttributes, showGrid, setShowGrid } ) => (
 		<Flex>
 			<FlexItem>
 				<CheckboxControl
-					label={ __( 'Show grid', 'b2wp-grid' ) }
+					label={ __( 'Show grid' ) }
 					checked={ showGrid }
 					onChange={ ( val ) => setShowGrid( val ) }
 				/>
@@ -163,7 +163,7 @@ const UserSettings = ( { setAttributes, showGrid, setShowGrid } ) => (
 				<Button
 					icon={ undo }
 					showTooltip={ true }
-					label={ __( 'Reset to default grid layout', 'b2wp-grid' ) }
+					label={ __( 'Reset to default grid layout' ) }
 					onClick={ () => resetGridAttributes( setAttributes ) }
 				/>
 			</FlexItem>
@@ -185,24 +185,24 @@ export const GridGapPanel = ( { attributes, setAttributes } ) => {
 		<ToolsPanel label={ __( 'Grid Gap' ) } resetAll={ resetAll }>
 			<SingleColumnItem
 				hasValue={ () => !! attributes.rowGap }
-				label={ __( 'Row', 'b2wp-grid' ) }
+				label={ __( 'Row' ) }
 				onDeselect={ () => setAttributes( { rowGap: '' } ) }
 				isShownByDefault
 			>
 				<UnitControl
-					label={ __( 'Row', 'b2wp-grid' ) }
+					label={ __( 'Row' ) }
 					onChange={ ( val ) => setAttributes( { rowGap: val } ) }
 					value={ attributes.rowGap }
 				/>
 			</SingleColumnItem>
 			<SingleColumnItem
 				hasValue={ () => !! attributes.columnGap }
-				label={ __( 'Column', 'b2wp-grid' ) }
+				label={ __( 'Column' ) }
 				onDeselect={ () => setAttributes( { columnGap: '' } ) }
 				isShownByDefault
 			>
 				<UnitControl
-					label={ __( 'Column', 'b2wp-grid' ) }
+					label={ __( 'Column' ) }
 					onChange={ ( val ) => setAttributes( { columnGap: val } ) }
 					value={ attributes.columnGap }
 				/>

@@ -65,7 +65,7 @@ export const AreasPanel = () => {
 	}, [ areas, mobileAreas, numberNamedAreas, mobileBreakpoint ] );
 
 	return (
-		<PluginGridUserPanel title={ __( 'Areas', 'b2wp-grid' ) }>
+		<PluginGridUserPanel title={ __( 'Areas' ) }>
 			<SetAreas
 				areas={ areas }
 				setAreas={ setAreas }
@@ -99,7 +99,7 @@ const SetAreas = ( { areas, setAreas, setHasUpdated } ) => {
 	return (
 		<TextareaControl
 			rows={ 6 }
-			label={ __( 'Template Areas', 'b2wp-grid' ) }
+			label={ __( 'Template Areas' ) }
 			help={ __(
 				"Value for grid-template-areas CSS property, like 'a a' 'b c'",
 				'b2wp-grid'
@@ -119,7 +119,7 @@ const SetMobileAreas = ( { mobileAreas, setMobileAreas, setHasUpdated } ) => {
 	return (
 		<TextareaControl
 			rows={ 6 }
-			label={ __( 'Mobile Template Areas', 'b2wp-grid' ) }
+			label={ __( 'Mobile Template Areas' ) }
 			help={ __(
 				'Value for grid-template-areas on mobile widths',
 				'b2wp-grid'
@@ -142,7 +142,7 @@ const SetNumberNamedAreas = ( {
 
 	return (
 		<RangeControl
-			label={ __( 'Number of named areas', 'b2wp-grid' ) }
+			label={ __( 'Number of named areas' ) }
 			help={ __(
 				"Auto-generate named areas starting at 'a'",
 				'b2wp-grid'
@@ -180,12 +180,12 @@ const SetMobileBreakpoint = ( {
 		>
 			<SingleColumnItem
 				hasValue={ () => !! mobileBreakpoint }
-				label={ __( 'Width', 'b2wp-grid' ) }
+				label={ __( 'Width' ) }
 				onDeselect={ () => setMobileBreakpoint( '600px' ) }
 				isShownByDefault
 			>
 				<UnitControl
-					label={ __( 'Width', 'b2wp-grid' ) }
+					label={ __( 'Width' ) }
 					onChange={ ( val ) => updateMobileBreakpoint( val ) }
 					value={ mobileBreakpoint }
 				/>

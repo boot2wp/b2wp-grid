@@ -48,7 +48,7 @@ export const PresetsAuto = ( { setAttributes } ) => {
 	return (
 		<>
 			<ToggleGroupControl
-				label={ __( 'Auto', 'b2wp-grid' ) }
+				label={ __( 'Auto' ) }
 				isAdaptiveWidth={ true }
 				value=""
 				isDeselectable={ true }
@@ -58,31 +58,31 @@ export const PresetsAuto = ( { setAttributes } ) => {
 				<ToggleGroupControlOptionIcon
 					value="column"
 					icon={ AutoColumnIcon }
-					label={ __( 'auto-column', 'b2wp-grid' ) }
+					label={ __( 'auto-column' ) }
 				/>
 				<ToggleGroupControlOptionIcon
 					value="row"
 					icon={ AutoRowIcon }
-					label={ __( 'auto-row', 'b2wp-grid' ) }
+					label={ __( 'auto-row' ) }
 				/>
 				<ToggleGroupControlOptionIcon
 					value="centered"
 					icon={ CenteredIcon }
-					label={ __( 'centerd', 'b2wp-grid' ) }
+					label={ __( 'centerd' ) }
 				/>
 			</ToggleGroupControl>
 			<>
 				{ presets === 'column' && (
-					<p>{ __( 'Auto-column layout selected', 'b2wp-grid' ) }</p>
+					<p>{ __( 'Auto-column layout selected' ) }</p>
 				) }
 				{ presets === 'row' && (
-					<p>{ __( 'Auto-row layout selected', 'b2wp-grid' ) }</p>
+					<p>{ __( 'Auto-row layout selected' ) }</p>
 				) }
 				{ presets === 'centered' && (
-					<p>{ __( 'Centered layout selected', 'b2wp-grid' ) }</p>
+					<p>{ __( 'Centered layout selected' ) }</p>
 				) }
 				{ presets === undefined && (
-					<p>{ __( 'Select a grid layout', 'b2wp-grid' ) }</p>
+					<p>{ __( 'Select a grid layout' ) }</p>
 				) }
 			</>
 		</>

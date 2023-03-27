@@ -87,7 +87,7 @@ export const SaveLayouts = ( { attributes, setAttributes } ) => {
 
 const LayoutName = ( { layoutName, setLayoutName } ) => (
 	<TextControl
-		label={ __( 'Layout name', 'b2wp-grid' ) }
+		label={ __( 'Layout name' ) }
 		value={ layoutName }
 		onChange={ ( val ) => setLayoutName( val ) }
 	/>
@@ -95,7 +95,7 @@ const LayoutName = ( { layoutName, setLayoutName } ) => (
 
 const LayoutDescription = ( { layoutDescription, setLayoutDescription } ) => (
 	<TextControl
-		label={ __( 'Layout description', 'b2wp-grid' ) }
+		label={ __( 'Layout description' ) }
 		value={ layoutDescription }
 		onChange={ ( val ) => setLayoutDescription( val ) }
 	/>
@@ -141,7 +141,7 @@ const SuccessNotice = ( { setSavedSuccess } ) => {
 		<Animate type="slide-in" options={ { origin: 'top' } }>
 			{ () => (
 				<Notice status="success" onRemove={ remove }>
-					{ __( 'Saved!', 'b2wp-grid' ) }
+					{ __( 'Saved!' ) }
 				</Notice>
 			) }
 		</Animate>
@@ -161,7 +161,7 @@ const SavedLayouts = ( { attributes, setAttributes } ) => {
 						variant="tertiary"
 						icon={ cancelCircleFilled }
 						showTooltip={ true }
-						label={ __( 'remove saved layout', 'b2wp-grid' ) }
+						label={ __( 'remove saved layout' ) }
 						onClick={ () =>
 							onRemoveSavedLayout(
 								index,
@@ -177,11 +177,9 @@ const SavedLayouts = ( { attributes, setAttributes } ) => {
 	return (
 		<>
 			<Divider />
-			<h2>{ __( 'Saved layouts', 'b2wp-grid' ) }</h2>
+			<h2>{ __( 'Saved layouts' ) }</h2>
 			{ hasNoCustomLayouts && (
-				<p>
-					{ __( 'No custom layouts have been saved.', 'b2wp-grid' ) }
-				</p>
+				<p>{ __( 'No custom layouts have been saved.' ) }</p>
 			) }
 			{ layouts }
 			<Divider />

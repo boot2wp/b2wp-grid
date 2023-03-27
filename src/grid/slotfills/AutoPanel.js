@@ -68,7 +68,7 @@ export const AutoPanel = () => {
 	}, [ minimumColumnWidth, onMobile ] );
 
 	return (
-		<PluginGridUserPanel title={ __( 'Auto', 'b2wp-grid' ) }>
+		<PluginGridUserPanel title={ __( 'Auto' ) }>
 			<SetMinWidth
 				minimumColumnWidth={ minimumColumnWidth }
 				setMinimumColumnWidth={ setMinimumColumnWidth }
@@ -108,12 +108,12 @@ const SetMinWidth = ( {
 		>
 			<SingleColumnItem
 				hasValue={ () => !! minimumColumnWidth }
-				label={ __( 'Width', 'b2wp-grid' ) }
+				label={ __( 'Width' ) }
 				onDeselect={ () => setMinimumColumnWidth( '10rem' ) }
 				isShownByDefault
 			>
 				<UnitControl
-					label={ __( 'Width', 'b2wp-grid' ) }
+					label={ __( 'Width' ) }
 					onChange={ ( val ) => updateMinimumColumnWidth( val ) }
 					value={ minimumColumnWidth }
 				/>

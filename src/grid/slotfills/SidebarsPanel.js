@@ -79,7 +79,7 @@ export const SidebarsPanel = () => {
 	}, [ sidebarWidth, sidebarLocation, onMobile ] );
 
 	return (
-		<PluginGridUserPanel title={ __( 'Sidebars', 'b2wp-grid' ) }>
+		<PluginGridUserPanel title={ __( 'Sidebars' ) }>
 			<SetSidebarLocation
 				sidebarLocation={ sidebarLocation }
 				setSidebarLocation={ setSidebarLocation }
@@ -177,12 +177,12 @@ const SetSidebarWidth = ( {
 		<ToolsPanel label={ __( 'Set Sidebar Width' ) } resetAll={ resetAll }>
 			<SingleColumnItem
 				hasValue={ () => !! sidebarWidth }
-				label={ __( 'Width', 'b2wp-grid' ) }
+				label={ __( 'Width' ) }
 				onDeselect={ () => setSidebarWidth( '200px' ) }
 				isShownByDefault
 			>
 				<UnitControl
-					label={ __( 'Width', 'b2wp-grid' ) }
+					label={ __( 'Width' ) }
 					onChange={ ( val ) => updateSidebarWidth( val ) }
 					value={ sidebarWidth }
 				/>

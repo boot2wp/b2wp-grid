@@ -56,7 +56,7 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 	return (
 		<>
 			<ToggleGroupControl
-				label={ __( '4 columns', 'b2wp-grid' ) }
+				label={ __( '4 columns' ) }
 				isAdaptiveWidth={ true }
 				value=""
 				isDeselectable={ true }
@@ -66,27 +66,25 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 				<ToggleGroupControlOptionIcon
 					value="featured"
 					icon={ FourColumnFeaturedIcon }
-					label={ __( 'featured', 'b2wp-grid' ) }
+					label={ __( 'featured' ) }
 				/>
 				<ToggleGroupControlOptionIcon
 					value="magazine"
 					icon={ FourColumnMagazineIcon }
-					label={ __( 'magazine', 'b2wp-grid' ) }
+					label={ __( 'magazine' ) }
 				/>
 				<ToggleGroupControlOptionIcon
 					value="equal"
 					icon={ FourColumnEqualIcon }
-					label={ __( 'equal', 'b2wp-grid' ) }
+					label={ __( 'equal' ) }
 				/>
 			</ToggleGroupControl>
 			<>
 				{ presets === 'featured' && (
-					<p>
-						{ __( 'Featured-block layout selected', 'b2wp-grid' ) }
-					</p>
+					<p>{ __( 'Featured-block layout selected' ) }</p>
 				) }
 				{ presets === 'magazine' && (
-					<p>{ __( 'Magazine layout selected', 'b2wp-grid' ) }</p>
+					<p>{ __( 'Magazine layout selected' ) }</p>
 				) }
 				{ presets === 'equal' && (
 					<p>
@@ -97,7 +95,7 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 					</p>
 				) }
 				{ presets === undefined && (
-					<p>{ __( 'Select a grid layout', 'b2wp-grid' ) }</p>
+					<p>{ __( 'Select a grid layout' ) }</p>
 				) }
 			</>
 		</>
