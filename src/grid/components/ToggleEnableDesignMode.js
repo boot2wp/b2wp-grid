@@ -17,6 +17,7 @@ export const ToggleEnableDesignMode = () => {
 				: true,
 		};
 	} );
+
 	const { updateBlockAttributes } = useDispatch( blockEditorStore );
 
 	let message = enableDesignMode

@@ -26,11 +26,6 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			registerPlugin( 'plugin-grid-user-panel', {
 				render: () => <></>,
 				scope: 'grid-user-slots',
-				settings: {
-					attributes,
-					setAttributes,
-					setGridAttributes,
-				},
 			} );
 		}
 	}, [] );
@@ -41,11 +36,6 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			registerPlugin( 'plugin-grid-design-panel', {
 				render: () => <></>,
 				scope: 'grid-design-slots',
-				settings: {
-					attributes,
-					setAttributes,
-					setGridAttributes,
-				},
 			} );
 		}
 	}, [] );
@@ -54,13 +44,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		const menuSettingsPlugin = getPlugin( 'plugin-grid-menu-settings' );
 		if ( ! menuSettingsPlugin ) {
 			registerPlugin( 'plugin-grid-menu-settings', {
-				render: () => (
-					<ToggleEnableDesignMode
-						attributes={ attributes }
-						setAttributes={ setAttributes }
-						clientId={ clientId }
-					/>
-				),
+				render: () => <ToggleEnableDesignMode />,
 			} );
 		}
 	}, [] );

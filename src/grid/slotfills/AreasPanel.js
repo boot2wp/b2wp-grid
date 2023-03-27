@@ -1,5 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
+import { useSelect, useDispatch } from '@wordpress/data';
+import { store as blockEditorStore } from '@wordpress/block-editor';
 
 import {
 	TextareaControl,
@@ -9,16 +11,21 @@ import {
 	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 
-import { getPlugin } from '@wordpress/plugins';
-
 import styled from '@emotion/styled';
 
 import PluginGridUserPanel from './PluginGridUserPanel';
 
 export const AreasPanel = () => {
-	const plugin = getPlugin( 'plugin-grid-user-panel' );
-	const setAttributes = plugin.settings.setAttributes;
-	const setGridAttributes = plugin.settings.setGridAttributes;
+	const { clientId } = useSelect( ( select ) => {
+		const { getSelectedBlockClientId } = select( blockEditorStore );
+		const clientId = getSelectedBlockClientId();
+
+		return {
+			clientId,
+		};
+	} );
+
+	const { updateBlockAttributes } = useDispatch( blockEditorStore );
 
 	const [ hasUpdated, setHasUpdated ] = useState( false );
 	const [ numberNamedAreas, setNumberNamedAreas ] = useState( 3 );
@@ -32,9 +39,9 @@ export const AreasPanel = () => {
 		}
 
 		const onMobileCSS = `@media screen and (max-width: ${ mobileBreakpoint }) {
-.wp-grid-name-class {
-grid-template-areas: ${ mobileAreas };
-}
+  .wp-grid-name-class {
+    grid-template-areas: ${ mobileAreas };
+  }
 }`;
 
 		const newAttributes = {
@@ -44,7 +51,9 @@ grid-template-areas: ${ mobileAreas };
 			numberNamedAreas,
 		};
 
-		setGridAttributes( setAttributes, newAttributes );
+		if ( clientId ) {
+			updateBlockAttributes( [ clientId ], newAttributes );
+		}
 	}, [ areas, mobileAreas, numberNamedAreas, mobileBreakpoint ] );
 
 	return (

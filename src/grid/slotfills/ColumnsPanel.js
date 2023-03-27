@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
-
+import { useSelect, useDispatch } from '@wordpress/data';
+import { store as blockEditorStore } from '@wordpress/block-editor';
 import { RangeControl, RadioControl } from '@wordpress/components';
 
-import { getPlugin } from '@wordpress/plugins';
 import PluginGridUserPanel from './PluginGridUserPanel';
 import {
 	autoColumnsOnMobileCSS,
@@ -11,9 +11,16 @@ import {
 } from '../components/utils';
 
 export const ColumnsPanel = () => {
-	const plugin = getPlugin( 'plugin-grid-user-panel' );
-	const setAttributes = plugin.settings.setAttributes;
-	const setGridAttributes = plugin.settings.setGridAttributes;
+	const { clientId } = useSelect( ( select ) => {
+		const { getSelectedBlockClientId } = select( blockEditorStore );
+		const clientId = getSelectedBlockClientId();
+
+		return {
+			clientId,
+		};
+	} );
+
+	const { updateBlockAttributes } = useDispatch( blockEditorStore );
 
 	const [ hasUpdated, setHasUpdated ] = useState( false );
 	const [ columns, setColumns ] = useState( undefined );
@@ -42,10 +49,18 @@ export const ColumnsPanel = () => {
 		}
 		const newAttributes = {
 			templateColumns: newTemplateColumns.trim(),
+			templateRows: '',
+			templateAreas: '',
+			autoColumns: '',
+			autoRows: '',
+			autoFlow: '',
 			customCSS: onMobileCSS,
+			numberNamedAreas: 0,
 		};
 
-		setGridAttributes( setAttributes, newAttributes );
+		if ( clientId ) {
+			updateBlockAttributes( [ clientId ], newAttributes );
+		}
 	}, [ columns, onMobile ] );
 
 	return (
