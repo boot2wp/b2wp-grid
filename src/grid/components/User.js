@@ -139,7 +139,6 @@ export const User = ( {
 			<Panel>
 				<PanelBody>
 					<UserSettings
-						attributes={ setAttributes }
 						setAttributes={ setAttributes }
 						showGrid={ showGrid }
 						setShowGrid={ setShowGrid }
@@ -150,36 +149,26 @@ export const User = ( {
 	);
 };
 
-const UserSettings = ( {
-	attributes,
-	setAttributes,
-	showGrid,
-	setShowGrid,
-} ) => (
-	<>
-		<Spacer paddingBottom={ 2 }>
-			<Flex>
-				<FlexItem>
-					<CheckboxControl
-						label={ __( 'Show grid', 'b2wp-grid' ) }
-						checked={ showGrid }
-						onChange={ ( val ) => setShowGrid( val ) }
-					/>
-				</FlexItem>
-				<FlexItem>
-					<Button
-						icon={ undo }
-						showTooltip={ true }
-						label={ __(
-							'Reset to default grid layout',
-							'b2wp-grid'
-						) }
-						onClick={ () => resetGridAttributes( setAttributes ) }
-					/>
-				</FlexItem>
-			</Flex>
-		</Spacer>
-	</>
+const UserSettings = ( { setAttributes, showGrid, setShowGrid } ) => (
+	<Spacer paddingBottom={ 2 }>
+		<Flex>
+			<FlexItem>
+				<CheckboxControl
+					label={ __( 'Show grid', 'b2wp-grid' ) }
+					checked={ showGrid }
+					onChange={ ( val ) => setShowGrid( val ) }
+				/>
+			</FlexItem>
+			<FlexItem>
+				<Button
+					icon={ undo }
+					showTooltip={ true }
+					label={ __( 'Reset to default grid layout', 'b2wp-grid' ) }
+					onClick={ () => resetGridAttributes( setAttributes ) }
+				/>
+			</FlexItem>
+		</Flex>
+	</Spacer>
 );
 
 const SingleColumnItem = styled( ToolsPanelItem )`

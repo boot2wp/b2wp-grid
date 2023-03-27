@@ -11,107 +11,91 @@ import {
 	__experimentalSpacer as Spacer,
 } from '@wordpress/components';
 
-import { SaveLayouts } from './SaveLayouts';
 import { DesignSettings } from './DesignSettings';
 import PluginGridDesignPanel from '../slotfills/PluginGridDesignPanel.js';
 
-export const Design = ( { attributes, setAttributes } ) => (
-	<Panel>
-		<PanelBody title="Design" initialOpen={ false }>
-			<SaveLayouts
-				attributes={ attributes }
-				setAttributes={ setAttributes }
-			/>
-			<DesignSettings
-				attributes={ attributes }
-				setAttributes={ setAttributes }
-			/>
-			<GridName
-				attributes={ attributes }
-				setAttributes={ setAttributes }
-			/>
-			<PluginGridDesignPanel.Slot />
-			<TabPanel
-				className="grid-design-tab-panel"
-				tabs={ [
-					{
-						name: 'tabtemplate',
-						title: 'Template',
-						className: 'tab-template',
-					},
-					{
-						name: 'tabauto',
-						title: 'Auto',
-						className: 'tab-auto',
-					},
-					{
-						name: 'tabcss',
-						title: 'CSS',
-						className: 'tab-css',
-					},
-				] }
-			>
-				{ ( tab ) => (
-					<>
-						{ tab.name === 'tabtemplate' && (
-							<Spacer marginTop={ 6 }>
-								<TemplateColumns
-									attributes={ attributes }
-									setAttributes={ setAttributes }
-								/>
-								<TemplateRows
-									attributes={ attributes }
-									setAttributes={ setAttributes }
-								/>
-								<NumberNamedAreas
-									attributes={ attributes }
-									setAttributes={ setAttributes }
-								/>
-								<TemplateAreas
-									attributes={ attributes }
-									setAttributes={ setAttributes }
-								/>
-							</Spacer>
-						) }
-						{ tab.name === 'tabauto' && (
-							<Spacer marginTop={ 6 }>
-								<AutoColumns
-									attributes={ attributes }
-									setAttributes={ setAttributes }
-								/>
-								<AutoRows
-									attributes={ attributes }
-									setAttributes={ setAttributes }
-								/>
-								<AutoFlow
-									attributes={ attributes }
-									setAttributes={ setAttributes }
-								/>
-							</Spacer>
-						) }
-						{ tab.name === 'tabcss' && (
-							<Spacer marginTop={ 6 }>
-								<CustomCSS
-									attributes={ attributes }
-									setAttributes={ setAttributes }
-								/>
-							</Spacer>
-						) }
-					</>
-				) }
-			</TabPanel>
-		</PanelBody>
-	</Panel>
-);
-
-const GridName = ( { attributes, setAttributes } ) => (
-	<TextControl
-		label={ __( 'Grid Name', 'b2wp-grid' ) }
-		help="Each grid on a post or page should have a unique name."
-		value={ attributes.gridName }
-		onChange={ ( val ) => setAttributes( { gridName: val } ) }
-	/>
-);
+export const Design = ( { attributes, setAttributes } ) => {
+	return (
+		<Panel>
+			<PanelBody title="Design" initialOpen={ false }>
+				<DesignSettings
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				/>
+				<PluginGridDesignPanel.Slot />
+				<TabPanel
+					className="grid-design-tab-panel"
+					tabs={ [
+						{
+							name: 'tabtemplate',
+							title: 'Template',
+							className: 'tab-template',
+						},
+						{
+							name: 'tabauto',
+							title: 'Auto',
+							className: 'tab-auto',
+						},
+						{
+							name: 'tabcss',
+							title: 'CSS',
+							className: 'tab-css',
+						},
+					] }
+				>
+					{ ( tab ) => (
+						<>
+							{ tab.name === 'tabtemplate' && (
+								<Spacer marginTop={ 6 }>
+									<TemplateColumns
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
+									<TemplateRows
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
+									<NumberNamedAreas
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
+									<TemplateAreas
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
+								</Spacer>
+							) }
+							{ tab.name === 'tabauto' && (
+								<Spacer marginTop={ 6 }>
+									<AutoColumns
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
+									<AutoRows
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
+									<AutoFlow
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
+								</Spacer>
+							) }
+							{ tab.name === 'tabcss' && (
+								<Spacer marginTop={ 6 }>
+									<CustomCSS
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
+								</Spacer>
+							) }
+						</>
+					) }
+				</TabPanel>
+			</PanelBody>
+		</Panel>
+	);
+};
 
 const TemplateColumns = ( { attributes, setAttributes } ) => (
 	<TextControl
@@ -238,27 +222,6 @@ const AutoFlow = ( { attributes, setAttributes } ) => {
 		</PanelRow>
 	);
 };
-
-// const AutoFlow = ( { attributes, setAttributes } ) => (
-// 	<PanelRow>
-// 		<RadioControl
-// 			label={ __( 'Auto Flow', 'b2wp-grid' ) }
-// 			help={ __( 'Value for grid-auto-flow CSS property', 'b2wp-grid' ) }
-// 			selected={ attributes.autoFlow }
-// 			options={ [
-// 				{ label: 'none', value: 'none' },
-// 				{ label: 'row', value: 'row' },
-// 				{ label: 'column', value: 'column' },
-// 				{ label: 'dense', value: 'dense' },
-// 				{ label: 'row dense', value: 'row dense' },
-// 				{ label: 'column dense', value: 'column dense' },
-// 			] }
-// 			onChange={ ( option ) => {
-// 				setAttributes( { autoFlow: option } );
-// 			} }
-// 		/>
-// 	</PanelRow>
-// );
 
 const CustomCSS = ( { attributes, setAttributes } ) => (
 	<PanelRow>

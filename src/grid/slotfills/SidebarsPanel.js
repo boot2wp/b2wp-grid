@@ -57,7 +57,7 @@ export const SidebarsPanel = () => {
 			customCSS: onMobileCSS,
 		};
 
-		setGridAttributes( setAttributes, newAttributes );
+		setGridAttributes( attributes, setAttributes, newAttributes );
 	}, [ sidebarWidth, sidebarLocation, onMobile ] );
 
 	return (

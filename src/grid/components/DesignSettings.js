@@ -1,31 +1,118 @@
 import { __ } from '@wordpress/i18n';
-import { Panel, PanelBody, CheckboxControl } from '@wordpress/components';
+import {
+	TextControl,
+	Panel,
+	PanelBody,
+	Button,
+	Flex,
+	FlexItem,
+	CheckboxControl,
+	__experimentalSpacer as Spacer,
+} from '@wordpress/components';
+import { moreVertical } from '@wordpress/icons';
+import { useState } from '@wordpress/element';
+
+import { SaveLayouts } from './SaveLayouts';
+
+// export const DesignSettings = ( { attributes, setAttributes } ) => {
+// 	return (
+// 		<>
+// 			<Panel>
+// 				<PanelBody
+// 					title={ __( 'Panels', 'b2wp-grid' ) }
+// 					initialOpen={ false }
+// 				>
+// 					<Panels
+// 						attributes={ attributes }
+// 						setAttributes={ setAttributes }
+// 					/>
+// 				</PanelBody>
+// 			</Panel>
+// 			<Panel>
+// 				<PanelBody>
+// 					<ApplyToQueryLoop
+// 						attributes={ attributes }
+// 						setAttributes={ setAttributes }
+// 					/>
+// 				</PanelBody>
+// 			</Panel>
+// 		</>
+// 	);
+// };
 
 export const DesignSettings = ( { attributes, setAttributes } ) => {
+	const [ savedLayoutsVisible, setSavedLayoutsVisible ] = useState( false );
+	const [ moreSettingsVisible, setMoreSettingsVisible ] = useState( false );
+
+	const toggleSavedLayoutsVisible = () => {
+		setSavedLayoutsVisible( ( current ) => ! current );
+	};
+
+	const toggleMoreSettingsVisible = () => {
+		setMoreSettingsVisible( ( current ) => ! current );
+	};
 	return (
 		<>
-			<Panel>
-				<PanelBody
-					title={ __( 'Panels', 'b2wp-grid' ) }
-					initialOpen={ false }
-				>
-					<Panels
-						attributes={ attributes }
-						setAttributes={ setAttributes }
-					/>
-				</PanelBody>
-			</Panel>
-			<Panel>
-				<PanelBody>
-					<ApplyToQueryLoop
-						attributes={ attributes }
-						setAttributes={ setAttributes }
-					/>
-				</PanelBody>
-			</Panel>
+			<Spacer paddingBottom={ 2 }>
+				<Flex>
+					<FlexItem>
+						<Button
+							variant="secondary"
+							isPressed={ savedLayoutsVisible }
+							onClick={ toggleSavedLayoutsVisible }
+						>
+							{ __( 'Manage saved layouts', 'b2wp-grid' ) }
+						</Button>
+					</FlexItem>
+					<FlexItem>
+						<Button
+							icon={ moreVertical }
+							isPressed={ moreSettingsVisible }
+							showTooltip={ true }
+							label={ __( 'Design settings', 'b2wp-grid' ) }
+							onClick={ toggleMoreSettingsVisible }
+						/>
+					</FlexItem>
+				</Flex>
+			</Spacer>
+			{ savedLayoutsVisible && (
+				<SaveLayouts
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				/>
+			) }
+			{ moreSettingsVisible && (
+				<>
+					<Panel header={ __( 'Design Settings', 'b2wp-grid' ) }>
+						<PanelBody>
+							<GridName
+								attributes={ attributes }
+								setAttributes={ setAttributes }
+							/>
+							<ApplyToQueryLoop
+								attributes={ attributes }
+								setAttributes={ setAttributes }
+							/>
+							<Panels
+								attributes={ attributes }
+								setAttributes={ setAttributes }
+							/>
+						</PanelBody>
+					</Panel>
+				</>
+			) }
 		</>
 	);
 };
+
+const GridName = ( { attributes, setAttributes } ) => (
+	<TextControl
+		label={ __( 'Grid Name', 'b2wp-grid' ) }
+		help="Each grid on a post or page should have a unique name."
+		value={ attributes.gridName }
+		onChange={ ( val ) => setAttributes( { gridName: val } ) }
+	/>
+);
 
 const ApplyToQueryLoop = ( { attributes, setAttributes } ) => (
 	<CheckboxControl
