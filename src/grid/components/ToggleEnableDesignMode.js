@@ -24,8 +24,8 @@ export const ToggleEnableDesignMode = () => {
 	const { updateBlockAttributes } = useDispatch( blockEditorStore );
 
 	let message = enableDesignMode
-		? __( 'Disable Design Mode', 'b2wp-grid' )
-		: __( 'Enable Design Mode', 'b2wp-grid' );
+		? __( 'Disable Design Mode' )
+		: __( 'Enable Design Mode' );
 
 	const setEnableDesignMode = () => {
 		if ( clientId ) {

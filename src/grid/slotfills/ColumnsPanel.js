@@ -115,11 +115,11 @@ const SetOnMobileType = ( { onMobile, setOnMobile, setHasUpdated } ) => {
 			selected={ onMobile }
 			options={ [
 				{
-					label: __( 'One column', 'b2wp-grid' ),
+					label: __( 'One column' ),
 					value: 'oneColumn',
 				},
 				{
-					label: __( 'Auto columns', 'b2wp-grid' ),
+					label: __( 'Auto columns' ),
 					value: 'autoColumns',
 				},
 			] }

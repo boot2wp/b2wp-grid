@@ -78,8 +78,7 @@ const HasNoCustomLayouts = ( { attributes } ) => {
 			{ showDesignPanel( attributes ) && (
 				<p>
 					{ __(
-						'No custom layouts have been saved. Design and save a layout yourself!',
-						'b2wp-grid'
+						'No custom layouts have been saved. Design and save a layout yourself!'
 					) }
 				</p>
 			) }

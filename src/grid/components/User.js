@@ -92,19 +92,13 @@ export const User = ( {
 								<ToggleGroupControlOption
 									value="auto"
 									showTooltip={ true }
-									aria-label={ __(
-										'auto layouts',
-										'b2wp-grid'
-									) }
+									aria-label={ __( 'auto layouts' ) }
 									label={ __( 'auto' ) }
 								/>
 								<ToggleGroupControlOption
 									value="custom"
 									showTooltip={ true }
-									aria-label={ __(
-										'custom layouts',
-										'b2wp-grid'
-									) }
+									aria-label={ __( 'custom layouts' ) }
 									label={ __( 'custom' ) }
 								/>
 							</ToggleGroupControl>

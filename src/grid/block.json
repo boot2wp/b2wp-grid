@@ -6,8 +6,9 @@
 	"title": "CSS Grid",
 	"category": "design",
 	"icon": "layout",
-	"description": "A CSS Grid Block",
-	"keywords": [ "grid", "layout" ],
+	"description": "Use, design and share CSS grid layouts.",
+	"keywords": [ "grid", "layout", "CSS" ],
+	"textdomain": "b2wp-grid",
 	"supports": {
 		"html": false,
 		"align": true,
@@ -96,7 +97,6 @@
 			"default": false
 		}
 	},
-	"textdomain": "b2wp-grid",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

@@ -116,11 +116,11 @@ const SetSidebarLocation = ( {
 			selected={ sidebarLocation }
 			options={ [
 				{
-					label: __( 'Left', 'b2wp-grid' ),
+					label: __( 'Left' ),
 					value: 'left',
 				},
 				{
-					label: __( 'Right', 'b2wp-grid' ),
+					label: __( 'Right' ),
 					value: 'right',
 				},
 			] }
@@ -142,11 +142,11 @@ const SetOnMobileType = ( { onMobile, setOnMobile, setHasUpdated } ) => {
 			selected={ onMobile }
 			options={ [
 				{
-					label: __( 'One column', 'b2wp-grid' ),
+					label: __( 'One column' ),
 					value: 'oneColumn',
 				},
 				{
-					label: __( 'Auto columns', 'b2wp-grid' ),
+					label: __( 'Auto columns' ),
 					value: 'autoColumns',
 				},
 			] }

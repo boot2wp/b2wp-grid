@@ -53,8 +53,7 @@ export const DesignSettings = ( { attributes, setAttributes } ) => {
 							isPressed={ savedLayoutsVisible }
 							showTooltip={ true }
 							label={ __(
-								'Save and remove custom grid layouts',
-								'b2wp-grid'
+								'Save and remove custom grid layouts'
 							) }
 							onClick={ toggleSavedLayoutsVisible }
 						>
@@ -66,10 +65,7 @@ export const DesignSettings = ( { attributes, setAttributes } ) => {
 							variant="tertiary"
 							isPressed={ CSSVisible }
 							showTooltip={ true }
-							label={ __(
-								'View grid CSS properties',
-								'b2wp-grid'
-							) }
+							label={ __( 'View grid CSS properties' ) }
 							onClick={ toggleCSSVisible }
 						>
 							CSS
@@ -144,8 +140,7 @@ const ApplyToQueryLoop = ( { attributes, setAttributes } ) => (
 	<CheckboxControl
 		label="Apply to Query Loop block"
 		help={ __(
-			'Apply the css grid property to a Query Loop block inside the grid, instead of to the CSS Grid block itself.',
-			'b2wp-grid'
+			'Apply the css grid property to a Query Loop block inside the grid, instead of to the CSS Grid block itself.'
 		) }
 		checked={ attributes.applyToQueryLoop }
 		onChange={ ( val ) => setAttributes( { applyToQueryLoop: val } ) }

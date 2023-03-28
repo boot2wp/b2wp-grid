@@ -117,8 +117,7 @@ const TemplateColumns = ( { attributes, setAttributes } ) => (
 	<TextControl
 		label={ __( 'Template Columns' ) }
 		help={ __(
-			"Value for grid-template-columns CSS property, like '1fr 1fr 1fr'",
-			'b2wp-grid'
+			"Value for grid-template-columns CSS property, like '1fr 1fr 1fr'"
 		) }
 		value={ attributes.templateColumns }
 		onChange={ ( val ) => setAttributes( { templateColumns: val } ) }
@@ -129,8 +128,7 @@ const TemplateRows = ( { attributes, setAttributes } ) => (
 	<TextControl
 		label={ __( 'Template Rows' ) }
 		help={ __(
-			"Value for grid-template-rows CSS property, like '100px 1fr'",
-			'b2wp-grid'
+			"Value for grid-template-rows CSS property, like '100px 1fr'"
 		) }
 		value={ attributes.templateRows }
 		onChange={ ( val ) => setAttributes( { templateRows: val } ) }
@@ -142,8 +140,7 @@ const TemplateAreas = ( { attributes, setAttributes } ) => (
 		rows={ 6 }
 		label={ __( 'Template Areas' ) }
 		help={ __(
-			"Value for grid-template-areas CSS property, like 'a a' 'b c'",
-			'b2wp-grid'
+			"Value for grid-template-areas CSS property, like 'a a' 'b c'"
 		) }
 		value={ attributes.templateAreas }
 		onChange={ ( val ) => setAttributes( { templateAreas: val } ) }
@@ -165,8 +162,7 @@ const AutoColumns = ( { attributes, setAttributes } ) => (
 	<TextControl
 		label={ __( 'Auto Columns' ) }
 		help={ __(
-			"Value for grid-auto-columns CSS property, like 'min-content'",
-			'b2wp-grid'
+			"Value for grid-auto-columns CSS property, like 'min-content'"
 		) }
 		value={ attributes.autoColumns }
 		onChange={ ( val ) => setAttributes( { autoColumns: val } ) }
@@ -177,8 +173,7 @@ const AutoRows = ( { attributes, setAttributes } ) => (
 	<TextControl
 		label={ __( 'Auto Rows' ) }
 		help={ __(
-			"Value for grid-auto-rows CSS property, like 'min-content'",
-			'b2wp-grid'
+			"Value for grid-auto-rows CSS property, like 'min-content'"
 		) }
 		value={ attributes.autoRows }
 		onChange={ ( val ) => setAttributes( { autoRows: val } ) }
@@ -217,10 +212,7 @@ const AutoFlow = ( { attributes, setAttributes } ) => {
 		<PanelRow>
 			<RadioControl
 				label={ __( 'Auto Flow' ) }
-				help={ __(
-					'Value for grid-auto-flow CSS property',
-					'b2wp-grid'
-				) }
+				help={ __( 'Value for grid-auto-flow CSS property' ) }
 				selected={ getAutoFlowSelected() }
 				options={ [
 					{ label: 'none', value: 'none' },
@@ -245,8 +237,7 @@ const CustomCSS = ( { attributes, setAttributes } ) => (
 			rows={ 30 }
 			label={ __( 'Custom CSS' ) }
 			help={ __(
-				"Enter custom CSS. '.wp-grid-name-class' will be auto-replaced with block's grid name.",
-				'b2wp-grid'
+				"Enter custom CSS. '.wp-grid-name-class' will be auto-replaced with block's grid name."
 			) }
 			placeholder=".wp-grid-name-class {}"
 			value={ attributes.customCSS }
