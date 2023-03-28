@@ -4032,7 +4032,7 @@ const ToggleEnableDesignMode = () => {
   const {
     updateBlockAttributes
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.store);
-  let message = enableDesignMode ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Disable Design Mode') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enable Design Mode');
+  let message = enableDesignMode ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Disable design mode') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enable design mode');
   const setEnableDesignMode = () => {
     if (clientId) {
       updateBlockAttributes([clientId], {
