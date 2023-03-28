@@ -138,9 +138,9 @@ const GridName = ( { attributes, setAttributes } ) => (
 
 const ApplyToQueryLoop = ( { attributes, setAttributes } ) => (
 	<CheckboxControl
-		label="Apply to Query Loop block"
+		label="Experimental: Apply to Query Loop block"
 		help={ __(
-			'Apply the css grid property to a Query Loop block inside the grid, instead of to the CSS Grid block itself.'
+			'Experimental: Apply the css grid property to a Query Loop block inside the grid, instead of to the CSS Grid block itself.'
 		) }
 		checked={ attributes.applyToQueryLoop }
 		onChange={ ( val ) => setAttributes( { applyToQueryLoop: val } ) }
@@ -199,7 +199,8 @@ const Panels = ( { attributes, setAttributes } ) => {
 				onChange={ ( val ) => setChecked( val, 'Sidebars' ) }
 			/>
 			<CheckboxControl
-				label="Areas"
+				label="Areas - design"
+				help={ __( 'Show panels in user and design panels.' ) }
 				checked={ enablePanels.find(
 					( panel ) => panel.name === 'Areas'
 				) }

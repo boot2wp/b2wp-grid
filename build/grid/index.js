@@ -2440,8 +2440,8 @@ const ApplyToQueryLoop = _ref4 => {
     setAttributes
   } = _ref4;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CheckboxControl, {
-    label: "Apply to Query Loop block",
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Apply the css grid property to a Query Loop block inside the grid, instead of to the CSS Grid block itself.'),
+    label: "Experimental: Apply to Query Loop block",
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Experimental: Apply the css grid property to a Query Loop block inside the grid, instead of to the CSS Grid block itself.'),
     checked: attributes.applyToQueryLoop,
     onChange: val => setAttributes({
       applyToQueryLoop: val
@@ -2489,7 +2489,8 @@ const Panels = _ref5 => {
     checked: enablePanels.find(panel => panel.name === 'Sidebars'),
     onChange: val => setChecked(val, 'Sidebars')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CheckboxControl, {
-    label: "Areas",
+    label: "Areas - design",
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Show panels in user and design panels.'),
     checked: enablePanels.find(panel => panel.name === 'Areas'),
     onChange: val => setChecked(val, 'Areas')
   }));
