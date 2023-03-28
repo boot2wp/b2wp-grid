@@ -1,13 +1,18 @@
+/**
+ *
+ */
+const GRID_BLOCK_CLASS = '.wp-block-b2wp-grid';
+
 export const GridStyle = ( { attributes } ) => {
-	let gridSelector = `.wp-block-b2wp-grid.${ attributes.gridName }`;
+	let gridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName }`;
 	if ( attributes.applyToQueryLoop ) {
-		gridSelector = `.wp-block-b2wp-grid.${ attributes.gridName } > .wp-block-query > .wp-block-post-template`;
+		gridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName } > .wp-block-query > .wp-block-post-template`;
 	}
 	return <style>{ getRules( attributes, gridSelector ) }</style>;
 };
 
 export const gridCSSRules = ( attributes ) => {
-	let gridSelector = `.wp-block-b2wp-grid.${ attributes.gridName }`;
+	let gridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName }`;
 	return getRules( attributes, gridSelector );
 };
 
@@ -23,9 +28,9 @@ ${ gridCustomCSS( attributes ) }`;
 };
 
 export const EditorGridStyle = ( { attributes, showGrid } ) => {
-	let gridSelector = `.wp-block-b2wp-grid.${ attributes.gridName } > * > .block-editor-block-list__layout`;
+	let gridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName } > * > .block-editor-block-list__layout`;
 	if ( attributes.applyToQueryLoop ) {
-		gridSelector = `.wp-block-b2wp-grid.${ attributes.gridName } .wp-block-query > .wp-block-post-template`;
+		gridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName } .wp-block-query > .wp-block-post-template`;
 	}
 	return (
 		<style>
@@ -124,7 +129,7 @@ function gridGap( attributes ) {
 }
 
 function gridCustomCSS( attributes ) {
-	const defaultGridSelector = `.wp-block-b2wp-grid.${ attributes.gridName }`;
+	const defaultGridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName }`;
 	let customCSS = attributes.customCSS.trim();
 	if ( customCSS.length !== 0 ) {
 		customCSS = customCSS.replaceAll(
@@ -137,7 +142,7 @@ function gridCustomCSS( attributes ) {
 }
 
 function editorGridCustomCSS( attributes, gridSelector ) {
-	const defaultGridSelector = `.wp-block-b2wp-grid.${ attributes.gridName }`;
+	const defaultGridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName }`;
 	let customCSS = attributes.customCSS.trim();
 	if ( customCSS.length !== 0 ) {
 		customCSS = customCSS.replaceAll( defaultGridSelector, gridSelector );

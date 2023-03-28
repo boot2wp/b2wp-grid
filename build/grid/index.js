@@ -2513,18 +2513,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
+/**
+ *
+ */
+const GRID_BLOCK_CLASS = '.wp-block-b2wp-grid';
 const GridStyle = _ref => {
   let {
     attributes
   } = _ref;
-  let gridSelector = `.wp-block-b2wp-grid.${attributes.gridName}`;
+  let gridSelector = `${GRID_BLOCK_CLASS}.${attributes.gridName}`;
   if (attributes.applyToQueryLoop) {
-    gridSelector = `.wp-block-b2wp-grid.${attributes.gridName} > .wp-block-query > .wp-block-post-template`;
+    gridSelector = `${GRID_BLOCK_CLASS}.${attributes.gridName} > .wp-block-query > .wp-block-post-template`;
   }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, getRules(attributes, gridSelector));
 };
 const gridCSSRules = attributes => {
-  let gridSelector = `.wp-block-b2wp-grid.${attributes.gridName}`;
+  let gridSelector = `${GRID_BLOCK_CLASS}.${attributes.gridName}`;
   return getRules(attributes, gridSelector);
 };
 const getRules = (attributes, gridSelector) => {
@@ -2541,9 +2545,9 @@ const EditorGridStyle = _ref2 => {
     attributes,
     showGrid
   } = _ref2;
-  let gridSelector = `.wp-block-b2wp-grid.${attributes.gridName} > * > .block-editor-block-list__layout`;
+  let gridSelector = `${GRID_BLOCK_CLASS}.${attributes.gridName} > * > .block-editor-block-list__layout`;
   if (attributes.applyToQueryLoop) {
-    gridSelector = `.wp-block-b2wp-grid.${attributes.gridName} .wp-block-query > .wp-block-post-template`;
+    gridSelector = `${GRID_BLOCK_CLASS}.${attributes.gridName} .wp-block-query > .wp-block-post-template`;
   }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, `
 ${gridSelector} {
@@ -2625,7 +2629,7 @@ function gridGap(attributes) {
   return gap;
 }
 function gridCustomCSS(attributes) {
-  const defaultGridSelector = `.wp-block-b2wp-grid.${attributes.gridName}`;
+  const defaultGridSelector = `${GRID_BLOCK_CLASS}.${attributes.gridName}`;
   let customCSS = attributes.customCSS.trim();
   if (customCSS.length !== 0) {
     customCSS = customCSS.replaceAll('.wp-grid-name-class', defaultGridSelector);
@@ -2634,7 +2638,7 @@ function gridCustomCSS(attributes) {
   return '';
 }
 function editorGridCustomCSS(attributes, gridSelector) {
-  const defaultGridSelector = `.wp-block-b2wp-grid.${attributes.gridName}`;
+  const defaultGridSelector = `${GRID_BLOCK_CLASS}.${attributes.gridName}`;
   let customCSS = attributes.customCSS.trim();
   if (customCSS.length !== 0) {
     customCSS = customCSS.replaceAll(defaultGridSelector, gridSelector);
