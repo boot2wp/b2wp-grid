@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	Panel,
@@ -17,6 +20,14 @@ import {
 import { useState, useEffect } from '@wordpress/element';
 import { undo } from '@wordpress/icons';
 
+/**
+ * External dependencies
+ */
+import styled from '@emotion/styled';
+
+/**
+ * Internal dependencies
+ */
 import { TwoColumnIcon, ThreeColumnIcon, FourColumnIcon } from './Icons';
 import { PresetsTwoColumn } from './PresetsTwoColumn';
 import { PresetsThreeColumn } from './PresetsThreeColumn';
@@ -24,9 +35,7 @@ import { PresetsFourColumn } from './PresetsFourColumn';
 import { PresetsAuto } from './PresetsAuto';
 import { PresetsCustom } from './PresetsCustom';
 import { resetGridAttributes } from './utils';
-
 import PluginGridUserPanel from '../slotfills/PluginGridUserPanel';
-import styled from '@emotion/styled';
 
 export const User = ( {
 	attributes,

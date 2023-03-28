@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
 import { useSelect, useDispatch } from '@wordpress/data';

@@ -3735,9 +3735,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Icons */ "./src/grid/components/Icons.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./src/grid/components/utils.js");
 
+/**
+ * WordPress dependencies
+ */
 
 
 
+
+
+/**
+ * Internal dependencies
+ */
 
 
 const PresetsTwoColumn = _ref => {
@@ -3830,6 +3838,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/cancel-circle-filled.js");
 
+/**
+ * WordPress dependencies
+ */
 
 
 
@@ -3995,6 +4006,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/unlock.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/lock-outline.js");
 
+/**
+ * WordPress dependencies
+ */
 
 
 
@@ -4054,21 +4068,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/undo.js");
-/* harmony import */ var _Icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Icons */ "./src/grid/components/Icons.js");
-/* harmony import */ var _PresetsTwoColumn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PresetsTwoColumn */ "./src/grid/components/PresetsTwoColumn.js");
-/* harmony import */ var _PresetsThreeColumn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PresetsThreeColumn */ "./src/grid/components/PresetsThreeColumn.js");
-/* harmony import */ var _PresetsFourColumn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PresetsFourColumn */ "./src/grid/components/PresetsFourColumn.js");
-/* harmony import */ var _PresetsAuto__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./PresetsAuto */ "./src/grid/components/PresetsAuto.js");
-/* harmony import */ var _PresetsCustom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./PresetsCustom */ "./src/grid/components/PresetsCustom.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils */ "./src/grid/components/utils.js");
-/* harmony import */ var _slotfills_PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../slotfills/PluginGridUserPanel */ "./src/grid/slotfills/PluginGridUserPanel.js");
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js");
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js");
+/* harmony import */ var _Icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Icons */ "./src/grid/components/Icons.js");
+/* harmony import */ var _PresetsTwoColumn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PresetsTwoColumn */ "./src/grid/components/PresetsTwoColumn.js");
+/* harmony import */ var _PresetsThreeColumn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PresetsThreeColumn */ "./src/grid/components/PresetsThreeColumn.js");
+/* harmony import */ var _PresetsFourColumn__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./PresetsFourColumn */ "./src/grid/components/PresetsFourColumn.js");
+/* harmony import */ var _PresetsAuto__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./PresetsAuto */ "./src/grid/components/PresetsAuto.js");
+/* harmony import */ var _PresetsCustom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./PresetsCustom */ "./src/grid/components/PresetsCustom.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./utils */ "./src/grid/components/utils.js");
+/* harmony import */ var _slotfills_PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../slotfills/PluginGridUserPanel */ "./src/grid/slotfills/PluginGridUserPanel.js");
+
+/**
+ * WordPress dependencies
+ */
 
 
 
 
 
+/**
+ * External dependencies
+ */
 
+
+/**
+ * Internal dependencies
+ */
 
 
 
@@ -4089,7 +4114,7 @@ const User = _ref => {
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     setLayoutsPanel(attributes.enablePanels.find(panel => panel.name === 'Layouts'));
   }, [attributes.enablePanels]);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, !showLayoutsPanel && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsCustom__WEBPACK_IMPORTED_MODULE_8__.PresetsCustom, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, !showLayoutsPanel && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsCustom__WEBPACK_IMPORTED_MODULE_9__.PresetsCustom, {
     attributes: attributes,
     setAttributes: setAttributes
   }), showLayoutsPanel && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControl, {
@@ -4099,15 +4124,15 @@ const User = _ref => {
     isBlock: true
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
     value: "2col",
-    icon: _Icons__WEBPACK_IMPORTED_MODULE_3__.TwoColumnIcon,
+    icon: _Icons__WEBPACK_IMPORTED_MODULE_4__.TwoColumnIcon,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('2 columns')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
     value: "3col",
-    icon: _Icons__WEBPACK_IMPORTED_MODULE_3__.ThreeColumnIcon,
+    icon: _Icons__WEBPACK_IMPORTED_MODULE_4__.ThreeColumnIcon,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('3 columns')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
     value: "4col",
-    icon: _Icons__WEBPACK_IMPORTED_MODULE_3__.FourColumnIcon,
+    icon: _Icons__WEBPACK_IMPORTED_MODULE_4__.FourColumnIcon,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('4 columns')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOption, {
     value: "auto",
@@ -4119,22 +4144,22 @@ const User = _ref => {
     showTooltip: true,
     "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('custom layouts', 'b2wp-grid'),
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('custom')
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, layouts === '2col' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsTwoColumn__WEBPACK_IMPORTED_MODULE_4__.PresetsTwoColumn, {
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, layouts === '2col' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsTwoColumn__WEBPACK_IMPORTED_MODULE_5__.PresetsTwoColumn, {
     attributes: attributes,
     setAttributes: setAttributes
-  }), layouts === '3col' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsThreeColumn__WEBPACK_IMPORTED_MODULE_5__.PresetsThreeColumn, {
+  }), layouts === '3col' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsThreeColumn__WEBPACK_IMPORTED_MODULE_6__.PresetsThreeColumn, {
     attributes: attributes,
     setAttributes: setAttributes
-  }), layouts === '4col' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsFourColumn__WEBPACK_IMPORTED_MODULE_6__.PresetsFourColumn, {
+  }), layouts === '4col' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsFourColumn__WEBPACK_IMPORTED_MODULE_7__.PresetsFourColumn, {
     attributes: attributes,
     setAttributes: setAttributes
-  }), layouts === 'auto' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsAuto__WEBPACK_IMPORTED_MODULE_7__.PresetsAuto, {
+  }), layouts === 'auto' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsAuto__WEBPACK_IMPORTED_MODULE_8__.PresetsAuto, {
     attributes: attributes,
     setAttributes: setAttributes
-  }), layouts === 'custom' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsCustom__WEBPACK_IMPORTED_MODULE_8__.PresetsCustom, {
+  }), layouts === 'custom' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_PresetsCustom__WEBPACK_IMPORTED_MODULE_9__.PresetsCustom, {
     attributes: attributes,
     setAttributes: setAttributes
-  }))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_slotfills_PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_10__["default"].Slot, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(UserSettings, {
+  }))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_slotfills_PluginGridUserPanel__WEBPACK_IMPORTED_MODULE_11__["default"].Slot, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(UserSettings, {
     setAttributes: setAttributes,
     showGrid: showGrid,
     setShowGrid: setShowGrid
@@ -4156,10 +4181,10 @@ const UserSettings = _ref2 => {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__["default"],
     showTooltip: true,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Reset to default grid layout'),
-    onClick: () => (0,_utils__WEBPACK_IMPORTED_MODULE_9__.resetGridAttributes)(setAttributes)
+    onClick: () => (0,_utils__WEBPACK_IMPORTED_MODULE_10__.resetGridAttributes)(setAttributes)
   }))));
 };
-const SingleColumnItem = (0,_emotion_styled__WEBPACK_IMPORTED_MODULE_11__["default"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToolsPanelItem)`
+const SingleColumnItem = (0,_emotion_styled__WEBPACK_IMPORTED_MODULE_3__["default"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToolsPanelItem)`
 	grid-column: span 1;
 `;
 const GridGapPanel = _ref3 => {
@@ -5043,7 +5068,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 
+/**
+ * WordPress dependencies
+ */
 
+
+/**
+ * Internal dependencies
+ */
 const {
   Fill,
   Slot
@@ -5099,7 +5131,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * Internal dependencies
+ * External dependencies
  */
 
 

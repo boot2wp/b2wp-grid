@@ -1,5 +1,11 @@
+/**
+ * WordPress dependencies
+ */
 import { createSlotFill, Panel, PanelBody } from '@wordpress/components';
 
+/**
+ * Internal dependencies
+ */
 const { Fill, Slot } = createSlotFill( 'PluginGridUserPanel' );
 
 const PluginGridUserPanel = ( { children, title } ) => (

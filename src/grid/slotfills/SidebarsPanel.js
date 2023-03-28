@@ -13,7 +13,7 @@ import {
 } from '@wordpress/components';
 
 /**
- * Internal dependencies
+ * External dependencies
  */
 import styled from '@emotion/styled';
 
