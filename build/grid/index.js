@@ -2525,7 +2525,9 @@ const GridStyle = _ref => {
   if (attributes.applyToQueryLoop) {
     gridSelector = `${GRID_BLOCK_CLASS}.${attributes.gridName} > .wp-block-query > .wp-block-post-template`;
   }
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, getRules(attributes, gridSelector));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, `
+`, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", null, getRules(attributes, gridSelector)), `
+`);
 };
 const gridCSSRules = attributes => {
   let gridSelector = `${GRID_BLOCK_CLASS}.${attributes.gridName}`;

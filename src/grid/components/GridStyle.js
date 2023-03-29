@@ -8,7 +8,15 @@ export const GridStyle = ( { attributes } ) => {
 	if ( attributes.applyToQueryLoop ) {
 		gridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName } > .wp-block-query > .wp-block-post-template`;
 	}
-	return <style>{ getRules( attributes, gridSelector ) }</style>;
+	return (
+		<>
+			{ `
+` }
+			<style>{ getRules( attributes, gridSelector ) }</style>
+			{ `
+` }
+		</>
+	);
 };
 
 export const gridCSSRules = ( attributes ) => {
