@@ -111,7 +111,7 @@ const SetOnMobileType = ( { onMobile, setOnMobile, setHasUpdated } ) => {
 	return (
 		<RadioControl
 			label="On mobile"
-			help="Select grid for mobile width."
+			help="Select grid layout for mobile width."
 			selected={ onMobile }
 			options={ [
 				{

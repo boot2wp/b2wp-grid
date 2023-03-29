@@ -4876,7 +4876,7 @@ const SetOnMobileType = _ref2 => {
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RadioControl, {
     label: "On mobile",
-    help: "Select grid for mobile width.",
+    help: "Select grid layout for mobile width.",
     selected: onMobile,
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('One column'),
@@ -5021,7 +5021,7 @@ const SetOnMobileType = _ref2 => {
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RadioControl, {
     label: "On mobile",
-    help: "Select grid for mobile width.",
+    help: "Select grid layout for mobile width.",
     selected: onMobile,
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('One column'),
@@ -5285,7 +5285,7 @@ const SetOnMobileType = _ref2 => {
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RadioControl, {
     label: "On mobile",
-    help: "Select grid for mobile width.",
+    help: "Select grid layout for mobile width.",
     selected: onMobile,
     options: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('One column'),
