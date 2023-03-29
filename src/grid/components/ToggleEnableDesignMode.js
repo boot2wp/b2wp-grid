@@ -11,12 +11,12 @@ export const ToggleEnableDesignMode = () => {
 	const { clientId, enableDesignMode } = useSelect( ( select ) => {
 		const { getSelectedBlockClientId, getBlockAttributes } =
 			select( blockEditorStore );
-		const clientId = getSelectedBlockClientId();
+		const selectedClientId = getSelectedBlockClientId();
 
 		return {
-			clientId,
-			enableDesignMode: clientId
-				? getBlockAttributes( clientId ).enableDesignMode
+			clientId: selectedClientId,
+			enableDesignMode: selectedClientId
+				? getBlockAttributes( selectedClientId ).enableDesignMode
 				: true,
 		};
 	} );

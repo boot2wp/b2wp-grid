@@ -5,6 +5,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 	InspectorControls,
+	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import { useState, useEffect } from '@wordpress/element';
 import { SlotFillProvider } from '@wordpress/components';
@@ -55,7 +56,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	}, [] );
 
 	const blocks = useSelect( ( select ) => {
-		return select( 'core/block-editor' ).getBlocks();
+		return select( blockEditorStore ).getBlocks();
 	} );
 
 	useEffect( () => {

@@ -5,25 +5,64 @@
 	"version": "0.1.0",
 	"title": "CSS Grid",
 	"category": "design",
-	"icon": "layout",
 	"description": "Use, design and share CSS grid layouts.",
 	"keywords": [ "grid", "layout", "CSS" ],
 	"textdomain": "b2wp-grid",
 	"supports": {
+		"__experimentalOnEnter": true,
+		"__experimentalSettings": true,
+		"align": [ "wide", "full" ],
+		"anchor": true,
+		"ariaLabel": true,
 		"html": false,
-		"align": true,
 		"color": {
-			"background": true,
 			"gradients": true,
-			"text": true,
-			"link": true
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true
+			}
+		},
+		"spacing": {
+			"margin": [ "top", "bottom" ],
+			"padding": true,
+			"__experimentalDefaultControls": {
+				"padding": true
+			}
 		},
 		"dimensions": {
 			"minHeight": true
 		},
-		"spacing": {
-			"margin": true,
-			"padding": true
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+		"position": {
+			"sticky": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		},
+		"__experimentalLayout": {
+			"allowSizingOnChildren": true
 		}
 	},
 	"attributes": {
