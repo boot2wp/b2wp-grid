@@ -47,6 +47,7 @@ ${ gridSelector } {
     ${ gridStyleProperties( attributes ) }
 }
 ` }
+			{ editorLayoutStyle( gridSelector ) }
 			{ overRideLayoutFlow( gridSelector, attributes ) }
 			{ gridNamesRule( gridSelector, attributes, false ) }
 			{ editorShowGrid( attributes, gridSelector, showGrid ) }
@@ -54,6 +55,14 @@ ${ gridSelector } {
 		</style>
 	);
 };
+
+function editorLayoutStyle( gridSelector ) {
+	return `
+	${ gridSelector } > * {
+		margin-block-start: 0;
+}
+`;
+}
 
 function gridStyleProperties( attributes ) {
 	return `

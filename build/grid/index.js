@@ -2549,8 +2549,15 @@ const EditorGridStyle = _ref2 => {
 ${gridSelector} {
     ${gridStyleProperties(attributes)}
 }
-`, overRideLayoutFlow(gridSelector, attributes), gridNamesRule(gridSelector, attributes, false), editorShowGrid(attributes, gridSelector, showGrid), editorGridCustomCSS(attributes, gridSelector));
+`, editorLayoutStyle(gridSelector), overRideLayoutFlow(gridSelector, attributes), gridNamesRule(gridSelector, attributes, false), editorShowGrid(attributes, gridSelector, showGrid), editorGridCustomCSS(attributes, gridSelector));
 };
+function editorLayoutStyle(gridSelector) {
+  return `
+	${gridSelector} > * {
+		margin-block-start: 0;
+}
+`;
+}
 function gridStyleProperties(attributes) {
   return `
   display: grid;
