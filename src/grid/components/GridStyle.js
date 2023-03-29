@@ -20,12 +20,12 @@ export const GridStyle = ( { attributes } ) => {
 };
 
 export const gridCSSRules = ( attributes ) => {
-	let gridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName }`;
+	const gridSelector = `${ GRID_BLOCK_CLASS }.${ attributes.gridName }`;
 	return getRules( attributes, gridSelector );
 };
 
 const getRules = ( attributes, gridSelector ) => {
-	let cssRules = `${ gridSelector } {
+	const cssRules = `${ gridSelector } {
 ${ gridStyleProperties( attributes ) }
 }
 ${ overRideLayoutFlow( gridSelector, attributes ) }

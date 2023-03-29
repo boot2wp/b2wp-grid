@@ -29,10 +29,10 @@ import {
 export const SidebarsPanel = () => {
 	const { clientId } = useSelect( ( select ) => {
 		const { getSelectedBlockClientId } = select( blockEditorStore );
-		const clientId = getSelectedBlockClientId();
+		const selectedClientId = getSelectedBlockClientId();
 
 		return {
-			clientId,
+			clientId: selectedClientId,
 		};
 	} );
 
@@ -76,7 +76,14 @@ export const SidebarsPanel = () => {
 		if ( clientId ) {
 			updateBlockAttributes( [ clientId ], newAttributes );
 		}
-	}, [ sidebarWidth, sidebarLocation, onMobile ] );
+	}, [
+		sidebarWidth,
+		sidebarLocation,
+		onMobile,
+		clientId,
+		hasUpdated,
+		updateBlockAttributes,
+	] );
 
 	return (
 		<PluginGridUserPanel title={ __( 'Sidebars' ) }>

@@ -19,10 +19,10 @@ import {
 export const ColumnsPanel = () => {
 	const { clientId } = useSelect( ( select ) => {
 		const { getSelectedBlockClientId } = select( blockEditorStore );
-		const clientId = getSelectedBlockClientId();
+		const selectedClientId = getSelectedBlockClientId();
 
 		return {
-			clientId,
+			clientId: selectedClientId,
 		};
 	} );
 
@@ -67,7 +67,7 @@ export const ColumnsPanel = () => {
 		if ( clientId ) {
 			updateBlockAttributes( [ clientId ], newAttributes );
 		}
-	}, [ columns, onMobile ] );
+	}, [ columns, onMobile, clientId, hasUpdated, updateBlockAttributes ] );
 
 	return (
 		<PluginGridUserPanel title={ __( 'Columns' ) }>

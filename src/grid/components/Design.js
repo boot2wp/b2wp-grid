@@ -47,11 +47,6 @@ export const Design = ( { attributes, setAttributes } ) => {
 							title: 'Custom',
 							className: 'tab-custom-css',
 						},
-						// {
-						// 	name: 'tabcss',
-						// 	title: 'CSS',
-						// 	className: 'tab-css',
-						// },
 					] }
 				>
 					{ ( tab ) => (
@@ -100,11 +95,6 @@ export const Design = ( { attributes, setAttributes } ) => {
 									/>
 								</Spacer>
 							) }
-							{ /* { tab.name === 'tabcss' && (
-								<Spacer marginTop={ 6 }>
-									<div>CSS</div>
-								</Spacer>
-							) } */ }
 						</>
 					) }
 				</TabPanel>
@@ -201,7 +191,7 @@ const AutoFlow = ( { attributes, setAttributes } ) => {
 		return 'other';
 	};
 	const updateAutoFlow = ( option ) => {
-		let newOption = option === 'none' ? '' : option;
+		const newOption = option === 'none' ? '' : option;
 		if ( option === 'other' ) {
 			return;
 		}

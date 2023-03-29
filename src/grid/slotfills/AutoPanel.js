@@ -26,10 +26,10 @@ import PluginGridUserPanel from './PluginGridUserPanel';
 export const AutoPanel = () => {
 	const { clientId } = useSelect( ( select ) => {
 		const { getSelectedBlockClientId } = select( blockEditorStore );
-		const clientId = getSelectedBlockClientId();
+		const selectedClientId = getSelectedBlockClientId();
 
 		return {
-			clientId,
+			clientId: selectedClientId,
 		};
 	} );
 
@@ -65,7 +65,13 @@ export const AutoPanel = () => {
 		if ( clientId ) {
 			updateBlockAttributes( [ clientId ], newAttributes );
 		}
-	}, [ minimumColumnWidth, onMobile ] );
+	}, [
+		minimumColumnWidth,
+		onMobile,
+		clientId,
+		hasUpdated,
+		updateBlockAttributes,
+	] );
 
 	return (
 		<PluginGridUserPanel title={ __( 'Auto' ) }>

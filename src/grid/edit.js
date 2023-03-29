@@ -19,7 +19,7 @@ import { EditorGridStyle } from './components/GridStyle';
 import { User, GridGapPanel } from './components/User';
 import { Design } from './components/Design';
 import { ToggleEnableDesignMode } from './components/ToggleEnableDesignMode';
-import { showDesignPanel, setGridAttributes } from './components/utils';
+import { showDesignPanel } from './components/utils';
 import { UserPanels } from './slotfills/UserPanels';
 import { DesignPanels } from './slotfills/DesignPanels';
 
@@ -70,7 +70,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		if ( ! attributes.gridName || countOfDuplicates > 1 ) {
 			setAttributes( { gridName: `grid-${ clientId }` } );
 		}
-	}, [] );
+	}, [ attributes.gridName, blocks, clientId, setAttributes ] );
 
 	const [ showGrid, setShowGrid ] = useState( true );
 

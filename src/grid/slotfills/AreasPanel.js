@@ -26,10 +26,10 @@ import PluginGridUserPanel from './PluginGridUserPanel';
 export const AreasPanel = () => {
 	const { clientId } = useSelect( ( select ) => {
 		const { getSelectedBlockClientId } = select( blockEditorStore );
-		const clientId = getSelectedBlockClientId();
+		const selectedClientId = getSelectedBlockClientId();
 
 		return {
-			clientId,
+			clientId: selectedClientId,
 		};
 	} );
 
@@ -62,7 +62,15 @@ export const AreasPanel = () => {
 		if ( clientId ) {
 			updateBlockAttributes( [ clientId ], newAttributes );
 		}
-	}, [ areas, mobileAreas, numberNamedAreas, mobileBreakpoint ] );
+	}, [
+		areas,
+		mobileAreas,
+		numberNamedAreas,
+		mobileBreakpoint,
+		clientId,
+		hasUpdated,
+		updateBlockAttributes,
+	] );
 
 	return (
 		<PluginGridUserPanel title={ __( 'Areas' ) }>

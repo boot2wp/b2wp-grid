@@ -6,7 +6,6 @@ import {
 	PanelRow,
 	Button,
 	TextControl,
-	__experimentalSpacer as Spacer,
 	Flex,
 	FlexItem,
 	__experimentalDivider as Divider,
@@ -56,10 +55,6 @@ export const SaveLayouts = ( { attributes, setAttributes } ) => {
 	const [ layoutDescription, setLayoutDescription ] =
 		useState( 'Custom layout' );
 	const [ savedSuccess, setSavedSuccess ] = useState( false );
-
-	const toggleVisible = () => {
-		setVisible( ( current ) => ! current );
-	};
 
 	return (
 		<>
