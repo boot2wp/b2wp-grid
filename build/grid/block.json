@@ -70,9 +70,6 @@
       "__experimentalDefaultControls": {
         "fontSize": true
       }
-    },
-    "__experimentalLayout": {
-      "allowSizingOnChildren": true
     }
   },
   "attributes": {

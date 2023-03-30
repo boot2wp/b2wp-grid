@@ -60,6 +60,7 @@ function editorLayoutStyle( gridSelector ) {
 	return `
 	${ gridSelector } > * {
 		margin-block-start: 0;
+		margin-block-end: 0;
 }
 `;
 }
