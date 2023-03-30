@@ -1,9 +1,9 @@
 /**
  * Internal dependencies
  */
-import { AutoPanel } from './AutoPanel';
-import { ColumnsPanel } from './ColumnsPanel';
-import { SidebarsPanel } from './SidebarsPanel';
+import { AutoPanel } from './auto-panel';
+import { ColumnsPanel } from './columns-panel';
+import { SidebarsPanel } from './sidebars-panel';
 
 export const UserPanels = ( { attributes } ) => {
 	const enablePanels = attributes.enablePanels;

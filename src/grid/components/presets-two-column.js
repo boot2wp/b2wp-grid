@@ -1,6 +1,7 @@
 /**
  * WordPress dependencies
  */
+
 import { __ } from '@wordpress/i18n';
 import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
@@ -12,13 +13,14 @@ import { useState } from '@wordpress/element';
  * Internal dependencies
  */
 import {
-	FourColumnFeaturedIcon,
-	FourColumnMagazineIcon,
-	FourColumnEqualIcon,
-} from './Icons';
+	TwoColumnFeaturedIcon,
+	TwoColumnMagazineIcon,
+	TwoColumnSidebarIcon,
+	TwoColumnEqualIcon,
+} from './icons';
 import { setGridAttributes } from './utils';
 
-export const PresetsFourColumn = ( { setAttributes } ) => {
+export const PresetsTwoColumn = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );
 
 	function onChangePresets( value ) {
@@ -26,24 +28,32 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 		switch ( value ) {
 			case 'featured':
 				newGridAttributes = {
-					templateAreas: `'a a a a'
-'a a a a'
-'b c d e'`,
-					numberNamedAreas: 5,
+					templateAreas: `'a a'
+'b c'`,
+					numberNamedAreas: 3,
 				};
 				break;
 			case 'magazine':
 				newGridAttributes = {
-					templateAreas: `'a a a b'
-'a a a c'
-'d e f g'
+					templateAreas: `'a b'
+'a c'`,
+					numberNamedAreas: 3,
+				};
+				break;
+			case 'sidebar':
+				newGridAttributes = {
+					templateAreas: `
+'a b'
+'c d'
+'e f'
 `,
-					numberNamedAreas: 7,
+					numberNamedAreas: 6,
+					templateColumns: '1fr 200px',
 				};
 				break;
 			case 'equal':
 				newGridAttributes = {
-					templateColumns: '1fr 1fr 1fr 1fr',
+					templateColumns: '1fr 1fr',
 				};
 				break;
 			default:
@@ -56,7 +66,7 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 	return (
 		<>
 			<ToggleGroupControl
-				label={ __( '4 columns' ) }
+				label={ __( '2 Columns' ) }
 				isAdaptiveWidth={ true }
 				value=""
 				isDeselectable={ true }
@@ -65,18 +75,23 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 			>
 				<ToggleGroupControlOptionIcon
 					value="featured"
-					icon={ FourColumnFeaturedIcon }
-					label={ __( 'featured' ) }
+					icon={ TwoColumnFeaturedIcon }
+					label={ __( 'featured-block' ) }
 				/>
 				<ToggleGroupControlOptionIcon
 					value="magazine"
-					icon={ FourColumnMagazineIcon }
+					icon={ TwoColumnMagazineIcon }
 					label={ __( 'magazine' ) }
 				/>
 				<ToggleGroupControlOptionIcon
+					value="sidebar"
+					icon={ TwoColumnSidebarIcon }
+					label={ __( 'sidebar' ) }
+				/>
+				<ToggleGroupControlOptionIcon
 					value="equal"
-					icon={ FourColumnEqualIcon }
-					label={ __( 'equal' ) }
+					icon={ TwoColumnEqualIcon }
+					label={ __( 'equal-columns' ) }
 				/>
 			</ToggleGroupControl>
 			<>
@@ -86,13 +101,11 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 				{ presets === 'magazine' && (
 					<p>{ __( 'Magazine layout selected' ) }</p>
 				) }
+				{ presets === 'sidebar' && (
+					<p>{ __( 'Sidebar layout selected' ) }</p>
+				) }
 				{ presets === 'equal' && (
-					<p>
-						{ __(
-							'Equal - columns layout selected',
-							'b2wp - grid'
-						) }
-					</p>
+					<p>{ __( 'Equal-columns layout selected' ) }</p>
 				) }
 				{ presets === undefined && (
 					<p>{ __( 'Select a grid layout' ) }</p>

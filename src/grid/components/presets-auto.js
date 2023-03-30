@@ -7,7 +7,7 @@ import {
 	__experimentalToggleGroupControlOptionIcon as ToggleGroupControlOptionIcon,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
-import { AutoColumnIcon, AutoRowIcon, CenteredIcon } from './Icons';
+import { AutoColumnIcon, AutoRowIcon, CenteredIcon } from './icons';
 
 /**
  * Internal dependencies

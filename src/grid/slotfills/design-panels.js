@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import { AreasPanel } from './AreasPanel';
+import { AreasPanel } from './areas-panel';
 
 export const DesignPanels = ( { attributes } ) => {
 	const enablePanels = attributes.enablePanels;

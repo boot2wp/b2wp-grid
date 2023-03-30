@@ -28,14 +28,14 @@ import styled from '@emotion/styled';
 /**
  * Internal dependencies
  */
-import { TwoColumnIcon, ThreeColumnIcon, FourColumnIcon } from './Icons';
-import { PresetsTwoColumn } from './PresetsTwoColumn';
-import { PresetsThreeColumn } from './PresetsThreeColumn';
-import { PresetsFourColumn } from './PresetsFourColumn';
-import { PresetsAuto } from './PresetsAuto';
-import { PresetsCustom } from './PresetsCustom';
+import { TwoColumnIcon, ThreeColumnIcon, FourColumnIcon } from './icons';
+import { PresetsTwoColumn } from './presets-two-column';
+import { PresetsThreeColumn } from './presets-three-column';
+import { PresetsFourColumn } from './presets-four-column';
+import { PresetsAuto } from './presets-auto';
+import { PresetsCustom } from './presets-custom';
 import { resetGridAttributes } from './utils';
-import PluginGridUserPanel from '../slotfills/PluginGridUserPanel';
+import PluginGridUserPanel from '../slotfills/plugin-grid-user-panel';
 
 export const User = ( {
 	attributes,

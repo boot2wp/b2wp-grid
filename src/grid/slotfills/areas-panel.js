@@ -21,7 +21,7 @@ import styled from '@emotion/styled';
 /**
  * Internal dependencies
  */
-import PluginGridUserPanel from './PluginGridUserPanel';
+import PluginGridUserPanel from './plugin-grid-user-panel';
 
 export const AreasPanel = () => {
 	const { clientId } = useSelect( ( select ) => {

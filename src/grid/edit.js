@@ -15,13 +15,13 @@ import { useSelect } from '@wordpress/data';
 /**
  * Internal dependencies
  */
-import { EditorGridStyle } from './components/GridStyle';
-import { User, GridGapPanel } from './components/User';
-import { Design } from './components/Design';
-import { ToggleEnableDesignMode } from './components/ToggleEnableDesignMode';
+import { EditorGridStyle } from './components/grid-style';
+import { User, GridGapPanel } from './components/user';
+import { Design } from './components/design';
+import { ToggleEnableDesignMode } from './components/toggle-enable-design-mode';
 import { showDesignPanel } from './components/utils';
-import { UserPanels } from './slotfills/UserPanels';
-import { DesignPanels } from './slotfills/DesignPanels';
+import { UserPanels } from './slotfills/user-panels';
+import { DesignPanels } from './slotfills/design-panels';
 
 import './editor.scss';
 

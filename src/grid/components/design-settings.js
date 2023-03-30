@@ -18,8 +18,8 @@ import { useState } from '@wordpress/element';
 /**
  * Internal dependencies
  */
-import { SaveLayouts } from './SaveLayouts';
-import { gridCSSRules } from './GridStyle';
+import { SaveLayouts } from './save-layouts';
+import { gridCSSRules } from './grid-style';
 
 export const DesignSettings = ( { attributes, setAttributes } ) => {
 	const [ savedLayoutsVisible, setSavedLayoutsVisible ] = useState( false );

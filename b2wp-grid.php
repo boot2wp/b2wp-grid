@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Grid
  * Plugin URI:        https://boot2wp.com
- * Description:       A CSS Grid Brock
+ * Description:       Use, create, and share CSS grid layouts.
  * Requires at least: 5.9
  * Requires PHP:      7.0
  * Version:           0.1.0

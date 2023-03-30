@@ -20,10 +20,13 @@ import styled from '@emotion/styled';
 /**
  * Internal dependencies
  */
-import { oneColumnOnMobileCSS } from '../components/utils';
-import PluginGridUserPanel from './PluginGridUserPanel';
+import PluginGridUserPanel from './plugin-grid-user-panel';
+import {
+	autoColumnsOnMobileCSS,
+	oneColumnOnMobileCSS,
+} from '../components/utils';
 
-export const AutoPanel = () => {
+export const SidebarsPanel = () => {
 	const { clientId } = useSelect( ( select ) => {
 		const { getSelectedBlockClientId } = select( blockEditorStore );
 		const selectedClientId = getSelectedBlockClientId();
@@ -36,22 +39,30 @@ export const AutoPanel = () => {
 	const { updateBlockAttributes } = useDispatch( blockEditorStore );
 
 	const [ hasUpdated, setHasUpdated ] = useState( false );
-	const [ minimumColumnWidth, setMinimumColumnWidth ] = useState( '10rem' );
-	const [ onMobile, setOnMobile ] = useState( 'autoColumn' );
+	const [ sidebarLocation, setSidebarLocation ] = useState( 'right' );
+	const [ sidebarWidth, setSidebarWidth ] = useState( '200px' );
+	const [ onMobile, setOnMobile ] = useState( 'oneColumn' );
 
 	useEffect( () => {
 		if ( ! hasUpdated ) {
 			return;
 		}
 
-		const columns = `repeat(auto-fill, minmax(min(${ minimumColumnWidth }, 100%), 1fr))`;
+		let columns = '';
+
+		if ( sidebarLocation === 'left' ) {
+			columns = `${ sidebarWidth } 1fr`;
+		} else {
+			columns = `1fr ${ sidebarWidth }`;
+		}
 
 		let onMobileCSS = '';
 		switch ( onMobile ) {
 			case 'oneColumn':
 				onMobileCSS = oneColumnOnMobileCSS();
 				break;
-			case 'autoColumn':
+			case 'autoColumns':
+				onMobileCSS = autoColumnsOnMobileCSS();
 				break;
 			default:
 				break;
@@ -66,7 +77,8 @@ export const AutoPanel = () => {
 			updateBlockAttributes( [ clientId ], newAttributes );
 		}
 	}, [
-		minimumColumnWidth,
+		sidebarWidth,
+		sidebarLocation,
 		onMobile,
 		clientId,
 		hasUpdated,
@@ -74,10 +86,15 @@ export const AutoPanel = () => {
 	] );
 
 	return (
-		<PluginGridUserPanel title={ __( 'Auto' ) }>
-			<SetMinWidth
-				minimumColumnWidth={ minimumColumnWidth }
-				setMinimumColumnWidth={ setMinimumColumnWidth }
+		<PluginGridUserPanel title={ __( 'Sidebars' ) }>
+			<SetSidebarLocation
+				sidebarLocation={ sidebarLocation }
+				setSidebarLocation={ setSidebarLocation }
+				setHasUpdated={ setHasUpdated }
+			/>
+			<SetSidebarWidth
+				sidebarWidth={ sidebarWidth }
+				setSidebarWidth={ setSidebarWidth }
 				setHasUpdated={ setHasUpdated }
 			/>
 			<SetOnMobileType
@@ -89,42 +106,33 @@ export const AutoPanel = () => {
 	);
 };
 
-const SingleColumnItem = styled( ToolsPanelItem )`
-	grid-column: span 1;
-`;
-
-const SetMinWidth = ( {
-	minimumColumnWidth,
-	setMinimumColumnWidth,
+const SetSidebarLocation = ( {
+	sidebarLocation,
+	setSidebarLocation,
 	setHasUpdated,
 } ) => {
-	const updateMinimumColumnWidth = ( val ) => {
+	const updateSidebarLocation = ( val ) => {
 		setHasUpdated( true );
-		setMinimumColumnWidth( val );
-	};
-
-	const resetAll = () => {
-		setMinimumColumnWidth( '10rem' );
+		setSidebarLocation( val );
 	};
 
 	return (
-		<ToolsPanel
-			label={ __( 'Set Minimum Column Width' ) }
-			resetAll={ resetAll }
-		>
-			<SingleColumnItem
-				hasValue={ () => !! minimumColumnWidth }
-				label={ __( 'Width' ) }
-				onDeselect={ () => setMinimumColumnWidth( '10rem' ) }
-				isShownByDefault
-			>
-				<UnitControl
-					label={ __( 'Width' ) }
-					onChange={ ( val ) => updateMinimumColumnWidth( val ) }
-					value={ minimumColumnWidth }
-				/>
-			</SingleColumnItem>
-		</ToolsPanel>
+		<RadioControl
+			label="Select Sidebar Location"
+			help="Put sidebar on left or right."
+			selected={ sidebarLocation }
+			options={ [
+				{
+					label: __( 'Left' ),
+					value: 'left',
+				},
+				{
+					label: __( 'Right' ),
+					value: 'right',
+				},
+			] }
+			onChange={ ( value ) => updateSidebarLocation( value ) }
+		/>
 	);
 };
 
@@ -151,5 +159,41 @@ const SetOnMobileType = ( { onMobile, setOnMobile, setHasUpdated } ) => {
 			] }
 			onChange={ ( value ) => updateOnMobileType( value ) }
 		/>
+	);
+};
+
+const SingleColumnItem = styled( ToolsPanelItem )`
+	grid-column: span 1;
+`;
+
+const SetSidebarWidth = ( {
+	sidebarWidth,
+	setSidebarWidth,
+	setHasUpdated,
+} ) => {
+	const updateSidebarWidth = ( val ) => {
+		setHasUpdated( true );
+		setSidebarWidth( val );
+	};
+
+	const resetAll = () => {
+		setSidebarWidth( '200px' );
+	};
+
+	return (
+		<ToolsPanel label={ __( 'Set Sidebar Width' ) } resetAll={ resetAll }>
+			<SingleColumnItem
+				hasValue={ () => !! sidebarWidth }
+				label={ __( 'Width' ) }
+				onDeselect={ () => setSidebarWidth( '200px' ) }
+				isShownByDefault
+			>
+				<UnitControl
+					label={ __( 'Width' ) }
+					onChange={ ( val ) => updateSidebarWidth( val ) }
+					value={ sidebarWidth }
+				/>
+			</SingleColumnItem>
+		</ToolsPanel>
 	);
 };

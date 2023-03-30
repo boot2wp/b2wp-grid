@@ -15,7 +15,7 @@ import {
 	ThreeColumnFeaturedIcon,
 	ThreeColumnMagazineIcon,
 	ThreeColumnEqualIcon,
-} from './Icons';
+} from './icons';
 import { setGridAttributes } from './utils';
 
 export const PresetsThreeColumn = ( { setAttributes } ) => {

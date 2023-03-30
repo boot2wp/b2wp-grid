@@ -6,7 +6,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 /**
  * Internal dependencies
  */
-import { GridStyle } from './components/GridStyle';
+import { GridStyle } from './components/grid-style';
 
 export default function save( { attributes } ) {
 	return (
