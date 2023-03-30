@@ -21,7 +21,7 @@ import styled from '@emotion/styled';
 /**
  * Internal dependencies
  */
-import PluginGridUserPanel from '../plugins/plugin-grid-user-panel';
+import PluginGridDesignPanel from '../plugins/plugin-grid-design-panel';
 
 export const AreasPanel = () => {
 	const { clientId } = useSelect( ( select ) => {
@@ -73,7 +73,7 @@ export const AreasPanel = () => {
 	] );
 
 	return (
-		<PluginGridUserPanel title={ __( 'Areas' ) }>
+		<PluginGridDesignPanel title={ __( 'Areas' ) }>
 			<SetAreas
 				areas={ areas }
 				setAreas={ setAreas }
@@ -94,7 +94,7 @@ export const AreasPanel = () => {
 				setMobileBreakpoint={ setMobileBreakpoint }
 				setHasUpdated={ setHasUpdated }
 			/>
-		</PluginGridUserPanel>
+		</PluginGridDesignPanel>
 	);
 };
 

@@ -199,7 +199,7 @@ const Panels = ( { attributes, setAttributes } ) => {
 				onChange={ ( val ) => setChecked( val, 'Sidebars' ) }
 			/>
 			<CheckboxControl
-				label="Areas - design"
+				label="Areas - Design"
 				help={ __( 'Show panels in user and design panels.' ) }
 				checked={ enablePanels.find(
 					( panel ) => panel.name === 'Areas'

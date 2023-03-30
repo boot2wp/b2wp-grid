@@ -3,7 +3,7 @@
  */
 import { createSlotFill, Panel, PanelBody } from '@wordpress/components';
 
-const { Fill, Slot } = createSlotFill( 'PluginGridUserPanel' );
+const { Fill, Slot } = createSlotFill( 'PluginGridDesignPanel' );
 
 const PluginGridDesignPanel = ( { children, title } ) => (
 	<Fill>
