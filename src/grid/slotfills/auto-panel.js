@@ -21,7 +21,7 @@ import styled from '@emotion/styled';
  * Internal dependencies
  */
 import { oneColumnOnMobileCSS } from '../components/utils';
-import PluginGridUserPanel from './plugin-grid-user-panel';
+import PluginGridUserPanel from '../plugins/plugin-grid-user-panel';
 
 export const AutoPanel = () => {
 	const { clientId } = useSelect( ( select ) => {

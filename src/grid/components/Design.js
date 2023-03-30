@@ -18,7 +18,7 @@ import {
  * Internal dependencies
  */
 import { DesignSettings } from './design-settings';
-import PluginGridDesignPanel from '../slotfills/plugin-grid-design-panel';
+import PluginGridDesignPanel from '../plugins/plugin-grid-design-panel';
 
 export const Design = ( { attributes, setAttributes } ) => {
 	return (

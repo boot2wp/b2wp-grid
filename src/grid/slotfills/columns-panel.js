@@ -10,7 +10,7 @@ import { RangeControl, RadioControl } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import PluginGridUserPanel from './plugin-grid-user-panel';
+import PluginGridUserPanel from '../plugins/plugin-grid-user-panel';
 import {
 	autoColumnsOnMobileCSS,
 	oneColumnOnMobileCSS,

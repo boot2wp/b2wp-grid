@@ -35,7 +35,7 @@ import { PresetsFourColumn } from './presets-four-column';
 import { PresetsAuto } from './presets-auto';
 import { PresetsCustom } from './presets-custom';
 import { resetGridAttributes } from './utils';
-import PluginGridUserPanel from '../slotfills/plugin-grid-user-panel';
+import PluginGridUserPanel from '../plugins/plugin-grid-user-panel';
 
 export const User = ( {
 	attributes,
