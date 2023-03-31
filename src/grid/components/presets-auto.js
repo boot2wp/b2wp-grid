@@ -28,7 +28,7 @@ export const PresetsAuto = ( { setAttributes } ) => {
 				break;
 			case 'row':
 				newGridAttributes = {
-					autoFlow: 'column dense',
+					autoFlow: 'row dense',
 				};
 				break;
 			case 'centered':
