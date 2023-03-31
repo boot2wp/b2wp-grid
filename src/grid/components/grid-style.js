@@ -151,7 +151,7 @@ function gridCustomCSS( attributes ) {
 	let customCSS = attributes.customCSS.trim();
 	if ( customCSS.length !== 0 ) {
 		customCSS = customCSS.replaceAll(
-			'.wp-grid-name-class',
+			'.wp-grid-name',
 			defaultGridSelector
 		);
 		return customCSS;
@@ -164,7 +164,7 @@ function editorGridCustomCSS( attributes, gridSelector ) {
 	let customCSS = attributes.customCSS.trim();
 	if ( customCSS.length !== 0 ) {
 		customCSS = customCSS.replaceAll( defaultGridSelector, gridSelector );
-		customCSS = customCSS.replaceAll( '.wp-grid-name-class', gridSelector );
+		customCSS = customCSS.replaceAll( '.wp-grid-name', gridSelector );
 		return customCSS;
 	}
 	return '';

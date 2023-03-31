@@ -227,9 +227,9 @@ const CustomCSS = ( { attributes, setAttributes } ) => (
 			rows={ 30 }
 			label={ __( 'Custom CSS' ) }
 			help={ __(
-				"Enter custom CSS. '.wp-grid-name-class' will be auto-replaced with block's grid name."
+				"Enter custom CSS. '.wp-grid-name' will be auto-replaced with block's grid name."
 			) }
-			placeholder=".wp-grid-name-class {}"
+			placeholder=".wp-grid-name {}"
 			value={ attributes.customCSS }
 			onChange={ ( val ) => setAttributes( { customCSS: val } ) }
 		/>

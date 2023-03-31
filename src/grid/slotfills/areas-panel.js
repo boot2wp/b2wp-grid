@@ -47,7 +47,7 @@ export const AreasPanel = () => {
 		}
 
 		const onMobileCSS = `@media screen and (max-width: ${ mobileBreakpoint }) {
-  .wp-grid-name-class {
+  .wp-grid-name {
     grid-template-areas: ${ mobileAreas };
   }
 }`;

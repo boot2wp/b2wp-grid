@@ -27,7 +27,7 @@ export const showDesignPanel = ( attributes ) => {
 
 export const autoColumnsOnMobileCSS = () => {
 	return `@media screen and (max-width: 600px) {
-  .wp-grid-name-class {
+  .wp-grid-name {
     grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
   }
 }`;
@@ -35,7 +35,7 @@ export const autoColumnsOnMobileCSS = () => {
 
 export const oneColumnOnMobileCSS = () => {
 	return `@media screen and (max-width: 600px) {
-  .wp-grid-name-class {
+  .wp-grid-name {
     grid-template-columns: 1fr;
   }
 }`;
