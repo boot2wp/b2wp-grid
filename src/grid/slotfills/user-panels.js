@@ -4,6 +4,7 @@
 import { AutoPanel } from './auto-panel';
 import { ColumnsPanel } from './columns-panel';
 import { SidebarsPanel } from './sidebars-panel';
+import { CardPanel } from './card-panel';
 
 export const UserPanels = ( { attributes } ) => {
 	const enablePanels = attributes.enablePanels;
@@ -18,6 +19,9 @@ export const UserPanels = ( { attributes } ) => {
 			) }
 			{ enablePanels.find( ( panel ) => panel.name === 'Sidebars' ) && (
 				<SidebarsPanel />
+			) }
+			{ enablePanels.find( ( panel ) => panel.name === 'Card' ) && (
+				<CardPanel />
 			) }
 		</>
 	);
