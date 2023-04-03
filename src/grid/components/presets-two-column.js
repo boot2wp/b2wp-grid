@@ -18,7 +18,11 @@ import {
 	TwoColumnSidebarIcon,
 	TwoColumnEqualIcon,
 } from './icons';
-import { setGridAttributes } from './utils';
+import {
+	setGridAttributes,
+	oneColumnOnMobileCSS,
+	oneColumnNoAreasOnMobileCSS,
+} from './utils';
 
 export const PresetsTwoColumn = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );
@@ -26,11 +30,12 @@ export const PresetsTwoColumn = ( { setAttributes } ) => {
 	function onChangePresets( value ) {
 		let newGridAttributes = {};
 		switch ( value ) {
-			case 'featured':
+			case 'featured-block':
 				newGridAttributes = {
 					templateAreas: `'a a'
 'b c'`,
 					numberNamedAreas: 3,
+					customCSS: oneColumnNoAreasOnMobileCSS(),
 				};
 				break;
 			case 'magazine':
@@ -38,6 +43,7 @@ export const PresetsTwoColumn = ( { setAttributes } ) => {
 					templateAreas: `'a b'
 'a c'`,
 					numberNamedAreas: 3,
+					customCSS: oneColumnNoAreasOnMobileCSS(),
 				};
 				break;
 			case 'sidebar':
@@ -49,11 +55,13 @@ export const PresetsTwoColumn = ( { setAttributes } ) => {
 `,
 					numberNamedAreas: 6,
 					templateColumns: '1fr 200px',
+					customCSS: oneColumnNoAreasOnMobileCSS(),
 				};
 				break;
 			case 'equal':
 				newGridAttributes = {
 					templateColumns: '1fr 1fr',
+					customCSS: oneColumnOnMobileCSS(),
 				};
 				break;
 			default:
@@ -74,7 +82,7 @@ export const PresetsTwoColumn = ( { setAttributes } ) => {
 				isBlock
 			>
 				<ToggleGroupControlOptionIcon
-					value="featured"
+					value="featured-block"
 					icon={ TwoColumnFeaturedIcon }
 					label={ __( 'featured-block' ) }
 				/>
@@ -95,7 +103,7 @@ export const PresetsTwoColumn = ( { setAttributes } ) => {
 				/>
 			</ToggleGroupControl>
 			<>
-				{ presets === 'featured' && (
+				{ presets === 'featured-block' && (
 					<p>{ __( 'Featured-block layout selected' ) }</p>
 				) }
 				{ presets === 'magazine' && (

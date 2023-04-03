@@ -16,7 +16,11 @@ import {
 	FourColumnMagazineIcon,
 	FourColumnEqualIcon,
 } from './icons';
-import { setGridAttributes } from './utils';
+import {
+	setGridAttributes,
+	oneColumnOnMobileCSS,
+	oneColumnNoAreasOnMobileCSS,
+} from './utils';
 
 export const PresetsFourColumn = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );
@@ -24,12 +28,13 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 	function onChangePresets( value ) {
 		let newGridAttributes = {};
 		switch ( value ) {
-			case 'featured':
+			case 'featured-block':
 				newGridAttributes = {
 					templateAreas: `'a a a a'
 'a a a a'
 'b c d e'`,
 					numberNamedAreas: 5,
+					customCSS: oneColumnNoAreasOnMobileCSS(),
 				};
 				break;
 			case 'magazine':
@@ -39,11 +44,13 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 'd e f g'
 `,
 					numberNamedAreas: 7,
+					customCSS: oneColumnNoAreasOnMobileCSS(),
 				};
 				break;
 			case 'equal':
 				newGridAttributes = {
 					templateColumns: '1fr 1fr 1fr 1fr',
+					customCSS: oneColumnNoAreasOnMobileCSS(),
 				};
 				break;
 			default:
@@ -64,9 +71,9 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 				isBlock
 			>
 				<ToggleGroupControlOptionIcon
-					value="featured"
+					value="featured-block"
 					icon={ FourColumnFeaturedIcon }
-					label={ __( 'featured' ) }
+					label={ __( 'featured-block' ) }
 				/>
 				<ToggleGroupControlOptionIcon
 					value="magazine"
@@ -80,7 +87,7 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 				/>
 			</ToggleGroupControl>
 			<>
-				{ presets === 'featured' && (
+				{ presets === 'featured-block' && (
 					<p>{ __( 'Featured-block layout selected' ) }</p>
 				) }
 				{ presets === 'magazine' && (

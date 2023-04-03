@@ -40,3 +40,15 @@ export const oneColumnOnMobileCSS = () => {
   }
 }`;
 };
+
+export const oneColumnNoAreasOnMobileCSS = () => {
+	return `@media screen and (max-width: 600px) {
+.wp-grid-name {
+	grid-template-areas: none;
+	grid-template-columns: 1fr;
+}
+.wp-grid-name > * {
+	grid-area: auto !important;
+}
+}`;
+};

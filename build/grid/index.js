@@ -3587,12 +3587,13 @@ const PresetsFourColumn = _ref => {
   function onChangePresets(value) {
     let newGridAttributes = {};
     switch (value) {
-      case 'featured':
+      case 'featured-block':
         newGridAttributes = {
           templateAreas: `'a a a a'
 'a a a a'
 'b c d e'`,
-          numberNamedAreas: 5
+          numberNamedAreas: 5,
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnNoAreasOnMobileCSS)()
         };
         break;
       case 'magazine':
@@ -3601,12 +3602,14 @@ const PresetsFourColumn = _ref => {
 'a a a c'
 'd e f g'
 `,
-          numberNamedAreas: 7
+          numberNamedAreas: 7,
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnNoAreasOnMobileCSS)()
         };
         break;
       case 'equal':
         newGridAttributes = {
-          templateColumns: '1fr 1fr 1fr 1fr'
+          templateColumns: '1fr 1fr 1fr 1fr',
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnNoAreasOnMobileCSS)()
         };
         break;
       default:
@@ -3623,9 +3626,9 @@ const PresetsFourColumn = _ref => {
     onChange: value => onChangePresets(value),
     isBlock: true
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
-    value: "featured",
+    value: "featured-block",
     icon: _icons__WEBPACK_IMPORTED_MODULE_3__.FourColumnFeaturedIcon,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('featured')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('featured-block')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
     value: "magazine",
     icon: _icons__WEBPACK_IMPORTED_MODULE_3__.FourColumnMagazineIcon,
@@ -3634,7 +3637,7 @@ const PresetsFourColumn = _ref => {
     value: "equal",
     icon: _icons__WEBPACK_IMPORTED_MODULE_3__.FourColumnEqualIcon,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('equal')
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, presets === 'featured' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Featured-block layout selected')), presets === 'magazine' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Magazine layout selected')), presets === 'equal' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Equal - columns layout selected', 'b2wp - grid')), presets === undefined && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a grid layout'))));
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, presets === 'featured-block' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Featured-block layout selected')), presets === 'magazine' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Magazine layout selected')), presets === 'equal' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Equal - columns layout selected', 'b2wp - grid')), presets === undefined && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a grid layout'))));
 };
 
 /***/ }),
@@ -3678,12 +3681,13 @@ const PresetsThreeColumn = _ref => {
   function onChangePresets(value) {
     let newGridAttributes = {};
     switch (value) {
-      case 'featured':
+      case 'featured-block':
         newGridAttributes = {
           templateAreas: `'a a a'
 'b b c'
 'd d e'`,
-          numberNamedAreas: 3
+          numberNamedAreas: 3,
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnNoAreasOnMobileCSS)()
         };
         break;
       case 'magazine':
@@ -3691,12 +3695,14 @@ const PresetsThreeColumn = _ref => {
           templateAreas: `'a a b'
 'a a c'
 'd e f'`,
-          numberNamedAreas: 6
+          numberNamedAreas: 6,
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnNoAreasOnMobileCSS)()
         };
         break;
       case 'equal':
         newGridAttributes = {
-          templateColumns: '1fr 1fr 1fr'
+          templateColumns: '1fr 1fr 1fr',
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnOnMobileCSS)()
         };
         break;
       default:
@@ -3713,9 +3719,9 @@ const PresetsThreeColumn = _ref => {
     onChange: value => onChangePresets(value),
     isBlock: true
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
-    value: "featured",
+    value: "featured-block",
     icon: _icons__WEBPACK_IMPORTED_MODULE_3__.ThreeColumnFeaturedIcon,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('featured')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('featured-block')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
     value: "magazine",
     icon: _icons__WEBPACK_IMPORTED_MODULE_3__.ThreeColumnMagazineIcon,
@@ -3724,7 +3730,7 @@ const PresetsThreeColumn = _ref => {
     value: "equal",
     icon: _icons__WEBPACK_IMPORTED_MODULE_3__.ThreeColumnEqualIcon,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('equal')
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, presets === 'featured' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Featured-block layout selected')), presets === 'magazine' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Magazine layout selected')), presets === 'equal' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Equal-columns layout selected')), presets === undefined && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a grid layout'))));
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, presets === 'featured-block' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Featured-block layout selected')), presets === 'magazine' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Magazine layout selected')), presets === 'equal' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Equal-columns layout selected')), presets === undefined && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a grid layout'))));
 };
 
 /***/ }),
@@ -3769,18 +3775,20 @@ const PresetsTwoColumn = _ref => {
   function onChangePresets(value) {
     let newGridAttributes = {};
     switch (value) {
-      case 'featured':
+      case 'featured-block':
         newGridAttributes = {
           templateAreas: `'a a'
 'b c'`,
-          numberNamedAreas: 3
+          numberNamedAreas: 3,
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnNoAreasOnMobileCSS)()
         };
         break;
       case 'magazine':
         newGridAttributes = {
           templateAreas: `'a b'
 'a c'`,
-          numberNamedAreas: 3
+          numberNamedAreas: 3,
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnNoAreasOnMobileCSS)()
         };
         break;
       case 'sidebar':
@@ -3791,12 +3799,14 @@ const PresetsTwoColumn = _ref => {
 'e f'
 `,
           numberNamedAreas: 6,
-          templateColumns: '1fr 200px'
+          templateColumns: '1fr 200px',
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnNoAreasOnMobileCSS)()
         };
         break;
       case 'equal':
         newGridAttributes = {
-          templateColumns: '1fr 1fr'
+          templateColumns: '1fr 1fr',
+          customCSS: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.oneColumnOnMobileCSS)()
         };
         break;
       default:
@@ -3813,7 +3823,7 @@ const PresetsTwoColumn = _ref => {
     onChange: value => onChangePresets(value),
     isBlock: true
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
-    value: "featured",
+    value: "featured-block",
     icon: _icons__WEBPACK_IMPORTED_MODULE_3__.TwoColumnFeaturedIcon,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('featured-block')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalToggleGroupControlOptionIcon, {
@@ -3828,7 +3838,7 @@ const PresetsTwoColumn = _ref => {
     value: "equal",
     icon: _icons__WEBPACK_IMPORTED_MODULE_3__.TwoColumnEqualIcon,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('equal-columns')
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, presets === 'featured' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Featured-block layout selected')), presets === 'magazine' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Magazine layout selected')), presets === 'sidebar' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Sidebar layout selected')), presets === 'equal' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Equal-columns layout selected')), presets === undefined && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a grid layout'))));
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, presets === 'featured-block' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Featured-block layout selected')), presets === 'magazine' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Magazine layout selected')), presets === 'sidebar' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Sidebar layout selected')), presets === 'equal' && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Equal-columns layout selected')), presets === undefined && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a grid layout'))));
 };
 
 /***/ }),
@@ -4253,6 +4263,7 @@ const GridGapPanel = _ref3 => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "autoColumnsOnMobileCSS": function() { return /* binding */ autoColumnsOnMobileCSS; },
+/* harmony export */   "oneColumnNoAreasOnMobileCSS": function() { return /* binding */ oneColumnNoAreasOnMobileCSS; },
 /* harmony export */   "oneColumnOnMobileCSS": function() { return /* binding */ oneColumnOnMobileCSS; },
 /* harmony export */   "resetGridAttributes": function() { return /* binding */ resetGridAttributes; },
 /* harmony export */   "setGridAttributes": function() { return /* binding */ setGridAttributes; },
@@ -4298,6 +4309,17 @@ const oneColumnOnMobileCSS = () => {
   .wp-grid-name {
     grid-template-columns: 1fr;
   }
+}`;
+};
+const oneColumnNoAreasOnMobileCSS = () => {
+  return `@media screen and (max-width: 600px) {
+.wp-grid-name {
+	grid-template-areas: none;
+	grid-template-columns: 1fr;
+}
+.wp-grid-name > * {
+	grid-area: auto !important;
+}
 }`;
 };
 
