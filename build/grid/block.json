@@ -127,6 +127,15 @@
           "name": "Columns"
         },
         {
+          "name": "Auto"
+        },
+        {
+          "name": "Sidebars"
+        },
+        {
+          "name": "Card"
+        },
+        {
           "name": "Areas"
         }
       ]

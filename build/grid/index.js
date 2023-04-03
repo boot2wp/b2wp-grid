@@ -4762,7 +4762,7 @@ const SetAreas = _ref => {
     setAreas(val);
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextareaControl, {
-    rows: 6,
+    rows: 4,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Template Areas'),
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Value for grid-template-areas CSS property, like 'a a' 'b c'"),
     value: areas,
@@ -4780,7 +4780,7 @@ const SetMobileAreas = _ref2 => {
     setMobileAreas(val);
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextareaControl, {
-    rows: 6,
+    rows: 4,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Template Areas'),
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Value for grid-template-areas on mobile widths'),
     value: mobileAreas,
@@ -4907,6 +4907,8 @@ const AutoPanel = () => {
     const columns = `repeat(auto-fill, minmax(min(${minimumColumnWidth}, 100%), 1fr))`;
     let onMobileCSS = '';
     switch (onMobile) {
+      case 'noChange':
+        break;
       case 'oneColumn':
         onMobileCSS = (0,_components_utils__WEBPACK_IMPORTED_MODULE_6__.oneColumnOnMobileCSS)();
         break;
@@ -4980,6 +4982,9 @@ const SetOnMobileType = _ref2 => {
     help: "Select grid layout for mobile width.",
     selected: onMobile,
     options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('No change'),
+      value: 'noChange'
+    }, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('One column'),
       value: 'oneColumn'
     }, {
@@ -5208,6 +5213,8 @@ const ColumnsPanel = () => {
     }
     let onMobileCSS = '';
     switch (onMobile) {
+      case 'noChange':
+        break;
       case 'oneColumn':
         onMobileCSS = (0,_components_utils__WEBPACK_IMPORTED_MODULE_6__.oneColumnOnMobileCSS)();
         break;
@@ -5276,6 +5283,9 @@ const SetOnMobileType = _ref2 => {
     help: "Select grid layout for mobile width.",
     selected: onMobile,
     options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('No change'),
+      value: 'noChange'
+    }, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('One column'),
       value: 'oneColumn'
     }, {
@@ -5390,6 +5400,8 @@ const SidebarsPanel = () => {
     }
     let onMobileCSS = '';
     switch (onMobile) {
+      case 'noChange':
+        break;
       case 'oneColumn':
         onMobileCSS = (0,_components_utils__WEBPACK_IMPORTED_MODULE_7__.oneColumnOnMobileCSS)();
         break;
@@ -5462,6 +5474,9 @@ const SetOnMobileType = _ref2 => {
     help: "Select grid layout for mobile width.",
     selected: onMobile,
     options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('No change'),
+      value: 'noChange'
+    }, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('One column'),
       value: 'oneColumn'
     }, {
@@ -7080,7 +7095,7 @@ function combine (array, callback) {
   \*****************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"b2wp/grid","version":"0.1.0","title":"CSS Grid","category":"design","description":"Use, design, and share CSS grid layouts.","keywords":["grid","layout","CSS"],"textdomain":"b2wp-grid","supports":{"__experimentalOnEnter":true,"__experimentalSettings":true,"align":["wide","full"],"anchor":true,"ariaLabel":true,"html":false,"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"background":true,"text":true}},"spacing":{"margin":["top","bottom"],"padding":true,"__experimentalDefaultControls":{"padding":true}},"dimensions":{"minHeight":true},"__experimentalBorder":{"color":true,"radius":true,"style":true,"width":true,"__experimentalDefaultControls":{"color":true,"radius":true,"style":true,"width":true}},"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}}},"attributes":{"templateColumns":{"type":"string","default":"repeat(auto-fill, minmax(min(10rem, 100%), 1fr))"},"templateRows":{"type":"string","default":""},"templateAreas":{"type":"string","default":""},"autoColumns":{"type":"string","default":""},"autoRows":{"type":"string","default":""},"autoFlow":{"type":"string","default":""},"rowGap":{"type":"string","default":"1rem"},"columnGap":{"type":"string","default":"1rem"},"numberNamedAreas":{"type":"integer","default":0},"gridName":{"type":"string"},"customCSS":{"type":"string","default":""},"enableDesignMode":{"type":"boolean","default":true},"enablePanels":{"type":"array","default":[{"name":"Layouts"},{"name":"Columns"},{"name":"Areas"}]},"savedLayouts":{"type":"array","default":[]},"applyToQueryLoop":{"type":"boolean","default":false}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"b2wp/grid","version":"0.1.0","title":"CSS Grid","category":"design","description":"Use, design, and share CSS grid layouts.","keywords":["grid","layout","CSS"],"textdomain":"b2wp-grid","supports":{"__experimentalOnEnter":true,"__experimentalSettings":true,"align":["wide","full"],"anchor":true,"ariaLabel":true,"html":false,"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"background":true,"text":true}},"spacing":{"margin":["top","bottom"],"padding":true,"__experimentalDefaultControls":{"padding":true}},"dimensions":{"minHeight":true},"__experimentalBorder":{"color":true,"radius":true,"style":true,"width":true,"__experimentalDefaultControls":{"color":true,"radius":true,"style":true,"width":true}},"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}}},"attributes":{"templateColumns":{"type":"string","default":"repeat(auto-fill, minmax(min(10rem, 100%), 1fr))"},"templateRows":{"type":"string","default":""},"templateAreas":{"type":"string","default":""},"autoColumns":{"type":"string","default":""},"autoRows":{"type":"string","default":""},"autoFlow":{"type":"string","default":""},"rowGap":{"type":"string","default":"1rem"},"columnGap":{"type":"string","default":"1rem"},"numberNamedAreas":{"type":"integer","default":0},"gridName":{"type":"string"},"customCSS":{"type":"string","default":""},"enableDesignMode":{"type":"boolean","default":true},"enablePanels":{"type":"array","default":[{"name":"Layouts"},{"name":"Columns"},{"name":"Auto"},{"name":"Sidebars"},{"name":"Card"},{"name":"Areas"}]},"savedLayouts":{"type":"array","default":[]},"applyToQueryLoop":{"type":"boolean","default":false}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

@@ -106,7 +106,7 @@ const SetAreas = ( { areas, setAreas, setHasUpdated } ) => {
 
 	return (
 		<TextareaControl
-			rows={ 6 }
+			rows={ 4 }
 			label={ __( 'Template Areas' ) }
 			help={ __(
 				"Value for grid-template-areas CSS property, like 'a a' 'b c'"
@@ -125,7 +125,7 @@ const SetMobileAreas = ( { mobileAreas, setMobileAreas, setHasUpdated } ) => {
 
 	return (
 		<TextareaControl
-			rows={ 6 }
+			rows={ 4 }
 			label={ __( 'Mobile Template Areas' ) }
 			help={ __( 'Value for grid-template-areas on mobile widths' ) }
 			value={ mobileAreas }

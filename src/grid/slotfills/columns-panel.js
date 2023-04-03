@@ -44,6 +44,8 @@ export const ColumnsPanel = () => {
 
 		let onMobileCSS = '';
 		switch ( onMobile ) {
+			case 'noChange':
+				break;
 			case 'oneColumn':
 				onMobileCSS = oneColumnOnMobileCSS();
 				break;
@@ -114,6 +116,10 @@ const SetOnMobileType = ( { onMobile, setOnMobile, setHasUpdated } ) => {
 			help="Select grid layout for mobile width."
 			selected={ onMobile }
 			options={ [
+				{
+					label: __( 'No change' ),
+					value: 'noChange',
+				},
 				{
 					label: __( 'One column' ),
 					value: 'oneColumn',

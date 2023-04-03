@@ -112,9 +112,19 @@
 			"default": [
 				{
 					"name": "Layouts"
-				},
+				}
+				,
 				{
 					"name": "Columns"
+				},
+				{
+					"name": "Auto"
+				},
+				{
+					"name": "Sidebars"
+				},
+				{
+					"name": "Card"
 				},
 				{
 					"name": "Areas"
