@@ -188,17 +188,15 @@ function gridNamesRule( gridSelector, attributes, skipFirstElement ) {
 	let gridNames = '';
 	const count = attributes.numberNamedAreas;
 	let currentLetter = 0;
+	let nthChild = skipFirstElement ? 2 : 1;
 
 	for ( let i = 0; i < count; i++ ) {
-		if ( skipFirstElement && i === 0 ) {
-			continue;
-		}
-
 		gridNames += `
-${ gridSelector } > :nth-child(${ i + 1 }) {grid-area: ${
-			LETTERS[ currentLetter++ ]
-		};}`;
+${ gridSelector } > :nth-child(${ nthChild }) {grid-area: ${ LETTERS[ currentLetter ] };}`;
+		nthChild++;
+		currentLetter++;
 	}
+
 	return gridNames;
 }
 
