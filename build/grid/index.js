@@ -5203,13 +5203,15 @@ const ColumnsPanel = () => {
   const [hasUpdated, setHasUpdated] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [columns, setColumns] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined);
   const [onMobile, setOnMobile] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('oneColumn');
+  const [autoWidth, setAutoWidth] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (!hasUpdated) {
       return;
     }
     let newTemplateColumns = '';
+    const columnType = autoWidth ? 'auto ' : '1fr ';
     for (let i = 0; i < columns; i++) {
-      newTemplateColumns = newTemplateColumns + '1fr ';
+      newTemplateColumns = newTemplateColumns + columnType;
     }
     let onMobileCSS = '';
     switch (onMobile) {
@@ -5237,12 +5239,16 @@ const ColumnsPanel = () => {
     if (clientId) {
       updateBlockAttributes([clientId], newAttributes);
     }
-  }, [columns, onMobile, clientId, hasUpdated, updateBlockAttributes]);
+  }, [columns, onMobile, autoWidth, clientId, hasUpdated, updateBlockAttributes]);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_plugins_plugin_grid_user_panel__WEBPACK_IMPORTED_MODULE_5__["default"], {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Columns')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetColumns, {
     columns: columns,
     setColumns: setColumns,
+    setHasUpdated: setHasUpdated
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetAutoWidth, {
+    autoWidth: autoWidth,
+    setAutoWidth: setAutoWidth,
     setHasUpdated: setHasUpdated
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SetOnMobileType, {
     onMobile: onMobile,
@@ -5293,6 +5299,22 @@ const SetOnMobileType = _ref2 => {
       value: 'autoColumns'
     }],
     onChange: value => updateOnMobileType(value)
+  });
+};
+const SetAutoWidth = _ref3 => {
+  let {
+    autoWidth,
+    setAutoWidth,
+    setHasUpdated
+  } = _ref3;
+  const updateAutoWidth = val => {
+    setHasUpdated(true);
+    setAutoWidth(val);
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.CheckboxControl, {
+    label: "Auto width column",
+    checked: autoWidth,
+    onChange: val => updateAutoWidth(val)
   });
 };
 

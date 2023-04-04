@@ -5,7 +5,11 @@ import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { store as blockEditorStore } from '@wordpress/block-editor';
-import { RangeControl, RadioControl } from '@wordpress/components';
+import {
+	RangeControl,
+	RadioControl,
+	CheckboxControl,
+} from '@wordpress/components';
 
 /**
  * Internal dependencies
@@ -31,6 +35,7 @@ export const ColumnsPanel = () => {
 	const [ hasUpdated, setHasUpdated ] = useState( false );
 	const [ columns, setColumns ] = useState( undefined );
 	const [ onMobile, setOnMobile ] = useState( 'oneColumn' );
+	const [ autoWidth, setAutoWidth ] = useState( false );
 
 	useEffect( () => {
 		if ( ! hasUpdated ) {
@@ -38,8 +43,9 @@ export const ColumnsPanel = () => {
 		}
 
 		let newTemplateColumns = '';
+		const columnType = autoWidth ? 'auto ' : '1fr ';
 		for ( let i = 0; i < columns; i++ ) {
-			newTemplateColumns = newTemplateColumns + '1fr ';
+			newTemplateColumns = newTemplateColumns + columnType;
 		}
 
 		let onMobileCSS = '';
@@ -69,13 +75,25 @@ export const ColumnsPanel = () => {
 		if ( clientId ) {
 			updateBlockAttributes( [ clientId ], newAttributes );
 		}
-	}, [ columns, onMobile, clientId, hasUpdated, updateBlockAttributes ] );
+	}, [
+		columns,
+		onMobile,
+		autoWidth,
+		clientId,
+		hasUpdated,
+		updateBlockAttributes,
+	] );
 
 	return (
 		<PluginGridUserPanel title={ __( 'Columns' ) }>
 			<SetColumns
 				columns={ columns }
 				setColumns={ setColumns }
+				setHasUpdated={ setHasUpdated }
+			/>
+			<SetAutoWidth
+				autoWidth={ autoWidth }
+				setAutoWidth={ setAutoWidth }
 				setHasUpdated={ setHasUpdated }
 			/>
 			<SetOnMobileType
@@ -130,6 +148,21 @@ const SetOnMobileType = ( { onMobile, setOnMobile, setHasUpdated } ) => {
 				},
 			] }
 			onChange={ ( value ) => updateOnMobileType( value ) }
+		/>
+	);
+};
+
+const SetAutoWidth = ( { autoWidth, setAutoWidth, setHasUpdated } ) => {
+	const updateAutoWidth = ( val ) => {
+		setHasUpdated( true );
+		setAutoWidth( val );
+	};
+
+	return (
+		<CheckboxControl
+			label="Auto width column"
+			checked={ autoWidth }
+			onChange={ ( val ) => updateAutoWidth( val ) }
 		/>
 	);
 };
