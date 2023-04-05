@@ -12,7 +12,7 @@ This CSS grid block proposes a full-featured grid layout system that:
 -   provides a customizable and extensible user interface
 -   provides access to the full CSS grid specification for designers without overwhelming users with complexity or the need to learn CSS
 
-![CSS Grid block](./docs/css-grid-block.png)
+![CSS Grid block](./docs/css-grid-block-screenshot.png)
 
 Use flows:
 
