@@ -1,7 +1,6 @@
 /**
  * Internal dependencies
  */
-import { AutoPanel } from './auto-panel';
 import { ColumnsPanel } from './columns-panel';
 import { SidebarsPanel } from './sidebars-panel';
 import { CardPanel } from './card-panel';
@@ -19,9 +18,6 @@ export const UserPanels = ( { attributes } ) => {
 			) }
 			{ enablePanels.find( ( panel ) => panel.name === 'Card' ) && (
 				<CardPanel />
-			) }
-			{ enablePanels.find( ( panel ) => panel.name === 'Auto' ) && (
-				<AutoPanel />
 			) }
 		</>
 	);
