@@ -1,0 +1,1 @@
+{"version":3,"file":"grid/style-index.css","mappings":";;;AAAA;EACC;UAAA;EACA;UAAA;AACD,C","sources":["webpack://b2wp-grid/./src/grid/style.scss"],"sourcesContent":[".wp-block-b2wp-grid > * {\n\tmargin-block-start: 0;\n\tmargin-block-end: 0;\n}\n"],"names":[],"sourceRoot":""}

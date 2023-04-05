@@ -16,11 +16,7 @@ import {
 	FourColumnMagazineIcon,
 	FourColumnEqualIcon,
 } from './icons';
-import {
-	setGridAttributes,
-	oneColumnOnMobileCSS,
-	oneColumnNoAreasOnMobileCSS,
-} from './utils';
+import { setGridAttributes, oneColumnNoAreasOnMobileCSS } from './utils';
 
 export const PresetsFourColumn = ( { setAttributes } ) => {
 	const [ presets, setPresets ] = useState( undefined );
