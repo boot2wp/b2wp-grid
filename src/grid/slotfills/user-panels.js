@@ -14,14 +14,14 @@ export const UserPanels = ( { attributes } ) => {
 			{ enablePanels.find( ( panel ) => panel.name === 'Columns' ) && (
 				<ColumnsPanel />
 			) }
-			{ enablePanels.find( ( panel ) => panel.name === 'Auto' ) && (
-				<AutoPanel />
-			) }
 			{ enablePanels.find( ( panel ) => panel.name === 'Sidebars' ) && (
 				<SidebarsPanel />
 			) }
 			{ enablePanels.find( ( panel ) => panel.name === 'Card' ) && (
 				<CardPanel />
+			) }
+			{ enablePanels.find( ( panel ) => panel.name === 'Auto' ) && (
+				<AutoPanel />
 			) }
 		</>
 	);

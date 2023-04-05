@@ -185,13 +185,6 @@ const Panels = ( { attributes, setAttributes } ) => {
 				onChange={ ( val ) => setChecked( val, 'Columns' ) }
 			/>
 			<CheckboxControl
-				label={ __( 'Auto' ) }
-				checked={ enablePanels.find(
-					( panel ) => panel.name === 'Auto'
-				) }
-				onChange={ ( val ) => setChecked( val, 'Auto' ) }
-			/>
-			<CheckboxControl
 				label={ __( 'Sidebars' ) }
 				checked={ enablePanels.find(
 					( panel ) => panel.name === 'Sidebars'
@@ -204,6 +197,13 @@ const Panels = ( { attributes, setAttributes } ) => {
 					( panel ) => panel.name === 'Card'
 				) }
 				onChange={ ( val ) => setChecked( val, 'Card' ) }
+			/>
+			<CheckboxControl
+				label={ __( 'Auto' ) }
+				checked={ enablePanels.find(
+					( panel ) => panel.name === 'Auto'
+				) }
+				onChange={ ( val ) => setChecked( val, 'Auto' ) }
 			/>
 			<CheckboxControl
 				label="Areas - Design"

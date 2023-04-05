@@ -2226,10 +2226,6 @@ const Panels = _ref5 => {
     checked: enablePanels.find(panel => panel.name === 'Columns'),
     onChange: val => setChecked(val, 'Columns')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CheckboxControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto'),
-    checked: enablePanels.find(panel => panel.name === 'Auto'),
-    onChange: val => setChecked(val, 'Auto')
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CheckboxControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Sidebars'),
     checked: enablePanels.find(panel => panel.name === 'Sidebars'),
     onChange: val => setChecked(val, 'Sidebars')
@@ -2237,6 +2233,10 @@ const Panels = _ref5 => {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card'),
     checked: enablePanels.find(panel => panel.name === 'Card'),
     onChange: val => setChecked(val, 'Card')
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CheckboxControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Auto'),
+    checked: enablePanels.find(panel => panel.name === 'Auto'),
+    onChange: val => setChecked(val, 'Auto')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CheckboxControl, {
     label: "Areas - Design",
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Show panels in user and design panels.'),
@@ -5570,7 +5570,7 @@ const UserPanels = _ref => {
     attributes
   } = _ref;
   const enablePanels = attributes.enablePanels;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, enablePanels.find(panel => panel.name === 'Columns') && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_columns_panel__WEBPACK_IMPORTED_MODULE_2__.ColumnsPanel, null), enablePanels.find(panel => panel.name === 'Auto') && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_auto_panel__WEBPACK_IMPORTED_MODULE_1__.AutoPanel, null), enablePanels.find(panel => panel.name === 'Sidebars') && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sidebars_panel__WEBPACK_IMPORTED_MODULE_3__.SidebarsPanel, null), enablePanels.find(panel => panel.name === 'Card') && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_card_panel__WEBPACK_IMPORTED_MODULE_4__.CardPanel, null));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, enablePanels.find(panel => panel.name === 'Columns') && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_columns_panel__WEBPACK_IMPORTED_MODULE_2__.ColumnsPanel, null), enablePanels.find(panel => panel.name === 'Sidebars') && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_sidebars_panel__WEBPACK_IMPORTED_MODULE_3__.SidebarsPanel, null), enablePanels.find(panel => panel.name === 'Card') && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_card_panel__WEBPACK_IMPORTED_MODULE_4__.CardPanel, null), enablePanels.find(panel => panel.name === 'Auto') && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_auto_panel__WEBPACK_IMPORTED_MODULE_1__.AutoPanel, null));
 };
 
 /***/ }),
@@ -7117,7 +7117,7 @@ function combine (array, callback) {
   \*****************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"b2wp/grid","version":"0.1.0","title":"CSS Grid","category":"design","description":"Use, design, and share CSS grid layouts.","keywords":["grid","layout","CSS"],"textdomain":"b2wp-grid","supports":{"__experimentalOnEnter":true,"__experimentalSettings":true,"align":["wide","full"],"anchor":true,"ariaLabel":true,"html":false,"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"background":true,"text":true}},"spacing":{"margin":["top","bottom"],"padding":true,"__experimentalDefaultControls":{"padding":true}},"dimensions":{"minHeight":true},"__experimentalBorder":{"color":true,"radius":true,"style":true,"width":true,"__experimentalDefaultControls":{"color":true,"radius":true,"style":true,"width":true}},"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}}},"attributes":{"templateColumns":{"type":"string","default":"repeat(auto-fill, minmax(min(10rem, 100%), 1fr))"},"templateRows":{"type":"string","default":""},"templateAreas":{"type":"string","default":""},"autoColumns":{"type":"string","default":""},"autoRows":{"type":"string","default":""},"autoFlow":{"type":"string","default":""},"rowGap":{"type":"string","default":"1rem"},"columnGap":{"type":"string","default":"1rem"},"numberNamedAreas":{"type":"integer","default":0},"gridName":{"type":"string"},"customCSS":{"type":"string","default":""},"enableDesignMode":{"type":"boolean","default":true},"enablePanels":{"type":"array","default":[{"name":"Layouts"},{"name":"Columns"},{"name":"Auto"},{"name":"Sidebars"},{"name":"Card"},{"name":"Areas"}]},"savedLayouts":{"type":"array","default":[]},"applyToQueryLoop":{"type":"boolean","default":false}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"b2wp/grid","version":"0.1.0","title":"CSS Grid","category":"design","description":"Use, design, and share CSS grid layouts.","keywords":["grid","layout","CSS"],"textdomain":"b2wp-grid","supports":{"__experimentalOnEnter":true,"__experimentalSettings":true,"align":["wide","full"],"anchor":true,"ariaLabel":true,"html":false,"color":{"gradients":true,"link":true,"__experimentalDefaultControls":{"background":true,"text":true}},"spacing":{"margin":["top","bottom"],"padding":true,"__experimentalDefaultControls":{"padding":true}},"dimensions":{"minHeight":true},"__experimentalBorder":{"color":true,"radius":true,"style":true,"width":true,"__experimentalDefaultControls":{"color":true,"radius":true,"style":true,"width":true}},"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}}},"attributes":{"templateColumns":{"type":"string","default":"repeat(auto-fill, minmax(min(10rem, 100%), 1fr))"},"templateRows":{"type":"string","default":""},"templateAreas":{"type":"string","default":""},"autoColumns":{"type":"string","default":""},"autoRows":{"type":"string","default":""},"autoFlow":{"type":"string","default":""},"rowGap":{"type":"string","default":"1rem"},"columnGap":{"type":"string","default":"1rem"},"numberNamedAreas":{"type":"integer","default":0},"gridName":{"type":"string"},"customCSS":{"type":"string","default":""},"enableDesignMode":{"type":"boolean","default":true},"enablePanels":{"type":"array","default":[{"name":"Layouts"},{"name":"Columns"},{"name":"Sidebars"},{"name":"Card"},{"name":"Areas"}]},"savedLayouts":{"type":"array","default":[]},"applyToQueryLoop":{"type":"boolean","default":false}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
