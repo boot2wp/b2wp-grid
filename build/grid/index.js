@@ -2736,649 +2736,634 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * WordPress dependencies
  */
+// import { Icon } from '@wordpress/components';
 
-const TwoColumnIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "20",
-    y: "20",
-    width: "26",
-    height: "26"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "57",
-    y: "20",
-    width: "26",
-    height: "26"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "57",
-    y: "58",
-    width: "26",
-    height: "26"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "20",
-    y: "58",
-    width: "26",
-    height: "26"
-  }))
-});
-const ThreeColumnIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "40",
-    y: "40",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "40",
-    y: "12",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "40",
-    y: "68",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "68",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "40",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "12",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "12",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "40",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "68",
-    width: "21",
-    height: "21"
-  }))
-});
-const FourColumnIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "10",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "10",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "10",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "10",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "31",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "31",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "31",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "31",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "73",
-    width: "17",
-    height: "17"
-  }))
-});
-const TwoColumnFeaturedIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "18",
-    y: "15",
-    width: "63",
-    height: "26"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "18",
-    y: "55",
-    width: "26",
-    height: "26"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "55",
-    y: "55",
-    width: "26",
-    height: "26"
-  }))
-});
-const TwoColumnMagazineIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "19",
-    y: "17",
-    width: "26",
-    height: "66"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "56",
-    y: "17",
-    width: "26",
-    height: "26"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "56",
-    y: "57",
-    width: "26",
-    height: "26"
-  }))
-});
-const TwoColumnSidebarIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "65",
-    y: "17",
-    width: "18",
-    height: "66"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "15",
-    y: "17",
-    width: "41",
-    height: "66"
-  }))
-});
-const TwoColumnEqualIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "17",
-    y: "17",
-    width: "29",
-    height: "66"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "56",
-    y: "17",
-    width: "29",
-    height: "66"
-  }))
-});
-const AutoColumnIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "14",
-    y: "40",
-    width: "18",
-    height: "26"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "37",
-    y: "40",
-    width: "26",
-    height: "26"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "40",
-    width: "19",
-    height: "26"
-  }))
-});
-const AutoRowIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "68",
-    width: "77",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "40",
-    width: "77",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "12",
-    width: "77",
-    height: "21"
-  }))
-});
-const ThreeColumnFeaturedIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "68",
-    width: "49",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "40",
-    width: "49",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "12",
-    width: "77",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "40",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "68",
-    width: "21",
-    height: "21"
-  }))
-});
-const ThreeColumnMagazineIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "40",
-    y: "68",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "68",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "12",
-    width: "49",
-    height: "49"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "12",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "40",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "68",
-    width: "21",
-    height: "21"
-  }))
-});
-const ThreeColumnEqualIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "40",
-    y: "40",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "40",
-    y: "12",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "40",
-    y: "68",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "68",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "40",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "12",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "12",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "40",
-    width: "21",
-    height: "21"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "68",
-    y: "68",
-    width: "21",
-    height: "21"
-  }))
-});
-const FourColumnFeaturedIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "10",
-    width: "80",
-    height: "38"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "73",
-    width: "17",
-    height: "17"
-  }))
-});
-const FourColumnMagazineIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "10",
-    width: "59",
-    height: "40"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "10",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "31",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "73",
-    width: "17",
-    height: "17"
-  }))
-});
-const FourColumnEqualIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "10",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "10",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "10",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "10",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "31",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "31",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "31",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "31",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "52",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "10",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "31",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "52",
-    y: "73",
-    width: "17",
-    height: "17"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "73",
-    y: "73",
-    width: "17",
-    height: "17"
-  }))
-});
-const CenteredIcon = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
-  icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-    width: "100",
-    height: "100",
-    viewBox: "0 0 100 100"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "36",
-    y: "37",
-    width: "26",
-    height: "26"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "9",
-    y: "8",
-    width: "6",
-    height: "84"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "84",
-    y: "8",
-    width: "6",
-    height: "84"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "12",
-    y: "8",
-    width: "72",
-    height: "6"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
-    x: "13",
-    y: "86",
-    width: "72",
-    height: "6"
-  }))
-});
+const TwoColumnIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "20",
+  y: "20",
+  width: "26",
+  height: "26"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "57",
+  y: "20",
+  width: "26",
+  height: "26"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "57",
+  y: "58",
+  width: "26",
+  height: "26"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "20",
+  y: "58",
+  width: "26",
+  height: "26"
+}));
+const ThreeColumnIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "40",
+  y: "40",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "40",
+  y: "12",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "40",
+  y: "68",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "68",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "40",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "12",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "12",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "40",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "68",
+  width: "21",
+  height: "21"
+}));
+const FourColumnIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "10",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "10",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "10",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "10",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "31",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "31",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "31",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "31",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "73",
+  width: "17",
+  height: "17"
+}));
+const TwoColumnFeaturedIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "18",
+  y: "15",
+  width: "63",
+  height: "26"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "18",
+  y: "55",
+  width: "26",
+  height: "26"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "55",
+  y: "55",
+  width: "26",
+  height: "26"
+}));
+const TwoColumnMagazineIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "19",
+  y: "17",
+  width: "26",
+  height: "66"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "56",
+  y: "17",
+  width: "26",
+  height: "26"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "56",
+  y: "57",
+  width: "26",
+  height: "26"
+}));
+const TwoColumnSidebarIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "65",
+  y: "17",
+  width: "18",
+  height: "66"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "15",
+  y: "17",
+  width: "41",
+  height: "66"
+}));
+const TwoColumnEqualIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "17",
+  y: "17",
+  width: "29",
+  height: "66"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "56",
+  y: "17",
+  width: "29",
+  height: "66"
+}));
+const AutoColumnIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "14",
+  y: "40",
+  width: "18",
+  height: "26"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "37",
+  y: "40",
+  width: "26",
+  height: "26"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "40",
+  width: "19",
+  height: "26"
+}));
+const AutoRowIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "68",
+  width: "77",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "40",
+  width: "77",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "12",
+  width: "77",
+  height: "21"
+}));
+const ThreeColumnFeaturedIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "68",
+  width: "49",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "40",
+  width: "49",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "12",
+  width: "77",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "40",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "68",
+  width: "21",
+  height: "21"
+}));
+const ThreeColumnMagazineIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "40",
+  y: "68",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "68",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "12",
+  width: "49",
+  height: "49"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "12",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "40",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "68",
+  width: "21",
+  height: "21"
+}));
+const ThreeColumnEqualIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "40",
+  y: "40",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "40",
+  y: "12",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "40",
+  y: "68",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "68",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "40",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "12",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "12",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "40",
+  width: "21",
+  height: "21"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "68",
+  y: "68",
+  width: "21",
+  height: "21"
+}));
+const FourColumnFeaturedIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "10",
+  width: "80",
+  height: "38"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "73",
+  width: "17",
+  height: "17"
+}));
+const FourColumnMagazineIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "10",
+  width: "59",
+  height: "40"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "10",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "31",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "73",
+  width: "17",
+  height: "17"
+}));
+const FourColumnEqualIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "10",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "10",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "10",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "10",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "31",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "31",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "31",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "31",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "52",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "10",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "31",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "52",
+  y: "73",
+  width: "17",
+  height: "17"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "73",
+  y: "73",
+  width: "17",
+  height: "17"
+}));
+const CenteredIcon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "100",
+  height: "100",
+  viewBox: "0 0 100 100"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "36",
+  y: "37",
+  width: "26",
+  height: "26"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "9",
+  y: "8",
+  width: "6",
+  height: "84"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "84",
+  y: "8",
+  width: "6",
+  height: "84"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "12",
+  y: "8",
+  width: "72",
+  height: "6"
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
+  x: "13",
+  y: "86",
+  width: "72",
+  height: "6"
+}));
 
 /***/ }),
 
@@ -4461,33 +4446,34 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * WordPress dependencies
  */
+// import { SVG } from '@wordpress/components';
 
 /* harmony default export */ __webpack_exports__["default"] = ((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SVG, {
   xmlns: "http://www.w3.org/2000/svg",
   width: "24",
   height: "24",
   viewBox: "0 0 24 24"
-}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
   x: "9",
   y: "10",
   width: "6",
   height: "6"
-}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
   x: "3",
   y: "3",
   width: "5",
   height: "13"
-}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
   x: "16",
   y: "3",
   width: "5",
   height: "18"
-}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
   x: "9",
   y: "3",
   width: "6",
   height: "6"
-}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+}), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Rect, {
   x: "3",
   y: "17",
   width: "12",
