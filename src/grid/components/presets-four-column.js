@@ -90,12 +90,7 @@ export const PresetsFourColumn = ( { setAttributes } ) => {
 					<p>{ __( 'Magazine layout selected' ) }</p>
 				) }
 				{ presets === 'equal' && (
-					<p>
-						{ __(
-							'Equal - columns layout selected',
-							'b2wp - grid'
-						) }
-					</p>
+					<p>{ __( 'Equal - columns layout selected' ) }</p>
 				) }
 				{ presets === undefined && (
 					<p>{ __( 'Select a grid layout' ) }</p>
