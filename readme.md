@@ -2,6 +2,10 @@
 
 > See [“Designing a Core CSS Grid Block for Intrinsic Design“](https://github.com/WordPress/gutenberg/issues/49084), WordPress Gutenberg issue #49084.
 
+> For more information, see the [overview](https://boot2wp.com/css-grid-block/) and [examples](http://boot2wp.com/css-grid-block/examples/).
+
+See also an [example SlotFill plugin](https://github.com/boot2wp/b2wp-grid-slotfill).
+
 In recent releases, [WordPress has increasingly embraced intrinsic design](https://developer.wordpress.org/news/2023/02/intrinsic-design-theming-and-rethinking-how-to-design-with-wordpress/) as a fundamental modern styling methodology.
 
 And since the intrinsic term was coined, the CSS Grid standard has been a central tool of intrinsic Web design.
@@ -34,7 +38,3 @@ Sharing/Locking
 
 -   Pattern, site and theme builders can share grid layout designs that are easy for users to select
 -   Design mode can be locked so designs are used as intended
-
-For more information, see the [overview](https://boot2wp.com/css-grid/) and [examples](http://boot2wp.local/css-grid-block/examples/).
-
-See also an [example SlotFill plugin](https://github.com/boot2wp/b2wp-grid-slotfill).
